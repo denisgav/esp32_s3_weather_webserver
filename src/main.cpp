@@ -33,6 +33,15 @@
 #include "RTClib.h"
 //-------------------------------------------------
 
+
+//-------------------------------------------------
+// WiFi
+//-------------------------------------------------
+#include <WiFi.h>
+#include <AsyncTCP.h>
+#include <ESPAsyncWebServer.h>
+//-------------------------------------------------
+
 // uninitialized pointers to SPI objects
 // SPIClass fspi = SPIClass(FSPI);
 SPIClass hspi = SPIClass(HSPI);
@@ -45,7 +54,10 @@ Adafruit_BME280 bme; // I2C
 
 // RTC3231
 RTC_DS3231 rtc;
-char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+char daysOfTheWeek[7][4] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SUN"};
+
+// Create AsyncWebServer object on port 80
+AsyncWebServer server(80);
 
 int init_sd_mmc();
 int init_tft();
@@ -111,21 +123,37 @@ void setup(void)
     tft.fillScreen(ST77XX_BLACK);
 }
 
+String int_to_string(uint32_t i, int num_of_digits){
+    String i_s = String(i);
+    while(i_s.length() < num_of_digits){
+        i_s = "0" + i_s;
+    }
+    return i_s;
+}
+
+String string_extend(String s, int num_of_symbols){
+    String i_s = s;
+    while(i_s.length() < num_of_symbols){
+        i_s = i_s + " ";
+    }
+    return i_s;
+}
+
 void loop()
 {
     delay(1000);
 
     DateTime now = rtc.now();
 
-    String date_s = String(now.year()) + '/' + String(now.month()) + '/' + String(now.day()) + ", " + daysOfTheWeek[now.dayOfTheWeek()];
-    String time_s = String(now.hour()) + ':' + String(now.minute()) + ':' + String(now.second());
-    String temperature1_s = "Temperature: " + String(rtc.getTemperature()) + " C";
+    String date_s = int_to_string(now.year(), 4) + '/' + int_to_string(now.month(), 2) + '/' + int_to_string(now.day(), 2) + ", " + daysOfTheWeek[now.dayOfTheWeek()];
+    String time_s = int_to_string(now.hour(), 2) + ':' + int_to_string(now.minute(), 2) + ':' + int_to_string(now.second(), 2);
+    String temperature1_s = "Temperature: " + string_extend(String(rtc.getTemperature()), 6) + " C";
 
     Serial.println(date_s + " " + time_s + " " + temperature1_s);
 
-    String temperature2_s = "Temperature: " + String(bme.readTemperature()) + " C";
-    String pressure_s = "Pressure: " + String(bme.readPressure() / 100.0F) + " hPa";
-    String humidity_s = "Humidity: " + String(bme.readHumidity()) + " %";
+    String temperature2_s = "Temperature: " + string_extend(String(bme.readTemperature()), 6) + " C";
+    String pressure_s =     "Pressure: " +    string_extend(String(bme.readPressure() / 100.0F), 8) + " hPa";
+    String humidity_s =     "Humidity: " +    string_extend(String(bme.readHumidity()), 6) + " %";
 
     Serial.println(temperature2_s + ", " + pressure_s + ", " + humidity_s);
 
@@ -205,6 +233,7 @@ int init_tft()
 
     // Use this initializer (uncomment) if you're using a 0.96" 180x60 TFT
     tft.initR(INITR_MINI160x80); // initialize a ST7735S chip, mini display
+    tft.invertDisplay(true);
 
     tft.setRotation(3);
 
@@ -213,6 +242,6 @@ int init_tft()
     tft.setTextColor(ST77XX_WHITE);
     tft.setTextSize(0);
     tft.println("Hello World!");
-    tft.invertDisplay(true);
+    
     return 0;
 }
