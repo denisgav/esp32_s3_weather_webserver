@@ -27,6 +27,16 @@ const int FSPI_MISO  = 37;
 //--------------------------
 
 //--------------------------
+// I2C bus
+//--------------------------
+const int I2C_SDA  = 8;
+const int I2C_SCL  = 9;
+
+const int I2C_BME280_ADDR = 0x76;
+const int DS3231_INT = 42;
+//--------------------------
+
+//--------------------------
 // TFT Display
 //--------------------------
 const int TFT_SCL  = HSPI_SCK;  // SPI clock signal
