@@ -8,9 +8,11 @@
 #include <Arduino.h>
 
 #include "board_defines.h"
+#include "string_utils.h"
 
 #include <FS.h>
 #include <SD_MMC.h>
+#include <SPIFFS.h>
 
 //-------------------------------------------------
 // ST7735
@@ -32,7 +34,6 @@
 //-------------------------------------------------
 #include "RTClib.h"
 //-------------------------------------------------
-
 
 //-------------------------------------------------
 // WiFi
@@ -56,11 +57,21 @@ Adafruit_BME280 bme; // I2C
 RTC_DS3231 rtc;
 char daysOfTheWeek[7][4] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SUN"};
 
+// Replace with your network credentials
+const char *ssid = "";
+const char *password = "";
+
 // Create AsyncWebServer object on port 80
-AsyncWebServer server(80);
+// AsyncWebServer server(80);
+// AsyncEventSource events("/events");
 
 int init_sd_mmc();
 int init_tft();
+
+float bme280_temperature = 0.0;
+float bme280_pressure = 0.0;
+float bme280_humidity = 0.0;
+String get_live_sensor_values();
 
 void setup(void)
 {
@@ -69,6 +80,17 @@ void setup(void)
     // fspi.begin(FSPI_SCK, FSPI_MISO, FSPI_MOSI, FSPI_SS);
     hspi.begin(HSPI_SCK, HSPI_MISO, HSPI_MOSI, HSPI_SS);
 
+    // Initialize SPIFFS
+    // if (!SPIFFS.begin())
+    // {
+    //     while (true)
+    //     {
+    //         Serial.println("An Error has occurred while mounting SPIFFS");
+    //         delay(1000);
+    //     }
+    // }
+
+    Serial.println("Init SD MMC");
     if (init_sd_mmc() != 0)
     {
         while (true)
@@ -77,7 +99,9 @@ void setup(void)
             delay(1000);
         }
     }
+    Serial.println("Init SD MMC Done");
 
+    Serial.println("Init TFT");
     if (init_tft() != 0)
     {
         while (true)
@@ -86,7 +110,9 @@ void setup(void)
             delay(1000);
         }
     }
+    Serial.println("Init TFT Done");
 
+    Serial.println("Init BME");
     if (!bme.begin(I2C_BME280_ADDR, &Wire))
     {
         while (true)
@@ -95,7 +121,9 @@ void setup(void)
             delay(1000);
         }
     }
+    Serial.println("Init BME Done");
 
+    Serial.println("Init RTC");
     if (!rtc.begin())
     {
         while (true)
@@ -115,28 +143,49 @@ void setup(void)
         // January 21, 2014 at 3am you would call:
         // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
     }
+    Serial.println("Init RTC Done");
+
+    Serial.println("Connecting to WiFi");
+    WiFi.begin(ssid, password);
+    Serial.println("Waiting for connection");
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("Connecting to WiFi done");
+
+    // // Print local IP address and start web server
+    // Serial.println("");
+    // Serial.println("WiFi connected.");
+    // Serial.println("IP address: ");
+    // Serial.println(WiFi.localIP());
 
     Serial.print("Hello!");
 
     Serial.println("Initialized");
 
     tft.fillScreen(ST77XX_BLACK);
-}
 
-String int_to_string(uint32_t i, int num_of_digits){
-    String i_s = String(i);
-    while(i_s.length() < num_of_digits){
-        i_s = "0" + i_s;
-    }
-    return i_s;
-}
+    // -----------------------------
+    // Web server initialization
+    // -----------------------------
 
-String string_extend(String s, int num_of_symbols){
-    String i_s = s;
-    while(i_s.length() < num_of_symbols){
-        i_s = i_s + " ";
-    }
-    return i_s;
+    // // Route for root / web page
+    // server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+    //           { request->send(SPIFFS, "/index.html", String(), false /*, processor*/); });
+
+    // server.on("/live_sensor_values", HTTP_GET, [] (AsyncWebServerRequest * request) { 
+    //      request->send_P(200, "application/json", get_live_sensor_values().c_str()); 
+    // });
+
+    // // Handle Web Server Events
+    // events.onConnect([](AsyncEventSourceClient *client) {
+    //         client->send("hello!", NULL, millis(), 10000); 
+    // });
+    // server.addHandler(&events);
+
+    // server.begin();
 }
 
 void loop()
@@ -145,15 +194,21 @@ void loop()
 
     DateTime now = rtc.now();
 
+    bme280_temperature = bme.readTemperature();
+    bme280_pressure = bme.readPressure();
+    bme280_humidity = bme.readHumidity();
+
     String date_s = int_to_string(now.year(), 4) + '/' + int_to_string(now.month(), 2) + '/' + int_to_string(now.day(), 2) + ", " + daysOfTheWeek[now.dayOfTheWeek()];
     String time_s = int_to_string(now.hour(), 2) + ':' + int_to_string(now.minute(), 2) + ':' + int_to_string(now.second(), 2);
     String temperature1_s = "Temperature: " + string_extend(String(rtc.getTemperature()), 6) + " C";
 
     Serial.println(date_s + " " + time_s + " " + temperature1_s);
 
-    String temperature2_s = "Temperature: " + string_extend(String(bme.readTemperature()), 6) + " C";
-    String pressure_s =     "Pressure: " +    string_extend(String(bme.readPressure() / 100.0F), 8) + " hPa";
-    String humidity_s =     "Humidity: " +    string_extend(String(bme.readHumidity()), 6) + " %";
+    String temperature2_s = "Temperature: " + string_extend(String(bme280_temperature), 6) + " C";
+    String pressure_s = "Pressure: " + string_extend(String(bme280_pressure / 100.0F), 8) + " hPa";
+    String humidity_s = "Humidity: " + string_extend(String(bme280_humidity), 6) + " %";
+
+    String ip_addr_s = "IP address: " + String(WiFi.localIP());
 
     Serial.println(temperature2_s + ", " + pressure_s + ", " + humidity_s);
 
@@ -174,6 +229,18 @@ void loop()
     tft.println(pressure_s);
     tft.setCursor(8, 48);
     tft.println(humidity_s);
+
+    tft.setCursor(8, 56);
+    tft.println(ip_addr_s);
+}
+
+String get_live_sensor_values(){
+    String res = "{";
+    res +=  "\"bme280_temperature\": \"" + String(bme280_temperature) + "\"";
+    res +=  "\"bme280_pressure\": \"" + String(bme280_pressure) + "\"";
+    res +=  "\"bme280_humidity\": \"" + String(bme280_humidity) + "\"";
+    res += "}";
+    return res;
 }
 
 int init_sd_mmc()
@@ -242,6 +309,6 @@ int init_tft()
     tft.setTextColor(ST77XX_WHITE);
     tft.setTextSize(0);
     tft.println("Hello World!");
-    
+
     return 0;
 }

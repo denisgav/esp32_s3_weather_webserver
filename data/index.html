@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        /* Manually added style */
+    </style>
+</head>
+
+<body>
+    <h2>ESP32 DHT Server</h2>
+    <p>
+        <!-- <i class="fas fa-thermometer-half" style="color:#059e8a;"></i> -->
+        <span class="dht-labels">Temperature</span>
+        <span id="bme280_temperature">%TEMPERATURE%</span>
+        <sup class="units">&deg;C</sup>
+    </p>
+    <p>
+        <canvas id="myTemperatureLiveChart"></canvas>
+    </p>
+    <p>
+        <!-- <i class="fas fa-tint" style="color:#00add6;"></i> -->
+        <span class="dht-labels">Humidity</span>
+        <span id="bme280_humidity">%HUMIDITY%</span>
+        <sup class="units">&percnt;</sup>
+    </p>
+    <p>
+        <canvas id="myHumidityLiveChart"></canvas>
+    </p>
+    <p>
+        <!-- <i class="fas fas fa-wind" style="color:#d60000;"></i> -->
+        <span class="dht-labels">Pressure</span>
+        <span id="bme280_pressure">%PRESSURE%</span>
+        <sup class="units">Pa</sup>
+    </p>
+    <p>
+        <canvas id="myPressureLiveChart"></canvas>
+    </p>
+</body>
+<script>
+    // Manually added script here
+    // Update sensor values
+    function update_live_sensor_values() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                const sensor_data_json = JSON.parse(this.responseText);
+                set_sensor_data(sensor_data_json);
+            }
+        };
+        xhttp.open("GET", "/live_sensor_values", true);
+        xhttp.send();
+    }
+
+
+
+    // When document is loaded - read temperature and hummidity
+    // After each 2 seconds update current values
+    //document.addEventListener("load", update_live_sensor_values);
+    setTimeout(update_live_sensor_values, 100);
+    //setInterval(update_live_sensor_values, 2000);
+
+    if (!!window.EventSource) {
+        var source = new EventSource('/events');
+
+        source.addEventListener('open', function (e) {
+            console.log("Events Connected");
+        }, false);
+        source.addEventListener('error', function (e) {
+            if (e.target.readyState != EventSource.OPEN) {
+                console.log("Events Disconnected");
+            }
+        }, false);
+
+        source.addEventListener('message', function (e) {
+            console.log("message", e.data);
+        }, false);
+
+        source.addEventListener('data', function (e) {
+            const sensor_data_json = JSON.parse(e.data);
+            set_sensor_data(sensor_data_json);
+        }, false);
+    }
+
+    function set_sensor_data(sensor_data) {
+        var bme280_temperature = sensor_data["bme280_temperature"]
+        var bme280_pressure = sensor_data["bme280_pressure"]
+        var bme280_humidity = sensor_data["bme280_humidity"]
+
+        document.getElementById("bme280_temperature").innerHTML = bme280_temperature;
+        document.getElementById("bme280_pressure").innerHTML = bme280_pressure;
+        document.getElementById("bme280_humidity").innerHTML = bme280_humidity;
+    }
+
+</script>
+
+</html>
