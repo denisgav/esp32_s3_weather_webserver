@@ -307,8 +307,8 @@ int init_tft()
   //   ss.setBacklight(0x0); //set the backlight fully on
 
   // Use this initializer (uncomment) if you're using a 0.96" 180x60 TFT
-  tft.initR(INITR_MINI160x80); // initialize a ST7735S chip, mini display
-  tft.invertDisplay(true);
+  tft.initR(INITR_MINI160x80_PLUGIN); // initialize a ST7735S chip, mini display
+  //tft.invertDisplay(true);
 
   tft.setRotation(3);
 
