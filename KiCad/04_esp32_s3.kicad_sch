@@ -1024,9 +1024,19 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "[4] ESP32 S3"
+		(exclude_from_sim no)
+		(at 43.18 21.336 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+			)
+		)
+		(uuid "d5aea3df-8fba-4e25-bc1a-7361dc3235b9")
+	)
 	(wire
 		(pts
-			(xy 95.25 73.66) (xy 101.6 73.66)
+			(xy 165.1 72.39) (xy 171.45 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1036,7 +1046,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 76.2) (xy 101.6 76.2)
+			(xy 165.1 74.93) (xy 171.45 74.93)
 		)
 		(stroke
 			(width 0)
@@ -1046,7 +1056,7 @@
 	)
 	(global_label "USB_D+"
 		(shape input)
-		(at 101.6 76.2 0)
+		(at 171.45 74.93 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1056,7 +1066,7 @@
 		)
 		(uuid "56468dfc-f76e-41c6-989d-adffa78ddd75")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.2052 76.2 0)
+			(at 182.0552 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1068,7 +1078,7 @@
 	)
 	(global_label "USB_D-"
 		(shape input)
-		(at 101.6 73.66 0)
+		(at 171.45 72.39 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1078,7 +1088,7 @@
 		)
 		(uuid "5d2a79be-d842-414f-be97-dc82760341f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.2052 73.66 0)
+			(at 182.0552 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1090,7 +1100,7 @@
 	)
 	(symbol
 		(lib_id "esp32_s3_weather_webserver:ESP32-S3-WROOM-1-N16R8")
-		(at 62.23 55.88 0)
+		(at 132.08 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1098,7 +1108,7 @@
 		(dnp no)
 		(uuid "4d4ec5b1-dd5e-4813-8217-d00376debf36")
 		(property "Reference" "IC101"
-			(at 80.518 53.086 0)
+			(at 150.368 51.816 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1106,7 +1116,7 @@
 			)
 		)
 		(property "Value" "ESP32-S3-WROOM-1-N16R8"
-			(at 91.948 54.864 0)
+			(at 161.798 53.594 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1114,7 +1124,7 @@
 			)
 		)
 		(property "Footprint" "esp32_s3_weather_webserver:ESP32S3WROOM1N16R8"
-			(at 91.44 150.8 0)
+			(at 161.29 149.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1124,7 +1134,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
-			(at 91.44 250.8 0)
+			(at 161.29 249.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1134,7 +1144,7 @@
 			)
 		)
 		(property "Description" "Multiprotocol Modules SMD Module, ESP32-S3R8, 3.3V, 8 MB Octal PSRAM Die, 16 MB Quad SPI Flash, PCB Antenna"
-			(at 73.406 167.64 0)
+			(at 143.256 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1143,7 +1153,7 @@
 			)
 		)
 		(property "Height" "3.25"
-			(at 91.44 450.8 0)
+			(at 161.29 449.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1153,7 +1163,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Espressif Systems"
-			(at 91.44 550.8 0)
+			(at 161.29 549.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1163,7 +1173,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "ESP32-S3-WROOM-1-N16R8"
-			(at 91.44 650.8 0)
+			(at 161.29 649.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1173,7 +1183,7 @@
 			)
 		)
 		(property "Mouser Part Number" "356-ESP32S3WRM1N16R8"
-			(at 91.44 750.8 0)
+			(at 161.29 749.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1183,7 +1193,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Espressif-Systems/ESP32-S3-WROOM-1-N16R8?qs=Li%252BoUPsLEnvQc9gW6AMhZg%3D%3D"
-			(at 91.44 850.8 0)
+			(at 161.29 849.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1193,7 +1203,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 91.44 950.8 0)
+			(at 161.29 949.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1203,7 +1213,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 91.44 1050.8 0)
+			(at 161.29 1049.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
