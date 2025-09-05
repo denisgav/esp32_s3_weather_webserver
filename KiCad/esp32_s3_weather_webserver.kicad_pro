@@ -416,6 +416,22 @@
     [
       "04e96486-ec4c-4881-a0bf-37cb6ce91c2d",
       "Root"
+    ],
+    [
+      "693a6e30-8587-4c1f-a65c-fa3e0d92fd94",
+      "[2] Power"
+    ],
+    [
+      "03b8cdb9-87b3-40fb-b75a-b9ce0b7f30b6",
+      "[3] USB"
+    ],
+    [
+      "50304ef4-c32e-4a1f-a652-b7b630d07cc6",
+      "[4] ESP32 S3"
+    ],
+    [
+      "c3c48617-55df-481a-bcdd-56b688125780",
+      "[5] Peripherals"
     ]
   ],
   "text_variables": {}
