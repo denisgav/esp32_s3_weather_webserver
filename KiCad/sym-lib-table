@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "esp32_s3_weather_webserver")(type "KiCad")(uri "${KIPRJMOD}/esp32_s3_weather_webserver.kicad_sym")(options "")(descr ""))
+)
