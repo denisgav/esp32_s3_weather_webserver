@@ -3215,6 +3215,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 60.96) (xy 223.52 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "176fc2ab-023a-413b-947c-e5951cd838f4")
+	)
+	(wire
+		(pts
 			(xy 20.32 161.29) (xy 20.32 163.83)
 		)
 		(stroke
@@ -4875,6 +4885,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SD_CD"
+		(shape input)
+		(at 223.52 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6a4c0942-e10d-462d-965f-3a07cd2a8f52")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 232.4923 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
