@@ -1,4 +1,4 @@
-26125110742328419
+26128625079181555
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -104139,6 +104139,13 @@ Varistor VF
 2
 2
 esp32_s3_weather_webserver
+CR12202
+CR1220-2-3
+Integrated Circuit
+0
+2
+2
+esp32_s3_weather_webserver
 ESP32S3WROOM1N16R8
 ESP32-S3-WROOM-1-N16R8-5
 Integrated Circuit
@@ -104159,6 +104166,13 @@ Integrated Circuit
 0
 29
 29
+esp32_s3_weather_webserver
+SOIC127P600X175-8N
+8L SOIC (150MIL)
+Integrated Circuit
+0
+8
+8
 esp32_s3_weather_webserver
 SW_PUSH_6mm_H5mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm
