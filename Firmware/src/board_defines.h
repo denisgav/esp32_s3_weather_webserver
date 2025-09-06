@@ -15,52 +15,52 @@
 //--------------------------
 // SPI buses
 //--------------------------
-const int HSPI_SS    = 10;
-const int HSPI_MOSI  = 11;
-const int HSPI_SCK   = 12;
-const int HSPI_MISO  = 13;
+const int HSPI_SS_PIN    = 10;
+const int HSPI_MOSI_PIN  = 11;
+const int HSPI_SCK_PIN   = 12;
+const int HSPI_MISO_PIN  = 13;
 
-const int FSPI_SS    = 39;
-const int FSPI_MOSI  = 35;
-const int FSPI_SCK   = 36;
-const int FSPI_MISO  = 37;
+const int FSPI_SS_PIN    = 39;
+const int FSPI_MOSI_PIN  = 35;
+const int FSPI_SCK_PIN   = 36;
+const int FSPI_MISO_PIN  = 37;
 //--------------------------
 
 //--------------------------
 // I2C bus
 //--------------------------
-const int I2C_SDA  = 8;
-const int I2C_SCL  = 9;
+const int I2C_SDA_PIN  = 8;
+const int I2C_SCL_PIN  = 9;
 
+const int DS3231_INT_PIN = 42;
 const int I2C_BME280_ADDR = 0x76;
-const int DS3231_INT = 42;
 //--------------------------
 
 //--------------------------
 // TFT Display
 //--------------------------
-const int TFT_SCL  = HSPI_SCK;  // SPI clock signal
-const int TFT_SDA  = HSPI_MOSI; // Serial data input pin sda
-const int TFT_RES  = 40; // Reset pin
-const int TFT_DC   = 41; // Data selection signal
-const int TFT_CS   = HSPI_SS; // LCD chip select signal, for SPI protocol
-const int TFT_BLK  = -1; //
+const int TFT_SCL_PIN  = HSPI_SCK_PIN;  // SPI clock signal
+const int TFT_SDA_PIN  = HSPI_MOSI_PIN; // Serial data input pin sda
+const int TFT_RES_PIN  = 40; // Reset pin
+const int TFT_DC_PIN   = 41; // Data selection signal
+const int TFT_CS_PIN   = HSPI_SS_PIN; // LCD chip select signal, for SPI protocol
+const int TFT_BLK_PIN  = -1; //
 //--------------------------
 
 //--------------------------
 // SD SPI pins option
 //--------------------------
-const int SD_SCK  = FSPI_SCK;
-const int SD_MISO = FSPI_MISO;
-const int SD_MOSI = FSPI_MOSI;
-const int SD_CS   = FSPI_SS; /* D3 */
+const int SD_SCK_PIN  = FSPI_SCK_PIN;
+const int SD_MISO_PIN = FSPI_MISO_PIN;
+const int SD_MOSI_PIN = FSPI_MOSI_PIN;
+const int SD_CS_PIN   = FSPI_SS_PIN; /* D3 */
 //--------------------------
 
 //--------------------------
 // SD MMC pins option
 //--------------------------
-const int SD_MMC_CLK = FSPI_SCK;  // SCK OTG
-const int SD_MMC_CMD = FSPI_MOSI; // MOSI OTG
-const int SD_MMC_D0  = FSPI_MISO; // MISO OTG
+const int SD_MMC_CLK_PIN = FSPI_SCK_PIN;  // SCK OTG
+const int SD_MMC_CMD_PIN = FSPI_MOSI_PIN; // MOSI OTG
+const int SD_MMC_D0_PIN  = FSPI_MISO_PIN; // MISO OTG
 //--------------------------
 

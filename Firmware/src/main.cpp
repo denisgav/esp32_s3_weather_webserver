@@ -48,7 +48,7 @@
 SPIClass hspi = SPIClass(HSPI);
 
 // Adafruit_miniTFTWing ss;
-Adafruit_ST7735 tft = Adafruit_ST7735(&hspi, TFT_CS, TFT_DC, TFT_RES);
+Adafruit_ST7735 tft = Adafruit_ST7735(&hspi, TFT_CS_PIN, TFT_DC_PIN, TFT_RES_PIN);
 
 // BME280
 Adafruit_BME280 bme; // I2C
@@ -78,7 +78,7 @@ void setup(void)
   Serial.begin(115200);
 
   // fspi.begin(FSPI_SCK, FSPI_MISO, FSPI_MOSI, FSPI_SS);
-  hspi.begin(HSPI_SCK, HSPI_MISO, HSPI_MOSI, HSPI_SS);
+  hspi.begin(HSPI_SCK_PIN, HSPI_MISO_PIN, HSPI_MOSI_PIN, HSPI_SS_PIN);
 
   // Initialize SPIFFS
   if (!SPIFFS.begin())
@@ -253,7 +253,7 @@ String get_live_sensor_values()
 
 int init_sd_mmc()
 {
-  if (!SD_MMC.setPins(SD_MMC_CLK, SD_MMC_CMD, SD_MMC_D0))
+  if (!SD_MMC.setPins(SD_MMC_CLK_PIN, SD_MMC_CMD_PIN, SD_MMC_D0_PIN))
   {
     Serial.println("Pin change failed!");
     return -1;
