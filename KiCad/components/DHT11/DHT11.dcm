@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DHT11
+D Operating Voltage: 3.5V to 5.5V,Temperature and Humidity Sensor
+K
+F https://html.alldatasheet.com/html-pdf/1132088/ETC2/DHT11/225/2/DHT11.html
+$ENDCMP
+#
+#End Doc Library
