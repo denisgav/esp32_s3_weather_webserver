@@ -23,24 +23,35 @@
 //-------------------------------------------------
 
 //-------------------------------------------------
-// BME280
+// DS3231
 //-------------------------------------------------
-#include <Adafruit_Sensor.h>
-#include <Adafruit_BME280.h>
+#include "DS3231_wrapper.h"
 //-------------------------------------------------
 
 //-------------------------------------------------
-// DS3231
+// BME280
 //-------------------------------------------------
-#include "RTClib.h"
+#include "BME280_wrapper.h"
+//-------------------------------------------------
+
+//-------------------------------------------------
+// DHT11
+//-------------------------------------------------
+#include "DHT11_wrapper.h"
+//-------------------------------------------------
+
+//-------------------------------------------------
+// LM35
+//-------------------------------------------------
+#include "LM35_wrapper.h"
 //-------------------------------------------------
 
 //-------------------------------------------------
 // WiFi
 //-------------------------------------------------
-#include <WiFi.h>
-#include <AsyncTCP.h>
-#include <ESPAsyncWebServer.h>
+// #include <WiFi.h>
+// #include <AsyncTCP.h>
+// #include <ESPAsyncWebServer.h>
 //-------------------------------------------------
 
 // uninitialized pointers to SPI objects
@@ -50,28 +61,31 @@ SPIClass hspi = SPIClass(HSPI);
 // Adafruit_miniTFTWing ss;
 Adafruit_ST7735 tft = Adafruit_ST7735(&hspi, TFT_CS_PIN, TFT_DC_PIN, TFT_RES_PIN);
 
-// BME280
-Adafruit_BME280 bme; // I2C
-
 // RTC3231
-RTC_DS3231 rtc;
+DS3231_wrapper rtc;
 char daysOfTheWeek[7][4] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SUN"};
 
+// BME280
+BME280_wrapper bme280;
+
+// DHT11
+DHT11_wrapper dht11;
+
+// LM35
+LM35_wrapper lm35;
+
 // Replace with your network credentials
-const char *ssid = "";
-const char *password = "";
+// const char *ssid = "";
+// const char *password = "";
 
 // Create AsyncWebServer object on port 80
-AsyncWebServer server(80);
-AsyncEventSource events("/events");
+// AsyncWebServer server(80);
+// AsyncEventSource events("/events");
 
 int init_sd_mmc();
 int init_tft();
 
-float bme280_temperature = 0.0;
-float bme280_pressure = 0.0;
-float bme280_humidity = 0.0;
-String get_live_sensor_values();
+// String get_live_sensor_values();
 
 void setup(void)
 {
@@ -80,26 +94,26 @@ void setup(void)
   // fspi.begin(FSPI_SCK, FSPI_MISO, FSPI_MOSI, FSPI_SS);
   hspi.begin(HSPI_SCK_PIN, HSPI_MISO_PIN, HSPI_MOSI_PIN, HSPI_SS_PIN);
 
-  // Initialize SPIFFS
-  if (!SPIFFS.begin())
-  {
-    while (true)
-    {
-      Serial.println("An Error has occurred while mounting SPIFFS");
-      delay(1000);
-    }
-  }
+  // // Initialize SPIFFS
+  // if (!SPIFFS.begin())
+  // {
+  //   while (true)
+  //   {
+  //     Serial.println("An Error has occurred while mounting SPIFFS");
+  //     delay(1000);
+  //   }
+  // }
 
-  Serial.println("Init SD MMC");
-  if (init_sd_mmc() != 0)
-  {
-    while (true)
-    {
-      Serial.print("SD MMC init failed!");
-      delay(1000);
-    }
-  }
-  Serial.println("Init SD MMC Done");
+  // Serial.println("Init SD MMC");
+  // if (init_sd_mmc() != 0)
+  // {
+  //   while (true)
+  //   {
+  //     Serial.print("SD MMC init failed!");
+  //     delay(1000);
+  //   }
+  // }
+  // Serial.println("Init SD MMC Done");
 
   Serial.println("Init TFT");
   if (init_tft() != 0)
@@ -113,53 +127,36 @@ void setup(void)
   Serial.println("Init TFT Done");
 
   Serial.println("Init BME");
-  if (!bme.begin(I2C_BME280_ADDR, &Wire))
-  {
-    while (true)
-    {
-      Serial.println("Could not find a valid BME280 sensor, check wiring!");
-      delay(1000);
-    }
-  }
+  bme280.init();
   Serial.println("Init BME Done");
 
   Serial.println("Init RTC");
-  if (!rtc.begin())
-  {
-    while (true)
-    {
-      Serial.println("Couldn't find RTC");
-      delay(1000);
-    }
-  }
-
-  if (rtc.lostPower())
-  {
-    Serial.println("RTC lost power, let's set the time!");
-    // When time needs to be set on a new device, or after a power loss, the
-    // following line sets the RTC to the date & time this sketch was compiled
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-    // This line sets the RTC with an explicit date & time, for example to set
-    // January 21, 2014 at 3am you would call:
-    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
-  }
+  rtc.init();
   Serial.println("Init RTC Done");
 
-  Serial.println("Connecting to WiFi");
-  WiFi.begin(ssid, password);
-  Serial.println("Waiting for connection");
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("Connecting to WiFi done");
+  Serial.println("Init DHT11");
+  dht11.init();
+  Serial.println("Init DHT11 Done");
 
-  // Print local IP address and start web server
-  Serial.println("");
-  Serial.println("WiFi connected.");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP().toString());
+  Serial.println("Init LM35");
+  lm35.init();
+  Serial.println("Init LM35 Done");
+
+  // Serial.println("Connecting to WiFi");
+  // WiFi.begin(ssid, password);
+  // Serial.println("Waiting for connection");
+  // while (WiFi.status() != WL_CONNECTED)
+  // {
+  //   delay(500);
+  //   Serial.print(".");
+  // }
+  // Serial.println("Connecting to WiFi done");
+
+  // // Print local IP address and start web server
+  // Serial.println("");
+  // Serial.println("WiFi connected.");
+  // Serial.println("IP address: ");
+  // Serial.println(WiFi.localIP().toString());
 
   Serial.print("Hello!");
 
@@ -172,18 +169,18 @@ void setup(void)
   // -----------------------------
 
   // Route for root / web page
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-            { request->send(SPIFFS, "/index.html", String(), false /*, processor*/); });
+  // server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+  //           { request->send(SPIFFS, "/index.html", String(), false /*, processor*/); });
 
-  server.on("/live_sensor_values", HTTP_GET, [](AsyncWebServerRequest *request)
-            { request->send_P(200, "application/json", get_live_sensor_values().c_str()); });
+  // server.on("/live_sensor_values", HTTP_GET, [](AsyncWebServerRequest *request)
+  //           { request->send_P(200, "application/json", get_live_sensor_values().c_str()); });
 
-  // Handle Web Server Events
-  events.onConnect([](AsyncEventSourceClient *client)
-                   { client->send("hello!", NULL, millis(), 10000); });
-  server.addHandler(&events);
+  // // Handle Web Server Events
+  // events.onConnect([](AsyncEventSourceClient *client)
+  //                  { client->send("hello!", NULL, millis(), 10000); });
+  // server.addHandler(&events);
 
-  server.begin();
+  // server.begin();
 }
 
 void loop()
@@ -192,108 +189,150 @@ void loop()
   // delay(1000);
   if (((sensorUpdateMillisPrev == 0) || ((millis() - sensorUpdateMillisPrev) >= 1000)))
   {
+    if (rtc.sample_datetime_data() == false)
+    {
+      Serial.println("Couldn't find RTC");
+    }
+    else
+    {
+      DateTime now = rtc.get_sampled_datetime();
+      float ds3231_temperature = rtc.get_sampled_temperature();
 
-    DateTime now = rtc.now();
+      String date_s = int_to_string(now.year(), 4) + '/' + int_to_string(now.month(), 2) + '/' + int_to_string(now.day(), 2) + ", " + daysOfTheWeek[now.dayOfTheWeek()];
+      String time_s = int_to_string(now.hour(), 2) + ':' + int_to_string(now.minute(), 2) + ':' + int_to_string(now.second(), 2);
+      String temperature_s = "Temperature: " + string_extend(String(ds3231_temperature), 6) + " C";
 
-    bme280_temperature = bme.readTemperature();
-    bme280_pressure = bme.readPressure();
-    bme280_humidity = bme.readHumidity();
+      Serial.println("[DS3231] " + date_s + " " + time_s + " " + temperature_s);
+    }
 
-    String date_s = int_to_string(now.year(), 4) + '/' + int_to_string(now.month(), 2) + '/' + int_to_string(now.day(), 2) + ", " + daysOfTheWeek[now.dayOfTheWeek()];
-    String time_s = int_to_string(now.hour(), 2) + ':' + int_to_string(now.minute(), 2) + ':' + int_to_string(now.second(), 2);
-    String temperature1_s = "Temperature: " + string_extend(String(rtc.getTemperature()), 6) + " C";
+    if (bme280.sample_sensor_data() == false)
+    {
+      Serial.println("Could not find a valid BME280 sensor, check wiring!");
+    }
+    else
+    {
+      float bme280_temperature = bme280.get_sampled_temperature();
+      float bme280_pressure = bme280.get_sampled_pressure();
+      float bme280_humidity = bme280.get_sampled_humidity();
 
-    Serial.println(date_s + " " + time_s + " " + temperature1_s);
+      String temperature_s = "Temperature: " + string_extend(String(bme280_temperature), 6) + " C";
+      String pressure_s = "Pressure: " + string_extend(String(bme280_pressure / 100.0F), 8) + " hPa";
+      String humidity_s = "Humidity: " + string_extend(String(bme280_humidity), 6) + " %";
 
-    String temperature2_s = "Temperature: " + string_extend(String(bme280_temperature), 6) + " C";
-    String pressure_s = "Pressure: " + string_extend(String(bme280_pressure / 100.0F), 8) + " hPa";
-    String humidity_s = "Humidity: " + string_extend(String(bme280_humidity), 6) + " %";
+      Serial.println("[BME280] " + temperature_s + " " + pressure_s + " " + humidity_s);
+    }
 
-    String ip_addr_s = "IP address: " + WiFi.localIP().toString();
+    if (dht11.sample_sensor_data() == false)
+    {
+      Serial.println("Couldn't find DHT11");
+    }
+    else
+    {
+      float dht11_temperature = bme280.get_sampled_temperature();
+      float dht11_humidity = bme280.get_sampled_humidity();
 
-    Serial.println(temperature2_s + ", " + pressure_s + ", " + humidity_s);
+      String temperature_s = "Temperature: " + string_extend(String(dht11_temperature), 6) + " C";
+      String humidity_s = "Humidity: " + string_extend(String(dht11_humidity), 6) + " %";
 
-    // tft.fillScreen(ST77XX_BLACK);
-    tft.setTextColor(ST77XX_WHITE, ST77XX_BLACK);
-    tft.setTextSize(0);
+      Serial.println("[DHT11] " + temperature_s + " " + humidity_s);
+    }
 
-    tft.setCursor(8, 8);
-    tft.println(date_s);
-    tft.setCursor(8, 16);
-    tft.println(time_s);
-    tft.setCursor(8, 24);
-    tft.println(temperature1_s);
+    if (lm35.sample_sensor_data() == false)
+    {
+      Serial.println("Couldn't find LM35");
+    }
+    else
+    {
+      float lm35_temperature = lm35.get_sampled_temperature();
 
-    tft.setCursor(8, 32);
-    tft.println(temperature2_s);
-    tft.setCursor(8, 40);
-    tft.println(pressure_s);
-    tft.setCursor(8, 48);
-    tft.println(humidity_s);
+      String temperature_s = "Temperature: " + string_extend(String(lm35_temperature), 6) + " C";
 
-    tft.setCursor(8, 56);
-    tft.println(ip_addr_s);
+      Serial.println("[LM35] " + temperature_s);
+    }
+
+    // String ip_addr_s = "IP address: " + WiFi.localIP().toString();
+
+    // // tft.fillScreen(ST77XX_BLACK);
+    // tft.setTextColor(ST77XX_WHITE, ST77XX_BLACK);
+    // tft.setTextSize(0);
+
+    // tft.setCursor(8, 8);
+    // tft.println(date_s);
+    // tft.setCursor(8, 16);
+    // tft.println(time_s);
+    // tft.setCursor(8, 24);
+    // tft.println(temperature1_s);
+
+    // tft.setCursor(8, 32);
+    // tft.println(temperature2_s);
+    // tft.setCursor(8, 40);
+    // tft.println(pressure_s);
+    // tft.setCursor(8, 48);
+    // tft.println(humidity_s);
+
+    // tft.setCursor(8, 56);
+    // tft.println(ip_addr_s);
 
     sensorUpdateMillisPrev = millis();
 
-    String event_data = get_live_sensor_values();
-    events.send(event_data.c_str(), "data", millis());
+    // String event_data = get_live_sensor_values();
+    // events.send(event_data.c_str(), "data", millis());
   }
 }
 
-String get_live_sensor_values()
-{
-  String res = "{";
-  res += "\"bme280_temperature\": \"" + String(bme280_temperature) + "\",";
-  res += "\"bme280_pressure\": \"" + String(bme280_pressure) + "\",";
-  res += "\"bme280_humidity\": \"" + String(bme280_humidity) + "\"";
-  res += "}";
-  return res;
-}
+// String get_live_sensor_values()
+// {
+//   String res = "{";
+//   res += "\"bme280_temperature\": \"" + String(bme280_temperature) + "\",";
+//   res += "\"bme280_pressure\": \"" + String(bme280_pressure) + "\",";
+//   res += "\"bme280_humidity\": \"" + String(bme280_humidity) + "\"";
+//   res += "}";
+//   return res;
+// }
 
-int init_sd_mmc()
-{
-  if (!SD_MMC.setPins(SD_MMC_CLK_PIN, SD_MMC_CMD_PIN, SD_MMC_D0_PIN))
-  {
-    Serial.println("Pin change failed!");
-    return -1;
-  }
-  if (!SD_MMC.begin("/sdcard", true, false, BOARD_MAX_SDMMC_FREQ, 5))
-  {
-    Serial.println("Card Mount Failed");
-    return -1;
-  }
-  uint8_t cardType = SD_MMC.cardType();
+// int init_sd_mmc()
+// {
+//   if (!SD_MMC.setPins(SD_MMC_CLK_PIN, SD_MMC_CMD_PIN, SD_MMC_D0_PIN))
+//   {
+//     Serial.println("Pin change failed!");
+//     return -1;
+//   }
+//   if (!SD_MMC.begin("/sdcard", true, false, BOARD_MAX_SDMMC_FREQ, 5))
+//   {
+//     Serial.println("Card Mount Failed");
+//     return -1;
+//   }
+//   uint8_t cardType = SD_MMC.cardType();
 
-  if (cardType == CARD_NONE)
-  {
-    Serial.println("No SD_MMC card attached");
-    return -1;
-  }
+//   if (cardType == CARD_NONE)
+//   {
+//     Serial.println("No SD_MMC card attached");
+//     return -1;
+//   }
 
-  Serial.print("SD_MMC Card Type: ");
-  if (cardType == CARD_MMC)
-  {
-    Serial.println("MMC");
-  }
-  else if (cardType == CARD_SD)
-  {
-    Serial.println("SDSC");
-  }
-  else if (cardType == CARD_SDHC)
-  {
-    Serial.println("SDHC");
-  }
-  else
-  {
-    Serial.println("UNKNOWN");
-    return -1;
-  }
+//   Serial.print("SD_MMC Card Type: ");
+//   if (cardType == CARD_MMC)
+//   {
+//     Serial.println("MMC");
+//   }
+//   else if (cardType == CARD_SD)
+//   {
+//     Serial.println("SDSC");
+//   }
+//   else if (cardType == CARD_SDHC)
+//   {
+//     Serial.println("SDHC");
+//   }
+//   else
+//   {
+//     Serial.println("UNKNOWN");
+//     return -1;
+//   }
 
-  uint64_t cardSize = SD_MMC.cardSize() / (1024 * 1024);
-  Serial.printf("SD_MMC Card Size: %lluMB\n", cardSize);
-  return 0;
-}
+//   uint64_t cardSize = SD_MMC.cardSize() / (1024 * 1024);
+//   Serial.printf("SD_MMC Card Size: %lluMB\n", cardSize);
+//   return 0;
+// }
 
 int init_tft()
 {
@@ -308,7 +347,7 @@ int init_tft()
 
   // Use this initializer (uncomment) if you're using a 0.96" 180x60 TFT
   tft.initR(INITR_MINI160x80_PLUGIN); // initialize a ST7735S chip, mini display
-  //tft.invertDisplay(true);
+  // tft.invertDisplay(true);
 
   tft.setRotation(3);
 

@@ -33,7 +33,28 @@ const int I2C_SDA_PIN  = 8;
 const int I2C_SCL_PIN  = 9;
 
 const int DS3231_INT_PIN = 42;
-const int I2C_BME280_ADDR = 0x76;
+//--------------------------
+
+//--------------------------
+// DHT11
+//--------------------------
+const int DHT11_PIN = 7;
+//--------------------------
+
+//--------------------------
+// User buttons
+//--------------------------
+const int USR_BTN_PIN = 1;
+const int USR_BTN_LEFT_PIN = 17;
+const int USR_BTN_RIGHT_PIN = 18;
+//--------------------------
+
+//--------------------------
+// Analog pins
+//--------------------------
+const int LDR_PIN = 4;
+const int DS18B20_PIN = 5;
+const int LM35_PIN = 6;
 //--------------------------
 
 //--------------------------
