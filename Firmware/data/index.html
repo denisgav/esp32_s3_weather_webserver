@@ -58,29 +58,7 @@
     // After each 2 seconds update current values
     //document.addEventListener("load", update_live_sensor_values);
     setTimeout(update_live_sensor_values, 100);
-    //setInterval(update_live_sensor_values, 2000);
-
-    if (!!window.EventSource) {
-        var source = new EventSource('/events');
-
-        source.addEventListener('open', function (e) {
-            console.log("Events Connected");
-        }, false);
-        source.addEventListener('error', function (e) {
-            if (e.target.readyState != EventSource.OPEN) {
-                console.log("Events Disconnected");
-            }
-        }, false);
-
-        source.addEventListener('message', function (e) {
-            console.log("message", e.data);
-        }, false);
-
-        source.addEventListener('data', function (e) {
-            const sensor_data_json = JSON.parse(e.data);
-            set_sensor_data(sensor_data_json);
-        }, false);
-    }
+    setInterval(update_live_sensor_values, 1000);
 
     function set_sensor_data(sensor_data) {
         var bme280_temperature = sensor_data["bme280_temperature"]

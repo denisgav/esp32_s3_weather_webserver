@@ -30,10 +30,10 @@
 //-------------------------------------------------
 // WiFi
 //-------------------------------------------------
-// #include <WiFi.h>
-// #include <AsyncTCP.h>
-// #include <ESPAsyncWebServer.h>
+#include "weather_web_server.h"
 //-------------------------------------------------
+
+
 
 // uninitialized pointers to SPI objects
 // SPIClass fspi = SPIClass(FSPI);
@@ -46,18 +46,18 @@ Adafruit_ST7735 tft = Adafruit_ST7735(&hspi, TFT_CS_PIN, TFT_DC_PIN, TFT_RES_PIN
 // Multisensor
 multisensor_wrapper multisensor;
 
+// WiFi
+weather_web_server web_server(multisensor);
+
 // Replace with your network credentials
 // const char *ssid = "";
 // const char *password = "";
 
 // Create AsyncWebServer object on port 80
 // AsyncWebServer server(80);
-// AsyncEventSource events("/events");
 
 //int init_sd_mmc();
 int init_tft();
-
-// String get_live_sensor_values();
 
 void setup(void)
 {
@@ -66,15 +66,7 @@ void setup(void)
   // fspi.begin(FSPI_SCK, FSPI_MISO, FSPI_MOSI, FSPI_SS);
   hspi.begin(HSPI_SCK_PIN, HSPI_MISO_PIN, HSPI_MOSI_PIN, HSPI_SS_PIN);
 
-  // // Initialize SPIFFS
-  // if (!SPIFFS.begin())
-  // {
-  //   while (true)
-  //   {
-  //     Serial.println("An Error has occurred while mounting SPIFFS");
-  //     delay(1000);
-  //   }
-  // }
+
 
   // Serial.println("Init SD MMC");
   // if (init_sd_mmc() != 0)
@@ -102,23 +94,14 @@ void setup(void)
   multisensor.init();
   Serial.println("Init multisensor done");
 
+  // WiFi
+  Serial.println("Init web_server");
+  web_server.init();
+  Serial.println("Init web_server done");
+
   
 
-  // Serial.println("Connecting to WiFi");
-  // WiFi.begin(ssid, password);
-  // Serial.println("Waiting for connection");
-  // while (WiFi.status() != WL_CONNECTED)
-  // {
-  //   delay(500);
-  //   Serial.print(".");
-  // }
-  // Serial.println("Connecting to WiFi done");
 
-  // // Print local IP address and start web server
-  // Serial.println("");
-  // Serial.println("WiFi connected.");
-  // Serial.println("IP address: ");
-  // Serial.println(WiFi.localIP().toString());
 
   Serial.print("Hello!");
 
@@ -130,19 +113,7 @@ void setup(void)
   // Web server initialization
   // -----------------------------
 
-  // Route for root / web page
-  // server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-  //           { request->send(SPIFFS, "/index.html", String(), false /*, processor*/); });
-
-  // server.on("/live_sensor_values", HTTP_GET, [](AsyncWebServerRequest *request)
-  //           { request->send_P(200, "application/json", get_live_sensor_values().c_str()); });
-
-  // // Handle Web Server Events
-  // events.onConnect([](AsyncEventSourceClient *client)
-  //                  { client->send("hello!", NULL, millis(), 10000); });
-  // server.addHandler(&events);
-
-  // server.begin();
+  
 }
 
 void loop()
@@ -154,7 +125,8 @@ void loop()
     
     multisensor.sample_sensor_data();
 
-    // String ip_addr_s = "IP address: " + WiFi.localIP().toString();
+    String ip_addr_s = "IP address: " + WiFi.localIP().toString();
+    Serial.println(ip_addr_s);
 
     // // tft.fillScreen(ST77XX_BLACK);
     // tft.setTextColor(ST77XX_WHITE, ST77XX_BLACK);
@@ -183,17 +155,6 @@ void loop()
     // events.send(event_data.c_str(), "data", millis());
   }
 }
-
-// String get_live_sensor_values()
-// {
-//   String res = "{";
-//   res += "\"bme280_temperature\": \"" + String(bme280_temperature) + "\",";
-//   res += "\"bme280_pressure\": \"" + String(bme280_pressure) + "\",";
-//   res += "\"bme280_humidity\": \"" + String(bme280_humidity) + "\"";
-//   res += "}";
-//   return res;
-// }
-
 // int init_sd_mmc()
 // {
 //   if (!SD_MMC.setPins(SD_MMC_CLK_PIN, SD_MMC_CMD_PIN, SD_MMC_D0_PIN))
