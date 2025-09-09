@@ -4383,6 +4383,12 @@
 		(uuid "5a0e3aa2-8fb2-4bd0-85b3-fd3cb1071381")
 	)
 	(junction
+		(at 153.67 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5bbfa018-8996-431b-b197-d79e7eb78c14")
+	)
+	(junction
 		(at 73.66 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5206,7 +5212,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 60.96) (xy 153.67 71.12)
+			(xy 153.67 60.96) (xy 153.67 66.04)
 		)
 		(stroke
 			(width 0)
@@ -5936,16 +5942,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 66.04) (xy 170.18 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94ae6d38-68a2-42a4-ae40-36c5d06ecccf")
-	)
-	(wire
-		(pts
 			(xy 62.23 161.29) (xy 53.34 161.29)
 		)
 		(stroke
@@ -6446,6 +6442,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.67 66.04) (xy 153.67 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce465b13-ec5a-447a-a0e4-92b2e205f51c")
+	)
+	(wire
+		(pts
 			(xy 40.64 36.83) (xy 57.15 36.83)
 		)
 		(stroke
@@ -6583,6 +6589,16 @@
 			(type default)
 		)
 		(uuid "d83c28c2-69fb-4078-b009-5b45e114a8ca")
+	)
+	(wire
+		(pts
+			(xy 153.67 66.04) (xy 170.18 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db57fa7c-887f-49ad-b190-2e20151aca1d")
 	)
 	(wire
 		(pts
@@ -6963,6 +6979,28 @@
 			(justify left bottom)
 		)
 		(uuid "daad54c6-90ca-4ebf-9fa0-2e016fb5de69")
+	)
+	(global_label "ENS160_INT"
+		(shape input)
+		(at 212.09 91.44 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "02b11dc4-b5b6-4ea3-8664-b0ee8a3c33dc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 197.9168 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "DTR"
 		(shape input)
@@ -7382,29 +7420,6 @@
 			)
 		)
 	)
-	(global_label "GPIO14"
-		(shape input)
-		(at 212.09 91.44 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 7 10 255 1)
-			)
-			(justify right)
-		)
-		(uuid "591f1f0a-1a63-4084-9d9b-e2b446a46885")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 202.2105 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "USB_D-"
 		(shape input)
 		(at 261.62 60.96 0)
@@ -7662,29 +7677,6 @@
 		(uuid "85a95269-d68e-4ee1-a33f-c852d9d405f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 204.2063 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "GPIO14"
-		(shape input)
-		(at 166.37 66.04 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 7 10 255 1)
-			)
-			(justify right)
-		)
-		(uuid "8a44db98-01ec-4f03-a3c7-6839fbb8859a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.4905 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)

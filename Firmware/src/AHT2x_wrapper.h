@@ -3,17 +3,12 @@
 #include <Arduino.h>
 #include <stdbool.h>
 
-#include <DHT.h>
-#include <DHT_U.h>
+#include <Adafruit_AHTX0.h>
 
-#include "board_defines.h"
-
-#define DHTTYPE DHT11   // DHT 11
-
-class DHT11_wrapper{
+class AHT2x_wrapper{
 public:
     // Class constructor
-    DHT11_wrapper();
+    AHT2x_wrapper();
     // Initialize BME sensor
     bool init();
     // Sample date/time
@@ -24,9 +19,8 @@ public:
     float get_sampled_humidity() const;
 
     bool get_is_initialized() const;
-    void print_sensor_info();
 private:
-    DHT_Unified dht;
+    Adafruit_AHTX0 aht;
     float sampled_temperature;
     float sampled_humidity;
     bool is_initialized;

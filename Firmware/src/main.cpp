@@ -35,6 +35,18 @@
 //-------------------------------------------------
 
 //-------------------------------------------------
+// ENS160
+//-------------------------------------------------
+#include "ENS160_wrapper.h"
+//-------------------------------------------------
+
+//-------------------------------------------------
+// AHT2x
+//-------------------------------------------------
+#include "AHT2x_wrapper.h"
+//-------------------------------------------------
+
+//-------------------------------------------------
 // DHT11
 //-------------------------------------------------
 #include "DHT11_wrapper.h"
@@ -44,6 +56,12 @@
 // LM35
 //-------------------------------------------------
 #include "LM35_wrapper.h"
+//-------------------------------------------------
+
+//-------------------------------------------------
+// LDR
+//-------------------------------------------------
+#include "LDR_wrapper.h"
 //-------------------------------------------------
 
 //-------------------------------------------------
@@ -68,11 +86,20 @@ char daysOfTheWeek[7][4] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SUN"};
 // BME280
 BME280_wrapper bme280;
 
+// ENS160
+ENS160_wrapper ens160;
+
+// AHT2x
+AHT2x_wrapper aht2x;
+
 // DHT11
 DHT11_wrapper dht11;
 
 // LM35
 LM35_wrapper lm35;
+
+// LDR
+LDR_wrapper ldr;
 
 // Replace with your network credentials
 // const char *ssid = "";
@@ -126,13 +153,21 @@ void setup(void)
   }
   Serial.println("Init TFT Done");
 
-  Serial.println("Init BME");
-  bme280.init();
-  Serial.println("Init BME Done");
-
   Serial.println("Init RTC");
   rtc.init();
   Serial.println("Init RTC Done");
+
+  Serial.println("Init BME280");
+  bme280.init();
+  Serial.println("Init BME280 Done");
+
+  Serial.println("Init ENS160");
+  ens160.init();
+  Serial.println("Init ENS160 Done");
+
+  Serial.println("Init AHT2x");
+  aht2x.init();
+  Serial.println("Init AHT2x Done");
 
   Serial.println("Init DHT11");
   dht11.init();
@@ -141,6 +176,10 @@ void setup(void)
   Serial.println("Init LM35");
   lm35.init();
   Serial.println("Init LM35 Done");
+
+  Serial.println("Init LDR");
+  ldr.init();
+  Serial.println("Init LDR Done");
 
   // Serial.println("Connecting to WiFi");
   // WiFi.begin(ssid, password);
@@ -205,6 +244,19 @@ void loop()
       Serial.println("[DS3231] " + date_s + " " + time_s + " " + temperature_s);
     }
 
+    if (lm35.sample_sensor_data() == false)
+    {
+      Serial.println("Couldn't find LM35");
+    }
+    else
+    {
+      float lm35_temperature = lm35.get_sampled_temperature();
+
+      String temperature_s = "Temperature: " + string_extend(String(lm35_temperature), 6) + " C";
+
+      Serial.println("[LM35] " + temperature_s);
+    }
+
     if (bme280.sample_sensor_data() == false)
     {
       Serial.println("Could not find a valid BME280 sensor, check wiring!");
@@ -222,6 +274,38 @@ void loop()
       Serial.println("[BME280] " + temperature_s + " " + pressure_s + " " + humidity_s);
     }
 
+    if (ens160.sample_sensor_data() == false)
+    {
+      Serial.println("[ENS160] did not sample values!");
+    }
+    else
+    {
+      uint8_t ens160_AQI = ens160.get_sampled_AQI();
+      uint16_t ens160_TVOC = ens160.get_sampled_TVOC();
+      uint16_t ens160_eCO2 = ens160.get_sampled_eCO2();
+
+      String AQI_s = "AQI: " + String(ens160_AQI);
+      String TVOC_s = "TVOC: " + String(ens160_TVOC) + " ppb";
+      String eCO2_s = "eCO2: " + String(ens160_eCO2) + " ppm";
+
+      Serial.println("[ENS160] " + AQI_s + " " + TVOC_s + " " + eCO2_s);
+    }
+
+    if (aht2x.sample_sensor_data() == false)
+    {
+      Serial.println("Couldn't find AHT2x");
+    }
+    else
+    {
+      float aht2x_temperature = aht2x.get_sampled_temperature();
+      float aht2x_humidity = aht2x.get_sampled_humidity();
+
+      String temperature_s = "Temperature: " + string_extend(String(aht2x_temperature), 6) + " C";
+      String humidity_s = "Humidity: " + string_extend(String(aht2x_humidity), 6) + " %";
+
+      Serial.println("[AHT2x] " + temperature_s + " " + humidity_s);
+    }
+
     if (dht11.sample_sensor_data() == false)
     {
       Serial.println("Couldn't find DHT11");
@@ -237,17 +321,17 @@ void loop()
       Serial.println("[DHT11] " + temperature_s + " " + humidity_s);
     }
 
-    if (lm35.sample_sensor_data() == false)
+    if (ldr.sample_sensor_data() == false)
     {
-      Serial.println("Couldn't find LM35");
+      Serial.println("Couldn't find LDR");
     }
     else
     {
-      float lm35_temperature = lm35.get_sampled_temperature();
+      float sampled_ldr = ldr.get_sampled_ldr();
 
-      String temperature_s = "Temperature: " + string_extend(String(lm35_temperature), 6) + " C";
+      String ldr_s =  string_extend(String(sampled_ldr), 6) + " mV";
 
-      Serial.println("[LM35] " + temperature_s);
+      Serial.println("[LDR] " + ldr_s);
     }
 
     // String ip_addr_s = "IP address: " + WiFi.localIP().toString();
