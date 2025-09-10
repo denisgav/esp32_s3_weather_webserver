@@ -35,5 +35,5 @@ private:
     multisensor_wrapper &multisensor;
     AsyncWebServer server;
 
-    String get_live_sensor_values() const;
+    String fetch_sensor_data() const;
 };

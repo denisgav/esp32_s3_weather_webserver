@@ -36,14 +36,18 @@ void weather_web_server ::init()
     // Route for root / web page
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               { request->send(SPIFFS, "/index.html", String(), false /*, processor*/); });
+    server.on("/page_script.js", HTTP_GET, [](AsyncWebServerRequest *request)
+              { request->send(SPIFFS, "/page_script.js", String(), false /*, processor*/); });
+    server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest *request)
+              { request->send(SPIFFS, "/style.css", String(), false /*, processor*/); });
 
-    server.on("/live_sensor_values", HTTP_GET, [this](AsyncWebServerRequest *request)
-              { request->send_P(200, "application/json", get_live_sensor_values().c_str()); });
+    server.on("/api/fetch_sensor_data", HTTP_GET, [this](AsyncWebServerRequest *request)
+              { request->send_P(200, "application/json", fetch_sensor_data().c_str()); });
 
     server.begin();
 }
 
-String weather_web_server ::get_live_sensor_values() const
+String weather_web_server ::fetch_sensor_data() const
 {
     String res = "{";
     res += "\"bme280_temperature\": \"" + String(multisensor.get_bme280().get_sampled_temperature()) + "\",";
