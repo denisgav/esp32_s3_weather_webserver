@@ -19,10 +19,109 @@ const epochFromInputs = () => {
 const rtcNow = $("#rtcNow"), pcNow = $("#pcNow"), timeStatus = $("#timeStatus");
 */
 
-const el_bme280_t = $("#bme280_t");
-const el_bme280_h = $("#bme280_h");
-const el_bme280_p = $("#bme280_p");
-const el_bme280_status = $("#bme280_status");
+
+function set_bme280_data(success, temperature=null, humidity=null, pressure=null){
+    const el_t = $("#bme280_t");
+    const el_h = $("#bme280_h");
+    const el_p = $("#bme280_p");
+    const el_status = $("#bme280_status");
+
+    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+    el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
+    el_p.textContent = (pressure != null) ? (pressure.toFixed ? pressure.toFixed(0) : pressure) + " hPa" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_ens160_data(success, AQI=null, TVOC=null, eCO2=null){
+    const el_AQI = $("#ens160_AQI");
+    const el_TVOC = $("#ens160_TVOC");
+    const el_eCO2 = $("#ens160_ECO2");
+    const el_status = $("#ens160_status");
+
+    el_AQI.textContent = (AQI != null) ? (AQI.toFixed ? AQI.toFixed(0) : AQI) : "—";
+    el_TVOC.textContent = (TVOC != null) ? (TVOC.toFixed ? TVOC.toFixed(0) : TVOC) + " ppb" : "—";
+    el_eCO2.textContent = (eCO2 != null) ? (eCO2.toFixed ? eCO2.toFixed(0) : eCO2) + " ppm" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_dht11_data(success, temperature=null, humidity=null){
+    const el_t = $("#dht11_t");
+    const el_h = $("#dht11_h");
+    const el_status = $("#dht11_status");
+
+    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+    el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_aht2x_data(success, temperature=null, humidity=null){
+    const el_t = $("#aht2x_t");
+    const el_h = $("#aht2x_h");
+    const el_status = $("#aht2x_status");
+
+    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+    el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_lm35_data(success, temperature=null){
+    const el_t = $("#lm35_t");
+    const el_status = $("#lm35_status");
+
+    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_ldr_data(success, mv=null){
+    const el_mv = $("#ldr_mv");
+    const el_status = $("#ldr_status");
+
+    el_mv.textContent = (mv != null) ? (mv.toFixed ? mv.toFixed(1) : mv) + " mV" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
 
 // ======== BME280 ========
 async function fetch_sensor_data() {
@@ -30,18 +129,19 @@ async function fetch_sensor_data() {
         const r = await fetch("/api/fetch_sensor_data"); // { t,h,p } or {temperature,...}
         const j = await r.json();
 
-        const bme280_temperature = j.bme280_temperature;
-        const bme280_pressure = j.bme280_pressure
-        const bme280_humidity = j.bme280_humidity
-
-        el_bme280_t.textContent = (bme280_temperature != null) ? (bme280_temperature.toFixed ? bme280_temperature.toFixed(1) : bme280_temperature) + "°C" : "—";
-        el_bme280_h.textContent = (bme280_humidity != null) ? (bme280_humidity.toFixed ? bme280_humidity.toFixed(0) : bme280_humidity) + "%" : "—";
-        el_bme280_p.textContent = (bme280_pressure != null) ? (bme280_pressure.toFixed ? bme280_pressure.toFixed(0) : bme280_pressure) + " hPa" : "—";
-        el_bme280_status.textContent = "OK";
-        el_bme280_status.className = "ok";
+        set_bme280_data(true, j.bme280_temperature, j.bme280_humidity, j.bme280_pressure);
+        set_ens160_data(true, j.ens160_AQI, j.ens160_TVOC, j.ens160_eCO2);
+        set_dht11_data(true, j.dht11_temperature, j.dht11_humidity);
+        set_aht2x_data(true, j.aht2x_temperature, j.aht2x_humidity);
+        set_lm35_data(true, j.lm35_temperature);
+        set_ldr_data(true, j.ldr);
     } catch (e) {
-        el_bme280_status.textContent = "error";
-        el_bme280_status.className = "bad";
+        set_bme280_data(false);
+        set_ens160_data(false);
+        set_dht11_data(false);
+        set_aht2x_data(false);
+        set_lm35_data(false);
+        set_ldr_data(false);
     }
 }
 $("#btnRefresh").addEventListener("click", fetch_sensor_data);
