@@ -3,21 +3,18 @@
 #include "weather_web_server.h"
 
 weather_web_server ::weather_web_server(multisensor_wrapper &multisensor) : multisensor(multisensor),
-                                                                            server(80)
+                                                                            server(80),
+                                                                            scanned_networks("")
 {
 }
 
 void weather_web_server ::init()
 {
-    // Initialize SPIFFS
-    if (!SPIFFS.begin())
-    {
-        while (true)
-        {
-            Serial.println("An Error has occurred while mounting SPIFFS");
-            delay(1000);
-        }
-    }
+    start_SPIFFS();
+
+    Serial.println("Scanning WiFi networks");
+    scanned_networks = scan_networks();
+    Serial.println("Scanning WiFi networks done");
 
     Serial.println("Connecting to WiFi");
     WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -35,6 +32,24 @@ void weather_web_server ::init()
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP().toString());
 
+    setup_server();
+}
+
+void weather_web_server ::start_SPIFFS()
+{
+    // Initialize SPIFFS
+    if (!SPIFFS.begin())
+    {
+        while (true)
+        {
+            Serial.println("An Error has occurred while mounting SPIFFS");
+            delay(1000);
+        }
+    }
+}
+
+void weather_web_server ::setup_server()
+{
     // Route for root / web page
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               { request->send(SPIFFS, "/index.html", String(), false /*, processor*/); });
@@ -46,7 +61,39 @@ void weather_web_server ::init()
     server.on("/api/fetch_sensor_data", HTTP_GET, [this](AsyncWebServerRequest *request)
               { request->send_P(200, "application/json", fetch_sensor_data().c_str()); });
 
+    server.on("/api/wifi/scan", HTTP_GET, [this](AsyncWebServerRequest *request)
+              { request->send_P(200, "application/json", scanned_networks.c_str()); });
+              
+
     server.begin();
+}
+
+String weather_web_server ::scan_networks(){
+	// We need to make sure we are disconnected
+	// before trying to scan for networks. We do
+	// not care about the return value from it.
+	WiFi.disconnect();
+
+	byte networks = WiFi.scanNetworks();
+
+	String json = "[";
+	String separator = "";
+
+	// If negative value is returned from the scan we will
+	// just return the empty list as the loop will not
+	// run. This is in case of WIFI_SCAN_FAILED or similar.
+	for (int i = 0; i < networks; i++) {
+		String network = "\"" + WiFi.SSID(i) + "\"";
+
+		if (json.indexOf(network) == -1) {
+			json += separator + network;
+			separator = ",";
+		}
+	}
+
+	json += "]";
+
+	return json;
 }
 
 String weather_web_server ::fetch_sensor_data() const
@@ -91,7 +138,6 @@ String weather_web_server ::fetch_sensor_data() const
     // LDR
     doc["ldr"] = String(multisensor.get_ldr().get_sampled_ldr());
 
-    
     // Lastly, you can print the resulting JSON to a String
     String output;
     serializeJson(doc, output);

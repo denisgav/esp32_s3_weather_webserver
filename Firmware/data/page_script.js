@@ -218,7 +218,7 @@ btnWifi.addEventListener("click", async () => {
     wifiDlg.showModal();
     wifiMsg.textContent = "Scanning…";
     // clear and add placeholder
-    ssidSelect.innerHTML = "<option>Загрузка…</option>";
+    ssidSelect.innerHTML = "<option>Loading…</option>";
     try {
         const r = await fetch("/api/wifi/scan"); // expected: ["MyWiFi","Guest",...]
         const list = await r.json();

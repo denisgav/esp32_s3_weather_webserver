@@ -31,9 +31,15 @@ class weather_web_server{
 public:
     weather_web_server(multisensor_wrapper &multisensor);
     void init();
+protected:
+    void start_SPIFFS();
+    void setup_server();
+    String scan_networks();
 private:
     multisensor_wrapper &multisensor;
     AsyncWebServer server;
+    String scanned_networks;
 
     String fetch_sensor_data() const;
+    
 };
