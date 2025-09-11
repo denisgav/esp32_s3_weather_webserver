@@ -5,131 +5,6 @@
 	(uuid "fc50d40f-3855-46b6-960d-0207d75c7a9f")
 	(paper "A4")
 	(lib_symbols
-		(symbol "+3.3VA_1"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+3.3VA"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+3.3VA_1_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3.3VA_1_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Barrel_Jack_Switch_Pin3Ring"
 			(pin_names
 				(hide yes)
@@ -2002,144 +1877,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:HT75xx-1-SOT89"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -5.08 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "HT75xx-1-SOT89"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-89-3"
-				(at 0 8.255 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.holtek.com/documents/10179/116711/HT75xx-1v250.pdf"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "100mA Low Dropout Voltage Regulator, Fixed Output, SOT89"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "100mA LDO Regulator Fixed Positive"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?89*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "HT75xx-1-SOT89_0_1"
-				(rectangle
-					(start -5.08 5.08)
-					(end 5.08 -2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "HT75xx-1-SOT89_1_1"
-				(pin power_in line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Regulator_Switching:TLV62569DBV"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2545,131 +2282,6 @@
 				)
 			)
 			(symbol "+3.3V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:+3.3VA"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+3.3VA"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+3.3VA_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3.3VA_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
@@ -3193,18 +2805,6 @@
 		(uuid 81519825-1190-4a93-978a-053c4f1a0745)
 	)
 	(rectangle
-		(start 123.19 114.3)
-		(end 182.88 152.4)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 914153f6-2dc0-49a8-a060-c00e893f6f93)
-	)
-	(rectangle
 		(start 97.79 158.75)
 		(end 175.26 195.58)
 		(stroke
@@ -3247,27 +2847,6 @@
 		)
 		(uuid "21ef5520-0739-4783-bd44-4149c17234b0")
 	)
-	(text "Powering analog sensors"
-		(exclude_from_sim no)
-		(at 134.874 110.744 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "5ea15421-1071-4d8d-bde5-deeea3b82179")
-	)
-	(text "P(R)>1/8W"
-		(exclude_from_sim no)
-		(at 124.46 133.35 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "62b21296-a7fe-4096-bf1c-eeb4bcb79417")
-	)
 	(text "I(load)=0.25A max"
 		(exclude_from_sim no)
 		(at 165.608 96.266 0)
@@ -3300,17 +2879,6 @@
 		)
 		(uuid "71c9501b-9719-47e1-b15b-0166402e0687")
 	)
-	(text "C(in/out)>10uF"
-		(exclude_from_sim no)
-		(at 162.56 148.59 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "85255d22-e095-46a3-a9af-322de657b580")
-	)
 	(text "WEBENCH Tools"
 		(exclude_from_sim no)
 		(at 128.27 90.17 0)
@@ -3321,17 +2889,6 @@
 			(justify left bottom)
 		)
 		(uuid "a983953f-e8e6-428e-9d65-62f262e60c46")
-	)
-	(text "100mA max."
-		(exclude_from_sim no)
-		(at 162.56 144.78 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b10c9e2d-4a42-43d2-af71-70ac59051196")
 	)
 	(text "V(out)=0.6*(1+100k/22k)=3.327V"
 		(exclude_from_sim no)
@@ -3449,12 +3006,6 @@
 		(uuid "5f1c1316-a6c7-4d33-9ad5-85b0a9560f6f")
 	)
 	(junction
-		(at 156.21 140.97)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "659332d6-6bb6-439b-aea4-8c0a6319bb82")
-	)
-	(junction
 		(at 44.45 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3473,18 +3024,6 @@
 		(uuid "916e1eae-d30a-42e7-b06c-a08c8bf247fb")
 	)
 	(junction
-		(at 139.7 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "931850aa-a5e4-46e6-95de-7cc2092bc9fb")
-	)
-	(junction
-		(at 172.72 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "95e066be-c580-45d0-af1a-881ee7cf4c7c")
-	)
-	(junction
 		(at 43.18 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3495,12 +3034,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a4612283-f91e-4049-b0c4-ddacf631a943")
-	)
-	(junction
-		(at 168.91 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a6d58682-3bff-4536-b16f-00ecb16eeadf")
 	)
 	(junction
 		(at 140.97 41.91)
@@ -3555,12 +3088,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c9102de6-8d6e-45cf-a4ca-2b756eb24f33")
-	)
-	(junction
-		(at 156.21 143.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cb9e9e95-b0bd-47bf-a013-f0af7d5dfadd")
 	)
 	(junction
 		(at 167.64 29.21)
@@ -3630,16 +3157,6 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 140.97) (xy 172.72 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "079aa7db-c260-44e0-8479-f49a9f1f331c")
-	)
-	(wire
-		(pts
 			(xy 40.64 46.99) (xy 43.18 46.99)
 		)
 		(stroke
@@ -3657,16 +3174,6 @@
 			(type default)
 		)
 		(uuid "0a50c311-f529-4e33-aa23-3fc81846cdf6")
-	)
-	(wire
-		(pts
-			(xy 143.51 186.69) (xy 143.51 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b058138-6671-496f-bfb9-ec6ab1c0982f")
 	)
 	(wire
 		(pts
@@ -3697,16 +3204,6 @@
 			(type default)
 		)
 		(uuid "0d0ce838-3b05-486a-9e0b-1873fc3ec676")
-	)
-	(wire
-		(pts
-			(xy 127 128.27) (xy 129.54 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f5ef48b-fdb1-4478-bf9c-0751928e183e")
 	)
 	(wire
 		(pts
@@ -3830,16 +3327,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 135.89) (xy 156.21 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25d6369d-d511-429f-83d3-7c60e2260919")
-	)
-	(wire
-		(pts
 			(xy 204.47 83.82) (xy 217.17 83.82)
 		)
 		(stroke
@@ -3937,16 +3424,6 @@
 			(type default)
 		)
 		(uuid "3aa81de5-8542-4113-90a3-1167e3878e40")
-	)
-	(wire
-		(pts
-			(xy 143.51 166.37) (xy 143.51 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e454960-5a4f-4775-aa05-b88281cb27e0")
 	)
 	(wire
 		(pts
@@ -4120,16 +3597,6 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 128.27) (xy 172.72 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b8aa02a-4b72-44d7-a36b-100896ccefb7")
-	)
-	(wire
-		(pts
 			(xy 59.69 44.45) (xy 62.23 44.45)
 		)
 		(stroke
@@ -4167,16 +3634,6 @@
 			(type default)
 		)
 		(uuid "6804506d-8607-4fa5-bfc3-1e3c68348750")
-	)
-	(wire
-		(pts
-			(xy 156.21 140.97) (xy 172.72 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6804587f-27ef-42b0-9428-434cc4a29680")
 	)
 	(wire
 		(pts
@@ -4227,16 +3684,6 @@
 			(type default)
 		)
 		(uuid "6eab1f93-6465-493e-930a-946f3ee2d26f")
-	)
-	(wire
-		(pts
-			(xy 143.51 175.26) (xy 143.51 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ed71104-4201-4396-b167-65675f6ec5fd")
 	)
 	(wire
 		(pts
@@ -4390,16 +3837,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 128.27) (xy 139.7 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "861c5216-0615-407d-8485-c964545249b5")
-	)
-	(wire
-		(pts
 			(xy 59.69 109.22) (xy 62.23 109.22)
 		)
 		(stroke
@@ -4440,16 +3877,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 143.51) (xy 156.21 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e1ba613-f0ce-4c65-8eff-00dae73825af")
-	)
-	(wire
-		(pts
 			(xy 217.17 81.28) (xy 217.17 83.82)
 		)
 		(stroke
@@ -4477,16 +3904,6 @@
 			(type default)
 		)
 		(uuid "8fd9772e-4cfb-4729-8457-28dc44ded27b")
-	)
-	(wire
-		(pts
-			(xy 148.59 128.27) (xy 139.7 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ff935f4-f6b8-4ca7-adba-d3e4fb76bed7")
 	)
 	(wire
 		(pts
@@ -4520,26 +3937,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 138.43) (xy 139.7 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94339fa6-e9a3-4b65-ae92-6bb9bacb235a")
-	)
-	(wire
-		(pts
-			(xy 156.21 143.51) (xy 139.7 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "95eb4e5c-7b11-47e4-8c9c-8db235eeeb00")
-	)
-	(wire
-		(pts
 			(xy 129.54 26.67) (xy 129.54 29.21)
 		)
 		(stroke
@@ -4570,16 +3967,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 128.27) (xy 139.7 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f5352e4-fb42-4df6-b26c-05f699f447cc")
-	)
-	(wire
-		(pts
 			(xy 129.54 41.91) (xy 140.97 41.91)
 		)
 		(stroke
@@ -4607,16 +3994,6 @@
 			(type default)
 		)
 		(uuid "a1ffcd3a-1d85-4e02-a5fa-93e60110914f")
-	)
-	(wire
-		(pts
-			(xy 163.83 128.27) (xy 168.91 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a32ed56a-1531-44f4-a6da-b072479c5824")
 	)
 	(wire
 		(pts
@@ -4687,16 +4064,6 @@
 			(type default)
 		)
 		(uuid "b7f6d1dd-8d7f-4ca9-b735-5a6fae41c248")
-	)
-	(wire
-		(pts
-			(xy 168.91 127) (xy 168.91 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b89be293-a789-4f6b-9b87-94eb359f4bd4")
 	)
 	(wire
 		(pts
@@ -4890,16 +4257,6 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 127) (xy 172.72 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1e274d3-d059-4472-b080-c7c5bac2ca72")
-	)
-	(wire
-		(pts
 			(xy 140.97 41.91) (xy 157.48 41.91)
 		)
 		(stroke
@@ -4910,16 +4267,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 140.97) (xy 156.21 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d51eaa08-2027-4777-b3b4-007d8359f1b8")
-	)
-	(wire
-		(pts
 			(xy 101.6 166.37) (xy 101.6 167.64)
 		)
 		(stroke
@@ -4927,16 +4274,6 @@
 			(type default)
 		)
 		(uuid "d5a44d3d-bcba-44e5-ad42-f4aaca6c8fa6")
-	)
-	(wire
-		(pts
-			(xy 172.72 130.81) (xy 172.72 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d697fbb3-f7d2-4aab-a88d-a8535391f2d1")
 	)
 	(wire
 		(pts
@@ -5100,16 +4437,6 @@
 	)
 	(wire
 		(pts
-			(xy 127 121.92) (xy 127 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6069af5-d9de-4b21-95fc-4166b199caf1")
-	)
-	(wire
-		(pts
 			(xy 167.64 41.91) (xy 180.34 41.91)
 		)
 		(stroke
@@ -5168,16 +4495,6 @@
 		)
 		(uuid "fce04895-77b6-4528-8e9c-90b45e1cd2f5")
 	)
-	(label "+5V_FILT"
-		(at 148.59 128.27 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1621996f-97c0-4984-ab80-34eb40dc8672")
-	)
 	(label "BUCK_FB"
 		(at 190.5 86.36 0)
 		(effects
@@ -5197,16 +4514,6 @@
 			(justify left bottom)
 		)
 		(uuid "4aeebf25-cba7-453b-9222-3cdc864db524")
-	)
-	(label "LED_3V3A_A"
-		(at 143.51 177.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "73d9af78-ae20-4653-8c69-f3d655ffd41c")
 	)
 	(label "LED_3V3_PER_A"
 		(at 124.46 177.8 0)
@@ -6181,71 +5488,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3VA")
-		(at 172.72 127 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "20e3ad45-bb31-406e-a97d-94df3e3e61b6")
-		(property "Reference" "#PWR0226"
-			(at 172.72 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3A"
-			(at 172.72 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 172.72 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0052ce09-9459-4a98-a4c8-a19bdca0cb6b")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "#PWR0226")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 101.6 190.5 0)
 		(unit 1)
@@ -6420,102 +5662,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "C201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 172.72 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "299007ca-d8ef-43c2-8658-4aa53b99665e")
-		(property "Reference" "C215"
-			(at 176.53 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "22uF"
-			(at 176.53 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 173.6852 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 172.72 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 172.72 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC link" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samwha-Capacitor-CS2012X5R226M160NRE_C2918507.html"
-			(at 172.72 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 172.72 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "CL21A226MAYNNNE"
-			(at 172.72 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b6d0c7de-9e6d-4a58-b16e-6a28618fb9a4")
-		)
-		(pin "2"
-			(uuid "b471db50-2fcb-4f0e-bfbb-2b6f69a5f3d8")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "C215")
 					(unit 1)
 				)
 			)
@@ -7059,72 +6205,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "#PWR0209")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 156.21 144.78 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "33585e0e-958f-4cf6-9b84-7ad6957a128e")
-		(property "Reference" "#PWR0227"
-			(at 156.21 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 156.21 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 156.21 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 156.21 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4cf6229e-2653-417e-a1a2-d47d132ec092")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "#PWR0227")
 					(unit 1)
 				)
 			)
@@ -8206,73 +7286,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 168.91 127 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5621f7a1-571c-4341-bcda-6afd0e5bc2eb")
-		(property "Reference" "#FLG0211"
-			(at 168.91 125.095 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 168.91 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 168.91 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 168.91 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 168.91 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "88a3480f-fc0f-4911-b03a-1547803b1712")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "#FLG0211")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 124.46 171.45 180)
 		(unit 1)
@@ -8419,113 +7432,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "#PWR0210")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Regulator_Linear:HT75xx-1-SOT89")
-		(at 156.21 130.81 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5dd5fa8c-39be-4a4f-93f0-c1f5f0677001")
-		(property "Reference" "U203"
-			(at 156.21 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "HT7533-1"
-			(at 156.21 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-89-3"
-			(at 156.21 122.555 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.holtek.com/documents/10179/116711/HT75xx-1v250.pdf"
-			(at 156.21 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 156.21 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" ""
-			(at 156.21 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC link" "https://www.lcsc.com/product-detail/Voltage-Regulators-Linear-Low-Drop-Out-LDO-Regulators_Holtek-Semicon-HT7533-1_C14289.html"
-			(at 156.21 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Holtek Semicon"
-			(at 156.21 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "HT7533-1"
-			(at 156.21 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d298ae5-797c-4a39-a417-b8aa762764ab")
-		)
-		(pin "2"
-			(uuid "3abf1e69-a28e-4b17-ae48-4b3dbaf6d1cd")
-		)
-		(pin "3"
-			(uuid "bf5df4e5-7162-4c0c-9932-154d86d1b485")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "U203")
 					(unit 1)
 				)
 			)
@@ -9180,71 +8086,6 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 127 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "73e99062-6dec-4b63-bd25-3c7d8ed61a74")
-		(property "Reference" "#PWR0225"
-			(at 127 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 127 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 127 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 127 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 127 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b3a7a69a-6b56-42c9-9137-9b920c730fc5")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "#PWR0225")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
 		(at 59.69 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9688,91 +8529,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 143.51 171.45 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "89f044dc-e690-4d0d-ac54-76c607bac0e5")
-		(property "Reference" "R206"
-			(at 147.828 169.672 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "510R"
-			(at 147.574 171.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 145.288 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 143.51 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 143.51 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "0402WGF5100TCE"
-			(at 143.51 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8323bf15-45d9-4c49-9e37-8bfd10f15ccb")
-		)
-		(pin "1"
-			(uuid "6f26de29-f07e-467e-981a-6c2d62f99b3e")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "R206")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 68.58 44.45 270)
 		(unit 1)
@@ -9987,199 +8743,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "#FLG0210")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 143.51 182.88 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9848b269-1144-4779-b69f-6b46f3945be2")
-		(property "Reference" "D206"
-			(at 147.32 183.1974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 147.32 185.7374 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 143.51 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 143.51 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 143.51 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "XINGLIGHT"
-			(at 143.51 182.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "XL-1608SURC-06"
-			(at 143.51 182.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f51067fb-46fc-46f6-9818-92f6fe19362b")
-		)
-		(pin "1"
-			(uuid "c88407be-e9c2-44e4-9537-f613029312dc")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "D206")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 139.7 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9e0e75d5-36c1-4882-a608-d8cde2664581")
-		(property "Reference" "C214"
-			(at 143.51 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "22uF"
-			(at 143.51 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 140.6652 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 139.7 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 139.7 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC link" "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samwha-Capacitor-CS2012X5R226M160NRE_C2918507.html"
-			(at 139.7 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 139.7 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "CL21A226MAYNNNE"
-			(at 139.7 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "759bfbf3-636a-43c0-9e50-df42bcd02dc6")
-		)
-		(pin "2"
-			(uuid "b4963007-e8eb-4cd0-ac45-6d63234e7fda")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "C214")
 					(unit 1)
 				)
 			)
@@ -10602,100 +9165,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "#PWR0206")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 133.35 128.27 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bc46375a-4e73-4102-825c-cd55e674eae4")
-		(property "Reference" "R203"
-			(at 133.35 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10R"
-			(at 133.35 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 133.35 126.492 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 133.35 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.35 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC link" "https://www.lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0805W8F100JT5E_C17415.html"
-			(at 133.35 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 133.35 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "0805W8F100JT5E"
-			(at 133.35 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4a49c0e2-daaa-49db-b22b-8bb30b20164e")
-		)
-		(pin "2"
-			(uuid "f5ee0ab9-6ec9-4b90-bc97-5955022f0e62")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "R203")
 					(unit 1)
 				)
 			)
@@ -11301,71 +9770,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 143.51 190.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d811f589-b4a2-4ce7-8c10-865c4ce52367")
-		(property "Reference" "#PWR0233"
-			(at 143.51 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 147.574 192.532 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 143.51 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 143.51 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 143.51 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "26a3731c-8610-4d4a-b5fb-29ded599bbe8")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "#PWR0233")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 167.64 35.56 0)
 		(unit 1)
@@ -11905,72 +10309,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "#PWR0232")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "+3.3VA_1")
-		(lib_id "power:+3.3VA")
-		(at 143.51 166.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dff97f85-ac85-44a6-a832-01a1235309c8")
-		(property "Reference" "#PWR0230"
-			(at 143.51 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3A"
-			(at 143.51 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 143.51 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 143.51 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 143.51 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "60061a76-eb80-482a-970e-3e5562caafb4")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
-					(reference "#PWR0230")
 					(unit 1)
 				)
 			)
