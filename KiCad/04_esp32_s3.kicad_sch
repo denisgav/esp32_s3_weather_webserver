@@ -2719,8 +2719,8 @@
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
+			(property "Footprint" "esp32_s3_weather_webserver:ST7735S"
+				(at 9.398 -15.24 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -12196,7 +12196,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "esp32_s3_weather_webserver:ST7735S"
 			(at 139.7 123.19 0)
 			(effects
 				(font

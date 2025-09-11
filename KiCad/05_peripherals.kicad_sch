@@ -1374,8 +1374,8 @@
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
+			(property "Footprint" "esp32_s3_weather_webserver:BME280"
+				(at 0 -7.366 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2004,8 +2004,8 @@
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
+			(property "Footprint" "esp32_s3_weather_webserver:ENS160+AHT2x"
+				(at 7.62 -8.636 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -8109,7 +8109,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "esp32_s3_weather_webserver:ENS160+AHT2x"
 			(at 182.88 129.54 0)
 			(effects
 				(font
@@ -11402,7 +11402,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "esp32_s3_weather_webserver:BME280"
 			(at 60.96 77.47 0)
 			(effects
 				(font
