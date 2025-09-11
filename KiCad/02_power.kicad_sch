@@ -4872,6 +4872,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Advanced Monolithic Systems"
+			(at 157.48 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "AMS1117-3.3"
+			(at 157.48 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "c64ed000-dbc5-42ed-951c-2719fcfb6655")
 		)
@@ -5144,6 +5162,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Worldsemi"
+			(at 30.48 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "WS2812B-B/W"
+			(at 30.48 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "51afbd49-06fc-47d2-8617-56ed87f500ca")
 		)
@@ -5344,6 +5380,24 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 66.04 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Worldsemi"
+			(at 66.04 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "WS2812B-B/W"
 			(at 66.04 179.07 0)
 			(effects
 				(font
@@ -7310,7 +7364,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 126.238 171.45 90)
 			(effects
 				(font
@@ -7346,7 +7400,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5100TCE"
+		(property "Manufacturer Part Number" "0805W8F5100T5E"
 			(at 124.46 171.45 0)
 			(effects
 				(font
@@ -8934,6 +8988,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "DIODES"
+			(at 95.25 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "1N5819HW-7-F"
+			(at 95.25 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "df9948c6-2028-43ba-ab9f-e6f9d1bfd395")
 		)
@@ -9195,7 +9267,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 103.378 171.45 90)
 			(effects
 				(font
@@ -9231,7 +9303,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5100TCE"
+		(property "Manufacturer Part Number" "0805W8F5100T5E"
 			(at 101.6 171.45 0)
 			(effects
 				(font
@@ -9547,6 +9619,24 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 95.25 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "DIODES"
+			(at 95.25 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "1N5819HW-7-F"
 			(at 95.25 77.47 0)
 			(effects
 				(font
@@ -10502,6 +10592,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Worldsemi"
+			(at 83.82 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "WS2812B-B/W"
+			(at 83.82 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "52d975b9-f1a1-4cfb-9658-3ac97fb86e36")
 		)
@@ -10569,6 +10677,24 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 48.26 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Worldsemi"
+			(at 48.26 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "WS2812B-B/W"
 			(at 48.26 179.07 0)
 			(effects
 				(font
@@ -11043,6 +11169,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "DIODES"
+			(at 95.25 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "1N5819HW-7-F"
+			(at 95.25 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "39f0f20c-d3d7-4b70-9303-f885338bef00")
 		)
@@ -11311,7 +11455,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 160.528 171.45 90)
 			(effects
 				(font
@@ -11347,7 +11491,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5100TCE"
+		(property "Manufacturer Part Number" "0805W8F5100T5E"
 			(at 158.75 171.45 0)
 			(effects
 				(font

@@ -6043,7 +6043,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 127.762 54.61 90)
 			(effects
 				(font
@@ -6088,7 +6088,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5101TCE"
+		(property "Manufacturer Part Number" "0805W8F5101T5E"
 			(at 129.54 54.61 0)
 			(effects
 				(font
@@ -6139,7 +6139,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 118.872 54.61 90)
 			(effects
 				(font
@@ -6184,7 +6184,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5101TCE"
+		(property "Manufacturer Part Number" "0805W8F5101T5E"
 			(at 120.65 54.61 0)
 			(effects
 				(font
@@ -6235,7 +6235,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 212.852 54.61 90)
 			(effects
 				(font
@@ -6280,7 +6280,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5101TCE"
+		(property "Manufacturer Part Number" "0805W8F5101T5E"
 			(at 214.63 54.61 0)
 			(effects
 				(font
@@ -6599,7 +6599,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 221.742 54.61 90)
 			(effects
 				(font
@@ -6644,7 +6644,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5101TCE"
+		(property "Manufacturer Part Number" "0805W8F5101T5E"
 			(at 223.52 54.61 0)
 			(effects
 				(font
@@ -8109,7 +8109,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 35.56 173.228 90)
 			(effects
 				(font
@@ -8145,7 +8145,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0603WAF1004T5E"
+		(property "Manufacturer Part Number" "0805W8F1004T5E"
 			(at 35.56 171.45 90)
 			(effects
 				(font
@@ -8550,7 +8550,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0805W8D4752T5E"
+		(property "Manufacturer Part Number" "TC0525B4752T5G"
 			(at 82.55 62.23 0)
 			(effects
 				(font
@@ -8628,7 +8628,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 102.5652 59.69 0)
 			(effects
 				(font
@@ -8673,7 +8673,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
+		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
 			(at 101.6 55.88 90)
 			(effects
 				(font
@@ -8928,6 +8928,24 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SILICON LABS"
+			(at 54.61 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CP2102N-A02-GQFN28R"
+			(at 54.61 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -9330,7 +9348,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 201.6252 59.69 0)
 			(effects
 				(font
@@ -9375,7 +9393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
+		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
 			(at 200.66 55.88 90)
 			(effects
 				(font

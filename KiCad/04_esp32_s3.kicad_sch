@@ -8644,6 +8644,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "JSMSEMI"
+			(at 90.17 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SS8050"
+			(at 90.17 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "c241d916-27f0-4760-8308-ee59e9b45376")
 		)
@@ -8896,6 +8914,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "SM Switch"
+			(at 27.94 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SMG-01-H080A1"
+			(at 27.94 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6db88ff9-430d-4cfb-ad07-6ccef13fa37e")
 		)
@@ -9044,6 +9080,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Korean Hroparts Elec"
+			(at 96.52 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "TF-01A"
+			(at 96.52 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "MP4"
 			(uuid "dab89364-584f-48e3-bf54-59812a8b1c0f")
 		)
@@ -9136,6 +9190,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 27.94 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SM Switch"
+			(at 27.94 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SMG-01-H080A1"
 			(at 27.94 38.1 0)
 			(effects
 				(font
@@ -9595,7 +9667,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical"
 			(at 196.85 125.73 0)
 			(effects
 				(font
@@ -9843,6 +9915,24 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "ESPRESSIF"
+			(at 223.52 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "ESP32-S3-WROOM-1-N16R8"
+			(at 223.52 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -12150,6 +12240,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "JSMSEMI"
+			(at 90.17 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SS8050"
+			(at 90.17 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "1376225d-a5d8-4133-b223-0b6cff4080f4")
 		)
@@ -13653,7 +13761,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KA8NNNC"
+		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
 			(at 93.98 109.22 0)
 			(effects
 				(font

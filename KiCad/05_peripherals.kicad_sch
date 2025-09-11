@@ -6183,6 +6183,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "SM Switch"
+			(at 25.4 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SMG-01-H080A1"
+			(at 25.4 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c0db78e7-07ff-4e09-8a02-5baf367aadb5")
 		)
@@ -7737,6 +7755,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "VISHAY"
+			(at 160.02 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "VEML7700-TT"
+			(at 160.02 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7b79015a-5099-4a7a-a9ed-12ee09d7e102")
 		)
@@ -8419,6 +8455,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "SM Switch"
+			(at 106.68 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SMG-01-H080A1"
+			(at 106.68 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2a57c4b3-75e8-44fb-8dfa-224d8d66da06")
 		)
@@ -8907,7 +8961,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 225.7552 115.57 0)
 			(effects
 				(font
@@ -8952,7 +9006,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL21A106KOQNNNE"
+		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
 			(at 224.79 111.76 0)
 			(effects
 				(font
@@ -9658,7 +9712,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 225.7552 80.01 0)
 			(effects
 				(font
@@ -9703,7 +9757,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL21A106KOQNNNE"
+		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
 			(at 224.79 76.2 0)
 			(effects
 				(font
@@ -9969,6 +10023,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 63.5 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SM Switch"
+			(at 63.5 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "SMG-01-H080A1"
 			(at 63.5 175.26 0)
 			(effects
 				(font
@@ -10337,7 +10409,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 225.7552 45.72 0)
 			(effects
 				(font
@@ -10382,7 +10454,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL21A106KOQNNNE"
+		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
 			(at 224.79 41.91 0)
 			(effects
 				(font
@@ -10819,7 +10891,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ce5472b3-0a8d-417d-a9ce-8e8e6fc4a0c1")
 		(property "Reference" "IC502"
@@ -10936,6 +11008,24 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MAXIM"
+			(at 60.96 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "DS3231MZ+TRL"
+			(at 60.96 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
@@ -11885,7 +11975,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 259.842 76.2 90)
 			(effects
 				(font
@@ -11930,7 +12020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5101TCE"
+		(property "Manufacturer Part Number" "0805W8F5101T5E"
 			(at 261.62 76.2 0)
 			(effects
 				(font
@@ -11981,7 +12071,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 121.412 119.38 90)
 			(effects
 				(font
@@ -12026,7 +12116,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0402WGF5101TCE"
+		(property "Manufacturer Part Number" "0805W8F5101T5E"
 			(at 123.19 119.38 0)
 			(effects
 				(font
