@@ -150,7 +150,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "143328c3-7905-4542-85de-b34045594033")
-		(property "Reference" "H1"
+		(property "Reference" "H101"
 			(at 20.32 172.7199 0)
 			(effects
 				(font
@@ -207,7 +207,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d"
-					(reference "H1")
+					(reference "H101")
 					(unit 1)
 				)
 			)
@@ -223,7 +223,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ea0cc02-b3ff-44a4-a425-ab9b253c29c3")
-		(property "Reference" "H4"
+		(property "Reference" "H104"
 			(at 20.32 191.7699 0)
 			(effects
 				(font
@@ -280,7 +280,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d"
-					(reference "H4")
+					(reference "H104")
 					(unit 1)
 				)
 			)
@@ -296,7 +296,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37ecf426-1d96-4372-bef9-d3e199100a1a")
-		(property "Reference" "H3"
+		(property "Reference" "H103"
 			(at 20.32 185.4199 0)
 			(effects
 				(font
@@ -353,7 +353,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d"
-					(reference "H3")
+					(reference "H103")
 					(unit 1)
 				)
 			)
@@ -369,7 +369,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "65fb8d36-9776-429a-86e3-398b243d5e01")
-		(property "Reference" "H2"
+		(property "Reference" "H102"
 			(at 20.32 179.0699 0)
 			(effects
 				(font
@@ -426,7 +426,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d"
-					(reference "H2")
+					(reference "H102")
 					(unit 1)
 				)
 			)

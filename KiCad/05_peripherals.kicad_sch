@@ -3540,12 +3540,6 @@
 		(uuid "976f72ba-daca-42b3-8785-89cd4690e01c")
 	)
 	(junction
-		(at 57.15 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9ac59634-f066-42b6-8237-a354e98d2d6f")
-	)
-	(junction
 		(at 114.3 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3574,12 +3568,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b83aff7e-970a-420a-90c9-9ff10001058d")
-	)
-	(junction
-		(at 69.85 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c8c165d2-1b81-4c5e-a21e-9954647e140f")
 	)
 	(junction
 		(at 224.79 71.12)
@@ -3612,12 +3600,6 @@
 		(uuid "e21eefdc-2597-4673-b035-85108bd82008")
 	)
 	(junction
-		(at 57.15 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e2c024ad-f506-4e1f-bef2-c8482e4f9a87")
-	)
-	(junction
 		(at 39.37 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3628,12 +3610,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e4ec1ef0-f364-4281-b5b1-959608b3a8a2")
-	)
-	(junction
-		(at 67.31 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ea14eac7-0412-47cd-9a4c-13715b172d56")
 	)
 	(junction
 		(at 224.79 35.56)
@@ -3798,16 +3774,6 @@
 			(type default)
 		)
 		(uuid "190c584c-b9bb-4efa-8986-0e5ec3798c74")
-	)
-	(wire
-		(pts
-			(xy 69.85 49.53) (xy 74.93 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1af2f5c1-2c8e-4bb3-bb15-5ca211e1e50b")
 	)
 	(wire
 		(pts
@@ -4021,16 +3987,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 59.69) (xy 69.85 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c41ba7f-8b33-48c7-b24c-d559d745a14e")
-	)
-	(wire
-		(pts
 			(xy 99.06 168.91) (xy 114.3 168.91)
 		)
 		(stroke
@@ -4038,16 +3994,6 @@
 			(type default)
 		)
 		(uuid "3e27a873-b605-4131-8868-ae2412318471")
-	)
-	(wire
-		(pts
-			(xy 67.31 59.69) (xy 67.31 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f0366fe-7975-4afc-bf6c-2939039c0350")
 	)
 	(wire
 		(pts
@@ -4091,7 +4037,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 48.26) (xy 57.15 49.53)
+			(xy 69.85 72.39) (xy 69.85 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4148,16 +4094,6 @@
 			(type default)
 		)
 		(uuid "4c5ef84f-6ca9-49cf-b9f6-be97bbd0fbab")
-	)
-	(wire
-		(pts
-			(xy 69.85 49.53) (xy 69.85 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4de759af-8713-4038-8c53-5bbd0b268155")
 	)
 	(wire
 		(pts
@@ -4248,16 +4184,6 @@
 			(type default)
 		)
 		(uuid "5360d7ec-6efd-49dd-9030-68b72b242a1e")
-	)
-	(wire
-		(pts
-			(xy 57.15 58.42) (xy 57.15 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53e14c60-6598-4450-b6af-cfe709ad1c0b")
 	)
 	(wire
 		(pts
@@ -4361,16 +4287,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 49.53) (xy 74.93 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "628563e4-2e60-4a43-909c-d2e2bec4fdf8")
-	)
-	(wire
-		(pts
 			(xy 134.62 123.19) (xy 134.62 124.46)
 		)
 		(stroke
@@ -4418,6 +4334,16 @@
 			(type default)
 		)
 		(uuid "69e32a00-a765-432c-bcaa-d56ddbd20ca4")
+	)
+	(wire
+		(pts
+			(xy 67.31 55.88) (xy 67.31 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a1b7aa2-a54b-4550-a9f9-a35004d39367")
 	)
 	(wire
 		(pts
@@ -4471,16 +4397,6 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 59.69) (xy 67.31 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75bd8bf7-15cc-4968-a8b5-f4c28a9d25fd")
-	)
-	(wire
-		(pts
 			(xy 74.93 181.61) (xy 74.93 182.88)
 		)
 		(stroke
@@ -4508,6 +4424,16 @@
 			(type default)
 		)
 		(uuid "79e1efca-c638-4eb1-b154-aabac527f03b")
+	)
+	(wire
+		(pts
+			(xy 73.66 55.88) (xy 67.31 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a2432a5-35a7-47be-97ea-1e1f2fbb5ada")
 	)
 	(wire
 		(pts
@@ -4701,16 +4627,6 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 49.53) (xy 57.15 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9620b94e-006f-458a-b645-cee7daf7618a")
-	)
-	(wire
-		(pts
 			(xy 114.3 173.99) (xy 114.3 168.91)
 		)
 		(stroke
@@ -4718,16 +4634,6 @@
 			(type default)
 		)
 		(uuid "974163ce-dcf6-40e3-9783-c334114317c0")
-	)
-	(wire
-		(pts
-			(xy 69.85 59.69) (xy 69.85 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "975e99e8-ec9b-4457-b61a-a2ac07cbdaf0")
 	)
 	(wire
 		(pts
@@ -4768,16 +4674,6 @@
 			(type default)
 		)
 		(uuid "97f62fb4-8770-4f63-b7ce-b4c396b1835c")
-	)
-	(wire
-		(pts
-			(xy 74.93 62.23) (xy 69.85 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "984c4532-037d-4174-8d90-c1b9aa0e798f")
 	)
 	(wire
 		(pts
@@ -5001,16 +4897,6 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 49.53) (xy 57.15 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b87e2f9a-294f-459a-af9c-0a255073b4c2")
-	)
-	(wire
-		(pts
 			(xy 74.93 190.5) (xy 74.93 191.77)
 		)
 		(stroke
@@ -5018,6 +4904,16 @@
 			(type default)
 		)
 		(uuid "b9146f11-d0e0-4014-aca6-9c2e1735fde3")
+	)
+	(wire
+		(pts
+			(xy 73.66 59.69) (xy 73.66 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba017d6d-6743-4123-bacd-df3aeadcf481")
 	)
 	(wire
 		(pts
@@ -5231,16 +5127,6 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 62.23) (xy 69.85 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "de376a00-e2e1-45e7-abfb-8f377796bb33")
-	)
-	(wire
-		(pts
 			(xy 99.06 167.64) (xy 99.06 168.91)
 		)
 		(stroke
@@ -5418,16 +5304,6 @@
 			(type default)
 		)
 		(uuid "fbd32f59-4478-4c09-b0ed-788959c54189")
-	)
-	(wire
-		(pts
-			(xy 57.15 59.69) (xy 57.15 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc90b24b-5ded-429f-9995-5846a35f57a7")
 	)
 	(wire
 		(pts
@@ -5832,7 +5708,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "012640ee-9a37-44aa-84c4-dad1341aeba2")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR0517"
 			(at 205.74 123.19 0)
 			(effects
 				(font
@@ -5882,7 +5758,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR010")
+					(reference "#PWR0517")
 					(unit 1)
 				)
 			)
@@ -5897,7 +5773,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "06ef12f0-7361-4406-a173-195dc062a6fc")
-		(property "Reference" "#PWR0530"
+		(property "Reference" "#PWR0525"
 			(at 250.19 133.35 0)
 			(effects
 				(font
@@ -5947,7 +5823,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0530")
+					(reference "#PWR0525")
 					(unit 1)
 				)
 			)
@@ -5979,7 +5855,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 126.492 54.61 90)
 			(effects
 				(font
@@ -6075,7 +5951,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0d2875c0-643e-4151-83ec-9e2cf5767150")
-		(property "Reference" "#PWR0419"
+		(property "Reference" "#PWR0528"
 			(at 17.78 171.45 0)
 			(effects
 				(font
@@ -6125,7 +6001,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0419")
+					(reference "#PWR0528")
 					(unit 1)
 				)
 			)
@@ -6140,7 +6016,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0f323056-311c-423c-b19f-f9a1a59353ef")
-		(property "Reference" "SW403"
+		(property "Reference" "SW501"
 			(at 25.654 171.704 0)
 			(effects
 				(font
@@ -6216,7 +6092,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "SW403")
+					(reference "SW501")
 					(unit 1)
 				)
 			)
@@ -6378,7 +6254,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "152b4f4a-170f-44ae-901e-89c81e9807f9")
-		(property "Reference" "#PWR0506"
+		(property "Reference" "#PWR0503"
 			(at 144.78 52.07 0)
 			(effects
 				(font
@@ -6428,7 +6304,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0506")
+					(reference "#PWR0503")
 					(unit 1)
 				)
 			)
@@ -6443,7 +6319,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1619c571-e9d5-4ea3-a386-719c11edc4a3")
-		(property "Reference" "C514"
+		(property "Reference" "C510"
 			(at 149.098 118.11 0)
 			(effects
 				(font
@@ -6461,7 +6337,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 147.0152 123.19 0)
 			(effects
 				(font
@@ -6506,7 +6382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 146.05 119.38 0)
 			(effects
 				(font
@@ -6524,7 +6400,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C514")
+					(reference "C510")
 					(unit 1)
 				)
 			)
@@ -6540,7 +6416,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a899373-bf75-4241-bf3d-a9880fe297a4")
-		(property "Reference" "#PWR0520"
+		(property "Reference" "#PWR0514"
 			(at 50.8 114.3 0)
 			(effects
 				(font
@@ -6590,7 +6466,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0520")
+					(reference "#PWR0514")
 					(unit 1)
 				)
 			)
@@ -6606,7 +6482,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2a2c1181-0631-4631-a6e3-86dfbb42a476")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0533"
 			(at 63.5 198.12 0)
 			(effects
 				(font
@@ -6656,7 +6532,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR02")
+					(reference "#PWR0533")
 					(unit 1)
 				)
 			)
@@ -6672,7 +6548,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "30652ce5-3df6-4e24-9fa7-8e319951fb2d")
-		(property "Reference" "C506"
+		(property "Reference" "C502"
 			(at 251.46 49.5299 0)
 			(effects
 				(font
@@ -6690,7 +6566,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 248.6152 54.61 0)
 			(effects
 				(font
@@ -6735,7 +6611,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 247.65 50.8 0)
 			(effects
 				(font
@@ -6753,7 +6629,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C506")
+					(reference "C502")
 					(unit 1)
 				)
 			)
@@ -6785,7 +6661,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 136.652 54.61 90)
 			(effects
 				(font
@@ -6881,7 +6757,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "34dc8516-f3c2-4b70-9026-12ccff6bd52f")
-		(property "Reference" "C508"
+		(property "Reference" "C504"
 			(at 159.258 53.34 0)
 			(effects
 				(font
@@ -6899,7 +6775,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 157.1752 58.42 0)
 			(effects
 				(font
@@ -6944,7 +6820,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 156.21 54.61 0)
 			(effects
 				(font
@@ -6962,7 +6838,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C508")
+					(reference "C504")
 					(unit 1)
 				)
 			)
@@ -6977,7 +6853,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3535d493-d5c6-45ab-b3f4-603d74afe3a6")
-		(property "Reference" "#PWR0532"
+		(property "Reference" "#PWR0527"
 			(at 73.66 153.67 0)
 			(effects
 				(font
@@ -7027,7 +6903,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0532")
+					(reference "#PWR0527")
 					(unit 1)
 				)
 			)
@@ -7042,7 +6918,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3b625432-c9fe-44f8-a5c5-c257340e980f")
-		(property "Reference" "C512"
+		(property "Reference" "C508"
 			(at 65.278 115.57 0)
 			(effects
 				(font
@@ -7060,7 +6936,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 63.1952 120.65 0)
 			(effects
 				(font
@@ -7105,7 +6981,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 62.23 116.84 0)
 			(effects
 				(font
@@ -7123,7 +6999,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C512")
+					(reference "C508")
 					(unit 1)
 				)
 			)
@@ -7205,7 +7081,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "40e70292-7b73-4f78-8a52-3e2d3f7d34d0")
-		(property "Reference" "R409"
+		(property "Reference" "R508"
 			(at 29.21 185.166 0)
 			(effects
 				(font
@@ -7221,7 +7097,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 27.178 186.69 90)
 			(effects
 				(font
@@ -7302,7 +7178,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R409")
+					(reference "R508")
 					(unit 1)
 				)
 			)
@@ -7318,7 +7194,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41aacc71-6523-42ec-b6c9-6f7b479acbf4")
-		(property "Reference" "C409"
+		(property "Reference" "C511"
 			(at 40.64 185.4199 0)
 			(effects
 				(font
@@ -7336,7 +7212,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 37.7952 190.5 0)
 			(effects
 				(font
@@ -7372,7 +7248,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 36.83 186.69 0)
 			(effects
 				(font
@@ -7417,7 +7293,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C409")
+					(reference "C511")
 					(unit 1)
 				)
 			)
@@ -7506,7 +7382,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5574833b-8e14-4ad8-a803-4bafccb658bf")
-		(property "Reference" "#PWR0525"
+		(property "Reference" "#PWR0520"
 			(at 186.69 127 0)
 			(effects
 				(font
@@ -7556,7 +7432,72 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0525")
+					(reference "#PWR0520")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 73.66 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5625f55c-b1ec-40ad-a053-af17d775e68b")
+		(property "Reference" "#PWR0506"
+			(at 73.66 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 74.0146 63.9135 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 73.66 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "22733914-b865-4b36-86dc-3af2e01346d3")
+		)
+		(instances
+			(project "esp32_s3_weather_webserver"
+				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
+					(reference "#PWR0506")
 					(unit 1)
 				)
 			)
@@ -7572,7 +7513,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "573909dd-ba52-49d8-bf25-678c3a6727d7")
-		(property "Reference" "#PWR0523"
+		(property "Reference" "#PWR0518"
 			(at 30.48 121.92 0)
 			(effects
 				(font
@@ -7622,7 +7563,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0523")
+					(reference "#PWR0518")
 					(unit 1)
 				)
 			)
@@ -7803,7 +7744,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b41a9a1-c870-41d4-8317-c40ad4f35ff5")
-		(property "Reference" "C507"
+		(property "Reference" "C503"
 			(at 147.574 53.34 0)
 			(effects
 				(font
@@ -7902,7 +7843,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C507")
+					(reference "C503")
 					(unit 1)
 				)
 			)
@@ -7917,7 +7858,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5d9786b8-5717-4f76-8e5d-a43148ab9337")
-		(property "Reference" "R510"
+		(property "Reference" "R506"
 			(at 34.544 123.19 0)
 			(effects
 				(font
@@ -7933,7 +7874,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 32.258 124.46 90)
 			(effects
 				(font
@@ -8014,7 +7955,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R510")
+					(reference "R506")
 					(unit 1)
 				)
 			)
@@ -8048,7 +7989,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 235.712 50.8 90)
 			(effects
 				(font
@@ -8215,7 +8156,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "643bce41-619c-46bd-b4f3-b8a3639ce2f7")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR0534"
 			(at 74.93 198.12 0)
 			(effects
 				(font
@@ -8265,7 +8206,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR03")
+					(reference "#PWR0534")
 					(unit 1)
 				)
 			)
@@ -8281,7 +8222,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "66ee0481-12ab-499d-a379-f5dfed7a85f7")
-		(property "Reference" "#PWR0505"
+		(property "Reference" "#PWR0502"
 			(at 128.27 52.07 0)
 			(effects
 				(font
@@ -8331,7 +8272,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0505")
+					(reference "#PWR0502")
 					(unit 1)
 				)
 			)
@@ -8347,7 +8288,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6c1b7e88-1561-4cc0-a44f-6b66a2b2e66c")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR0535"
 			(at 106.68 198.12 0)
 			(effects
 				(font
@@ -8397,7 +8338,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR05")
+					(reference "#PWR0535")
 					(unit 1)
 				)
 			)
@@ -8412,7 +8353,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "75a4e014-f34f-4f05-ba73-05479fe0acbc")
-		(property "Reference" "SW2"
+		(property "Reference" "SW503"
 			(at 106.934 171.704 0)
 			(effects
 				(font
@@ -8488,7 +8429,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "SW2")
+					(reference "SW503")
 					(unit 1)
 				)
 			)
@@ -8503,7 +8444,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "79d828b3-840c-4bc7-9818-c2d06a065ba6")
-		(property "Reference" "#PWR0511"
+		(property "Reference" "#PWR0507"
 			(at 144.78 67.31 0)
 			(effects
 				(font
@@ -8553,7 +8494,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0511")
+					(reference "#PWR0507")
 					(unit 1)
 				)
 			)
@@ -8568,7 +8509,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7ed72981-4bb9-4e1d-8b4d-08aedcf50328")
-		(property "Reference" "R1"
+		(property "Reference" "R509"
 			(at 67.31 185.166 0)
 			(effects
 				(font
@@ -8584,7 +8525,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 65.278 186.69 90)
 			(effects
 				(font
@@ -8665,7 +8606,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R1")
+					(reference "R509")
 					(unit 1)
 				)
 			)
@@ -8681,7 +8622,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7eeb4a42-dfee-4bc3-8823-1c8550f3141d")
-		(property "Reference" "#PWR0426"
+		(property "Reference" "#PWR0532"
 			(at 36.83 198.12 0)
 			(effects
 				(font
@@ -8731,7 +8672,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0426")
+					(reference "#PWR0532")
 					(unit 1)
 				)
 			)
@@ -8746,7 +8687,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "86120f02-3289-4801-81f1-c4df83083741")
-		(property "Reference" "#PWR0507"
+		(property "Reference" "#PWR0504"
 			(at 224.79 55.88 0)
 			(effects
 				(font
@@ -8796,7 +8737,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0507")
+					(reference "#PWR0504")
 					(unit 1)
 				)
 			)
@@ -8811,7 +8752,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "86df0dd3-8aed-4b99-a878-fba55c8f5037")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0529"
 			(at 55.88 171.45 0)
 			(effects
 				(font
@@ -8861,73 +8802,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 60.96 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "873d60e5-2fac-488c-9282-d5f7cffc2c09")
-		(property "Reference" "#PWR0508"
-			(at 57.15 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 65.024 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d7872fae-c400-4ee9-923e-553990a00d68")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0508")
+					(reference "#PWR0529")
 					(unit 1)
 				)
 			)
@@ -8943,7 +8818,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8ceb3d45-3b51-4391-9253-bd87c8461577")
-		(property "Reference" "C510"
+		(property "Reference" "C506"
 			(at 228.6 110.4899 0)
 			(effects
 				(font
@@ -9024,7 +8899,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C510")
+					(reference "C506")
 					(unit 1)
 				)
 			)
@@ -9137,7 +9012,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "90f49a65-0647-4e71-a4a1-fe9707c6ab33")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR0516"
 			(at 134.62 116.84 0)
 			(effects
 				(font
@@ -9187,7 +9062,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR07")
+					(reference "#PWR0516")
 					(unit 1)
 				)
 			)
@@ -9202,7 +9077,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "93ba8bbb-83f0-4e97-89a0-d375677c5510")
-		(property "Reference" "#PWR0510"
+		(property "Reference" "#PWR0505"
 			(at 237.49 63.5 0)
 			(effects
 				(font
@@ -9252,7 +9127,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0510")
+					(reference "#PWR0505")
 					(unit 1)
 				)
 			)
@@ -9383,7 +9258,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9c1d0dc3-da86-43de-a7ff-d8157acb23e7")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR0513"
 			(at 224.79 107.95 0)
 			(effects
 				(font
@@ -9433,7 +9308,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR014")
+					(reference "#PWR0513")
 					(unit 1)
 				)
 			)
@@ -9448,7 +9323,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9d37bec6-65f0-4682-a13e-5da19fd60d56")
-		(property "Reference" "C513"
+		(property "Reference" "C509"
 			(at 137.414 118.11 0)
 			(effects
 				(font
@@ -9547,7 +9422,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C513")
+					(reference "C509")
 					(unit 1)
 				)
 			)
@@ -9563,7 +9438,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e73f827-67a5-4848-a2ea-f51c20b4cc3f")
-		(property "Reference" "#PWR0526"
+		(property "Reference" "#PWR0521"
 			(at 90.17 128.27 0)
 			(effects
 				(font
@@ -9613,7 +9488,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0526")
+					(reference "#PWR0521")
 					(unit 1)
 				)
 			)
@@ -9628,7 +9503,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9ff159fc-1ad1-48c3-8327-7535b1a49582")
-		(property "Reference" "#PWR0524"
+		(property "Reference" "#PWR0519"
 			(at 224.79 125.73 0)
 			(effects
 				(font
@@ -9678,7 +9553,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0524")
+					(reference "#PWR0519")
 					(unit 1)
 				)
 			)
@@ -9694,7 +9569,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a68cd18f-5d8a-4c13-88cb-5393bf1cb916")
-		(property "Reference" "C509"
+		(property "Reference" "C505"
 			(at 228.6 74.9299 0)
 			(effects
 				(font
@@ -9775,7 +9650,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C509")
+					(reference "C505")
 					(unit 1)
 				)
 			)
@@ -9792,7 +9667,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "adef7ca6-bf5f-45f2-8726-30d2fa730a19")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR0508"
 			(at 224.79 72.39 0)
 			(effects
 				(font
@@ -9842,7 +9717,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR015")
+					(reference "#PWR0508")
 					(unit 1)
 				)
 			)
@@ -9858,7 +9733,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ae6edfe9-e143-4752-81f4-b6e7881a50f1")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR0515"
 			(at 123.19 116.84 0)
 			(effects
 				(font
@@ -9908,7 +9783,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR09")
+					(reference "#PWR0515")
 					(unit 1)
 				)
 			)
@@ -9923,7 +9798,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "afdeee6d-6dff-4125-b5a9-51dc8deb0913")
-		(property "Reference" "#PWR0518"
+		(property "Reference" "#PWR0512"
 			(at 250.19 97.79 0)
 			(effects
 				(font
@@ -9973,7 +9848,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0518")
+					(reference "#PWR0512")
 					(unit 1)
 				)
 			)
@@ -9988,7 +9863,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2595e67-2f17-4a4d-a92e-9df3c666b147")
-		(property "Reference" "SW1"
+		(property "Reference" "SW502"
 			(at 63.754 171.704 0)
 			(effects
 				(font
@@ -10064,7 +9939,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "SW1")
+					(reference "SW502")
 					(unit 1)
 				)
 			)
@@ -10079,7 +9954,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b80cc5d1-8ff1-4296-ad2f-675eafce56bb")
-		(property "Reference" "#PWR0515"
+		(property "Reference" "#PWR0511"
 			(at 166.37 91.44 0)
 			(effects
 				(font
@@ -10129,7 +10004,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0515")
+					(reference "#PWR0511")
 					(unit 1)
 				)
 			)
@@ -10144,7 +10019,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bd0f7699-954c-437d-a2d4-aab634e1f05d")
-		(property "Reference" "C511"
+		(property "Reference" "C507"
 			(at 53.594 115.57 0)
 			(effects
 				(font
@@ -10243,7 +10118,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C511")
+					(reference "C507")
 					(unit 1)
 				)
 			)
@@ -10251,17 +10126,16 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 57.15 48.26 0)
+		(at 69.85 72.39 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "befd4df9-df1b-434f-b547-9e784a708c71")
-		(property "Reference" "#PWR0502"
-			(at 57.15 52.07 0)
+		(property "Reference" "#PWR0509"
+			(at 69.85 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10270,7 +10144,7 @@
 			)
 		)
 		(property "Value" "+3V3_PER"
-			(at 57.15 43.18 0)
+			(at 74.676 68.072 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10278,7 +10152,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 48.26 0)
+			(at 69.85 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10287,7 +10161,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 48.26 0)
+			(at 69.85 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10296,7 +10170,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 57.15 48.26 0)
+			(at 69.85 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10310,7 +10184,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0502")
+					(reference "#PWR0509")
 					(unit 1)
 				)
 			)
@@ -10325,7 +10199,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bf5c59fa-e144-4597-ab1c-747009b37b08")
-		(property "Reference" "#PWR0531"
+		(property "Reference" "#PWR0526"
 			(at 156.21 151.13 0)
 			(effects
 				(font
@@ -10375,7 +10249,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0531")
+					(reference "#PWR0526")
 					(unit 1)
 				)
 			)
@@ -10487,7 +10361,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c4d5b36b-3b8a-4607-b461-3784568bb64b")
-		(property "Reference" "R2"
+		(property "Reference" "R510"
 			(at 110.49 185.166 0)
 			(effects
 				(font
@@ -10503,7 +10377,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 108.458 186.69 90)
 			(effects
 				(font
@@ -10584,7 +10458,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R2")
+					(reference "R510")
 					(unit 1)
 				)
 			)
@@ -10601,7 +10475,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c552b935-9c18-4e2b-8b27-4584b6b93328")
-		(property "Reference" "#PWR0528"
+		(property "Reference" "#PWR0523"
 			(at 184.15 128.27 0)
 			(effects
 				(font
@@ -10651,7 +10525,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0528")
+					(reference "#PWR0523")
 					(unit 1)
 				)
 			)
@@ -10667,7 +10541,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ccc1e800-7663-41a4-a555-91c2dd8258e9")
-		(property "Reference" "C1"
+		(property "Reference" "C512"
 			(at 78.74 185.4199 0)
 			(effects
 				(font
@@ -10685,7 +10559,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 75.8952 190.5 0)
 			(effects
 				(font
@@ -10721,7 +10595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 74.93 186.69 0)
 			(effects
 				(font
@@ -10766,7 +10640,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C1")
+					(reference "C512")
 					(unit 1)
 				)
 			)
@@ -10781,7 +10655,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd165e8b-15aa-49d6-a05d-c9afb0e3dac0")
-		(property "Reference" "R511"
+		(property "Reference" "R507"
 			(at 43.434 123.19 0)
 			(effects
 				(font
@@ -10797,7 +10671,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 41.148 124.46 90)
 			(effects
 				(font
@@ -10878,7 +10752,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R511")
+					(reference "R507")
 					(unit 1)
 				)
 			)
@@ -10891,7 +10765,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ce5472b3-0a8d-417d-a9ce-8e8e6fc4a0c1")
 		(property "Reference" "IC502"
@@ -11071,7 +10945,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ce6b81dc-0a35-4621-9af9-e4a9f9a9785d")
-		(property "Reference" "#PWR0514"
+		(property "Reference" "#PWR0510"
 			(at 224.79 90.17 0)
 			(effects
 				(font
@@ -11121,7 +10995,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0514")
+					(reference "#PWR0510")
 					(unit 1)
 				)
 			)
@@ -11136,7 +11010,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d72ac019-8b86-4155-bf01-20acaca6d78a")
-		(property "Reference" "#PWR0527"
+		(property "Reference" "#PWR0522"
 			(at 50.8 129.54 0)
 			(effects
 				(font
@@ -11186,7 +11060,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0527")
+					(reference "#PWR0522")
 					(unit 1)
 				)
 			)
@@ -11202,7 +11076,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dad41a0e-53f1-4fe3-a2e9-01ae41008eb9")
-		(property "Reference" "#PWR0425"
+		(property "Reference" "#PWR0531"
 			(at 25.4 198.12 0)
 			(effects
 				(font
@@ -11252,7 +11126,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0425")
+					(reference "#PWR0531")
 					(unit 1)
 				)
 			)
@@ -11359,7 +11233,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ddb8b2a5-3ceb-4d46-adb0-b1d35f86038c")
-		(property "Reference" "C2"
+		(property "Reference" "C513"
 			(at 121.92 185.4199 0)
 			(effects
 				(font
@@ -11377,7 +11251,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 119.0752 190.5 0)
 			(effects
 				(font
@@ -11413,7 +11287,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
+		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 118.11 186.69 0)
 			(effects
 				(font
@@ -11458,7 +11332,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C2")
+					(reference "C513")
 					(unit 1)
 				)
 			)
@@ -11474,7 +11348,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de86a3ce-0d96-4aba-b69d-df099e0236e5")
-		(property "Reference" "U1"
+		(property "Reference" "U501"
 			(at 72.39 79.5047 0)
 			(effects
 				(font
@@ -11534,104 +11408,7 @@
 		(instances
 			(project ""
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 69.85 54.61 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "df30c0b2-ca00-480b-b533-40cf973b4ee0")
-		(property "Reference" "C503"
-			(at 64.516 52.578 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 69.342 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 68.8848 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 69.85 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 69.85 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 69.85 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
-			(at 69.85 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "CL10B104KB8NNNC"
-			(at 69.85 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "08eed61c-5a04-4fa9-8f36-d8304f6057ce")
-		)
-		(pin "1"
-			(uuid "e48494d5-0cb0-4ce1-a315-b6eafe92191f")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C503")
+					(reference "U501")
 					(unit 1)
 				)
 			)
@@ -11647,7 +11424,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e0dffc25-5789-4aae-9c0c-6f496a430fcb")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR0536"
 			(at 118.11 198.12 0)
 			(effects
 				(font
@@ -11697,7 +11474,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR06")
+					(reference "#PWR0536")
 					(unit 1)
 				)
 			)
@@ -11712,7 +11489,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e8232d40-5342-442f-a07f-44b9aa44e508")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR0501"
 			(at 224.79 36.83 0)
 			(effects
 				(font
@@ -11762,122 +11539,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 57.15 54.61 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e9ebe0c7-b5ad-4982-bb51-63e177100d74")
-		(property "Reference" "C502"
-			(at 51.816 52.324 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10uF"
-			(at 56.642 56.896 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 56.1848 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 57.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "08f36f15-9bf2-4bf9-b729-4a86660e944d")
-		)
-		(pin "1"
-			(uuid "869cf7b3-f74b-43e7-b2d6-1c9a77b7a292")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "C502")
+					(reference "#PWR0501")
 					(unit 1)
 				)
 			)
@@ -11892,7 +11554,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eca52524-7a69-4ca9-a350-336d538adaf8")
-		(property "Reference" "#PWR0529"
+		(property "Reference" "#PWR0524"
 			(at 134.62 132.08 0)
 			(effects
 				(font
@@ -11942,7 +11604,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0529")
+					(reference "#PWR0524")
 					(unit 1)
 				)
 			)
@@ -11957,7 +11619,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2988831-7cdc-4bd1-954c-085c8a993379")
-		(property "Reference" "R508"
+		(property "Reference" "R504"
 			(at 262.89 74.93 0)
 			(effects
 				(font
@@ -11975,7 +11637,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 259.842 76.2 90)
 			(effects
 				(font
@@ -12020,7 +11682,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0805W8F5101T5E"
+		(property "Manufacturer Part Number" "0402WGF5101TCE"
 			(at 261.62 76.2 0)
 			(effects
 				(font
@@ -12038,7 +11700,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R508")
+					(reference "R504")
 					(unit 1)
 				)
 			)
@@ -12053,7 +11715,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f4c8eb95-47e1-4026-a9cb-f3f1a91e6cba")
-		(property "Reference" "R509"
+		(property "Reference" "R505"
 			(at 124.46 118.11 0)
 			(effects
 				(font
@@ -12071,7 +11733,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 121.412 119.38 90)
 			(effects
 				(font
@@ -12116,7 +11778,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "0805W8F5101T5E"
+		(property "Manufacturer Part Number" "0402WGF5101TCE"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -12134,7 +11796,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "R509")
+					(reference "R505")
 					(unit 1)
 				)
 			)
@@ -12149,7 +11811,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fa84c4d0-8bdb-4591-ae8d-f1eff9680251")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR0530"
 			(at 99.06 171.45 0)
 			(effects
 				(font
@@ -12199,7 +11861,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR04")
+					(reference "#PWR0530")
 					(unit 1)
 				)
 			)
