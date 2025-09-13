@@ -798,156 +798,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_TVS"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D_TVS"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Bidirectional transient-voltage-suppression diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode TVS thyrector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_TVS_0_1"
-				(polyline
-					(pts
-						(xy -2.54 1.27) (xy -2.54 -1.27) (xy 2.54 1.27) (xy 2.54 -1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.508 1.27) (xy 0 1.27) (xy 0 -1.27) (xy -0.508 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_TVS_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -4221,12 +4071,6 @@
 		(uuid "1b9352c1-9c76-4903-b2ce-ba03b3a5b2c1")
 	)
 	(junction
-		(at 53.34 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2416d79b-a207-4b34-9608-d759c874407e")
-	)
-	(junction
 		(at 224.79 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4275,12 +4119,6 @@
 		(uuid "57b36151-4926-44ea-9664-f713de22f7f4")
 	)
 	(junction
-		(at 35.56 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5a0e3aa2-8fb2-4bd0-85b3-fd3cb1071381")
-	)
-	(junction
 		(at 175.26 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4297,12 +4135,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6298a11a-8a51-4272-bd75-363e199a75bd")
-	)
-	(junction
-		(at 44.45 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "72ef4f3a-50a1-4bef-9fe2-7767a9883c5c")
 	)
 	(junction
 		(at 245.11 115.57)
@@ -4640,16 +4472,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 161.29) (xy 35.56 163.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e9c084f-decb-46ec-b612-21aeab07abff")
-	)
-	(wire
-		(pts
 			(xy 209.55 45.72) (xy 218.44 45.72)
 		)
 		(stroke
@@ -4777,26 +4599,6 @@
 			(type default)
 		)
 		(uuid "17dcd8ae-a785-4c56-81ed-f85ccc8c7e12")
-	)
-	(wire
-		(pts
-			(xy 44.45 153.67) (xy 44.45 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "191992fb-076e-447b-ac39-b069e2ef9761")
-	)
-	(wire
-		(pts
-			(xy 44.45 129.54) (xy 44.45 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1adad953-48cd-497f-ba7d-2c07656479a3")
 	)
 	(wire
 		(pts
@@ -4950,16 +4752,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 161.29) (xy 44.45 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ba64e80-ca96-4b91-b8b1-0b319debe0e0")
-	)
-	(wire
-		(pts
 			(xy 179.07 116.84) (xy 179.07 120.65)
 		)
 		(stroke
@@ -5007,16 +4799,6 @@
 			(type default)
 		)
 		(uuid "32f170d8-acb0-47bf-be18-d153c69128d9")
-	)
-	(wire
-		(pts
-			(xy 53.34 153.67) (xy 53.34 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33c5109d-a205-4954-ab10-818557278a68")
 	)
 	(wire
 		(pts
@@ -5087,16 +4869,6 @@
 			(type default)
 		)
 		(uuid "3d7c67e7-afc1-4910-926d-ae302823ba12")
-	)
-	(wire
-		(pts
-			(xy 44.45 161.29) (xy 35.56 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42a5ae0a-b877-4ff2-85bf-0f86853dd4cf")
 	)
 	(wire
 		(pts
@@ -5237,16 +5009,6 @@
 			(type default)
 		)
 		(uuid "510e786a-61f1-4973-8129-b3355abce296")
-	)
-	(wire
-		(pts
-			(xy 35.56 153.67) (xy 35.56 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "518c2a96-b467-445d-bbe2-1343672ed627")
 	)
 	(wire
 		(pts
@@ -5430,16 +5192,6 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 134.62) (xy 62.23 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "636616a0-96fe-4c06-b54c-bd9ec600ecc6")
-	)
-	(wire
-		(pts
 			(xy 82.55 58.42) (xy 85.09 58.42)
 		)
 		(stroke
@@ -5607,16 +5359,6 @@
 			(type default)
 		)
 		(uuid "745d72ca-a0a3-41f4-a42c-5b09724afcc8")
-	)
-	(wire
-		(pts
-			(xy 62.23 153.67) (xy 62.23 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74873c55-9fa6-4272-bead-8c340fa834e4")
 	)
 	(wire
 		(pts
@@ -5887,16 +5629,6 @@
 			(type default)
 		)
 		(uuid "93a340e6-6c92-45db-8ee2-50c1c8bba6d6")
-	)
-	(wire
-		(pts
-			(xy 62.23 161.29) (xy 53.34 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97cff199-0193-4eaa-866f-2a232e86b7df")
 	)
 	(wire
 		(pts
@@ -6670,16 +6402,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 132.08) (xy 53.34 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb09f5d7-195e-4ab9-89b1-2fab384830de")
-	)
-	(wire
-		(pts
 			(xy 256.54 83.82) (xy 262.89 83.82)
 		)
 		(stroke
@@ -6757,16 +6479,6 @@
 			(type default)
 		)
 		(uuid "f712b555-c2ce-4675-a9a7-d3dfbe0b915a")
-	)
-	(wire
-		(pts
-			(xy 35.56 127) (xy 35.56 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f74a928a-da1a-4cec-9be9-2d1cc3df8ddc")
 	)
 	(wire
 		(pts
@@ -8211,72 +7923,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
 					(reference "#PWR0406")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 163.83 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "04d4f562-c3a7-4464-87cb-498ced02ccbf")
-		(property "Reference" "#PWR0428"
-			(at 35.56 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ec7040a7-9815-4911-ac20-5bcfeefc6fe7")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
-					(reference "#PWR0428")
 					(unit 1)
 				)
 			)
@@ -10027,120 +9673,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
 					(reference "#PWR0421")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_TVS")
-		(at 35.56 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "56f80eb6-dc68-49c9-94f8-1995f93a1603")
-		(property "Reference" "D401"
-			(at 38.1 147.066 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD3V3L1BA,115"
-			(at 32.766 140.208 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "PESD3V3L1BA,115"
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 35.56 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d4d12d05-5383-4afc-b232-14178ecf6717")
-		)
-		(pin "2"
-			(uuid "492f61a0-75c5-4443-8d49-9a3dd4d0d522")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
-					(reference "D401")
 					(unit 1)
 				)
 			)
@@ -12560,120 +12092,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_TVS")
-		(at 53.34 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b637afa6-f01a-4cb3-87d3-852fbfeaee16")
-		(property "Reference" "D403"
-			(at 55.88 147.066 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD3V3L1BA,115"
-			(at 50.546 140.208 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "PESD3V3L1BA,115"
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 53.34 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c89de89d-93ad-4b52-88ce-9cbff35b2563")
-		)
-		(pin "2"
-			(uuid "513c1eb8-4485-4ecb-8d9a-267e9b5eddd6")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
-					(reference "D403")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 137.16 114.3 0)
 		(unit 1)
@@ -12855,120 +12273,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_TVS")
-		(at 62.23 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bf3e9f06-cd51-40c0-959c-f53467e78313")
-		(property "Reference" "D404"
-			(at 64.77 147.066 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD3V3L1BA,115"
-			(at 59.436 140.208 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "PESD3V3L1BA,115"
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 62.23 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fe77b60f-6640-435b-95b0-e5279c349e14")
-		)
-		(pin "2"
-			(uuid "68cf1e82-4830-426f-9ba6-db0f9d15ad35")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
-					(reference "D404")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 78.74 58.42 90)
 		(unit 1)
@@ -13142,120 +12446,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
 					(reference "#PWR0414")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_TVS")
-		(at 44.45 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d0c8f1f4-bc23-4d78-84de-5857f65186ec")
-		(property "Reference" "D402"
-			(at 46.99 147.066 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD3V3L1BA,115"
-			(at 41.656 140.208 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "PESD3V3L1BA,115"
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" ""
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" ""
-			(at 44.45 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a1949da1-f91b-4ce6-bf3d-7debdbd11c06")
-		)
-		(pin "2"
-			(uuid "c1fbbfd1-301e-431b-9967-1f078383d1e1")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/50304ef4-c32e-4a1f-a652-b7b630d07cc6"
-					(reference "D402")
 					(unit 1)
 				)
 			)
