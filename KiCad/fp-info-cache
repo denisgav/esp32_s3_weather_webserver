@@ -1,4 +1,4 @@
-26137412729984399
+26139170679922091
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -104173,6 +104173,13 @@ Integrated Circuit
 0
 62
 41
+esp32_s3_weather_webserver
+MPD_BC2032-E2
+
+
+0
+2
+2
 esp32_s3_weather_webserver
 MWSA0603S
 

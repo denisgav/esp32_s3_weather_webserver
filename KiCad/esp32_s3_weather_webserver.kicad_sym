@@ -1998,7 +1998,7 @@
 				)
 			)
 			(pin passive line
-				(at 1.27 -71.12 90)
+				(at 11.43 -71.12 90)
 				(length 5.08)
 				(name "GND_1"
 					(effects
@@ -2008,78 +2008,6 @@
 					)
 				)
 				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 3.81 -71.12 90)
-				(length 5.08)
-				(name "GND_2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "40"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 6.35 -71.12 90)
-				(length 5.08)
-				(name "GND_3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "41"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 8.89 -71.12 90)
-				(length 5.08)
-				(name "GND_4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "42"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 11.43 -71.12 90)
-				(length 5.08)
-				(name "GND_5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "43"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2108,14 +2036,14 @@
 			(pin passive line
 				(at 13.97 -71.12 90)
 				(length 5.08)
-				(name "GND_6"
+				(name "GND_2"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "44"
+				(number "40"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2126,86 +2054,14 @@
 			(pin passive line
 				(at 16.51 -71.12 90)
 				(length 5.08)
-				(name "GND_7"
+				(name "GND_3"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "45"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 19.05 -71.12 90)
-				(length 5.08)
-				(name "GND_8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "46"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 21.59 -71.12 90)
-				(length 5.08)
-				(name "GND_9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "47"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 24.13 -71.12 90)
-				(length 5.08)
-				(name "GND_10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "48"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 26.67 -71.12 90)
-				(length 5.08)
-				(name "GND_11"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "49"
+				(number "41"
 					(effects
 						(font
 							(size 1.27 1.27)

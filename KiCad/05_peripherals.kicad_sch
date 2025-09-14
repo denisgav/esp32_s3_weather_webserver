@@ -9160,7 +9160,7 @@
 				)
 			)
 		)
-		(property "Footprint" "esp32_s3_weather_webserver:CR12202"
+		(property "Footprint" "esp32_s3_weather_webserver:MPD_BC2032-E2"
 			(at 84.836 119.38 90)
 			(effects
 				(font
@@ -9196,7 +9196,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Q&J"
+		(property "Manufacturer" "MYOUNG"
 			(at 86.36 119.38 0)
 			(effects
 				(font
@@ -9205,7 +9205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CR1220-2"
+		(property "Manufacturer Part Number" "BS-02-A1AJ010"
 			(at 86.36 119.38 0)
 			(effects
 				(font
