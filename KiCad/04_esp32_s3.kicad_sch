@@ -6404,6 +6404,28 @@
 			)
 		)
 	)
+	(global_label "DS3231_INT"
+		(shape input)
+		(at 262.89 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0abb7151-81cf-4e16-a3fd-bb14c5db477b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 277.0632 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "FSPI_MOSI"
 		(shape input)
 		(at 29.21 129.54 180)
@@ -6448,24 +6470,24 @@
 			)
 		)
 	)
-	(global_label "I2C_SDA"
+	(global_label "ENS160_INT"
 		(shape input)
-		(at 130.81 80.01 180)
+		(at 262.89 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "1864fd2b-7f9a-4ca4-a1d6-572f6708c67f")
+		(uuid "1c385600-02d7-45ff-80e7-cc070df0962a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.2048 80.01 0)
+			(at 277.0632 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -6576,28 +6598,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C_SCL"
-		(shape input)
-		(at 130.81 82.55 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3bf69828-3fa6-463e-936a-ac2c093a7925")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.2653 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -6801,6 +6801,28 @@
 			)
 		)
 	)
+	(global_label "I2C_SCL"
+		(shape input)
+		(at 130.81 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "60b6aef0-ac38-404b-84ba-be9197f42cd5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.2653 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "HSPI_MOSI"
 		(shape input)
 		(at 148.59 116.84 90)
@@ -6908,28 +6930,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DS3231_INT"
-		(shape input)
-		(at 262.89 58.42 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7cbb4109-810a-4f95-bd3a-18e5bfc6f242")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 277.0632 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -7243,24 +7243,24 @@
 			)
 		)
 	)
-	(global_label "ENS160_INT"
+	(global_label "I2C_SDA"
 		(shape input)
-		(at 262.89 55.88 0)
+		(at 130.81 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "cf520ec0-a588-4690-b0a1-8142b6b15557")
+		(uuid "ce911a1d-2046-4475-b3b2-9f3d9f16c979")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 277.0632 55.88 0)
+			(at 120.2048 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
