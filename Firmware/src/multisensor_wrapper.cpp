@@ -7,6 +7,7 @@ multisensor_wrapper ::multisensor_wrapper() : rtc(),
                                               bme280(),
                                               ens160(),
                                               aht2x(),
+                                              veml7700(),
                                               dht11(),
                                               lm35(),
                                               ldr(),
@@ -32,6 +33,10 @@ bool multisensor_wrapper ::init()
     aht2x.init();
     Serial.println("Init AHT2x Done");
 
+    Serial.println("Init VEML770");
+    veml7700.init();
+    Serial.println("Init VEML770 Done");
+
     Serial.println("Init DHT11");
     dht11.init();
     Serial.println("Init DHT11 Done");
@@ -44,7 +49,11 @@ bool multisensor_wrapper ::init()
     ldr.init();
     Serial.println("Init LDR Done");
 
-    is_initialized = rtc.get_is_initialized() && bme280.get_is_initialized() && ens160.get_is_initialized() && aht2x.get_is_initialized() && dht11.get_is_initialized() && lm35.get_is_initialized() && ldr.get_is_initialized();
+    is_initialized = rtc.get_is_initialized() && 
+        bme280.get_is_initialized() && ens160.get_is_initialized() && 
+        aht2x.get_is_initialized() && veml7700.get_is_initialized() && 
+        dht11.get_is_initialized() && 
+        lm35.get_is_initialized() && ldr.get_is_initialized();
 
     return is_initialized;
 }
@@ -136,6 +145,24 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[AHT2x] " + temperature_s + " " + humidity_s);
     }
 
+    if (veml7700.sample_sensor_data() == false)
+    {
+        Serial.println("Couldn't find VEML7700");
+        sample_error_happen = true;
+    }
+    else
+    {
+        float lux = veml7700.get_sampled_lux();
+        float gain = veml7700.get_sampled_gain();
+        float integration_time = veml7700.get_sampled_integration_time();
+
+        String lux_s = "Lux: " + String(lux);
+        String gain_s = "Gain: " + veml7700.get_sampled_gain_s();
+        String integration_time_s = "Integration Time: " + veml7700.get_sampled_integration_time_s() + "MS";
+
+        Serial.println("[VEML7700] " + lux_s + " " + gain_s + " " + integration_time_s);
+    }
+
     if (dht11.sample_sensor_data() == false)
     {
         Serial.println("Couldn't find DHT11");
@@ -188,6 +215,11 @@ ENS160_wrapper &multisensor_wrapper ::get_ens160()
 AHT2x_wrapper &multisensor_wrapper ::get_aht2x()
 {
     return aht2x;
+}
+// AHT2x
+VEML7700_wrapper &multisensor_wrapper ::get_veml7700()
+{
+    return veml7700;
 }
 // DHT11
 DHT11_wrapper &multisensor_wrapper ::get_dht11()

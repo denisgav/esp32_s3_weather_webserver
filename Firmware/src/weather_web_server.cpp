@@ -135,6 +135,11 @@ String weather_web_server ::fetch_sensor_data() const
     doc["aht2x_temperature"] = String(multisensor.get_aht2x().get_sampled_temperature());
     doc["aht2x_humidity"] = String(multisensor.get_aht2x().get_sampled_humidity());
 
+    // VEML7700
+    doc["veml7700_lux"] = String(multisensor.get_veml7700().get_sampled_lux());
+    doc["veml7700_gain"] = multisensor.get_veml7700().get_sampled_gain_s();
+    doc["veml7700_integration_time"] = multisensor.get_veml7700().get_sampled_integration_time_s();
+
     // LDR
     doc["ldr"] = String(multisensor.get_ldr().get_sampled_ldr());
 

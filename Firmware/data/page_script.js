@@ -92,6 +92,25 @@ function set_aht2x_data(success, temperature=null, humidity=null){
     }
 }
 
+function set_veml700_data(success, lux=null, gain=null, integration_time=null){
+    const el_lux = $("#veml7700_lux");
+    const el_gain = $("#veml7700_gain");
+    const el_integration_time = $("#veml7700_integration_time");
+    const el_status = $("#veml7700_status");
+
+    el_lux.textContent = (lux != null) ? (lux.toFixed ? lux.toFixed(2) : lux) : "—";
+    el_gain.textContent = (gain != null) ? gain : "—";
+    el_integration_time.textContent = (integration_time != null) ? integration_time + "MS" : "—";
+
+    if(success == true){
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
 function set_lm35_data(success, temperature=null){
     const el_t = $("#lm35_t");
     const el_status = $("#lm35_status");
@@ -133,6 +152,7 @@ async function fetch_sensor_data() {
         set_ens160_data(true, j.ens160_AQI, j.ens160_TVOC, j.ens160_eCO2);
         set_dht11_data(true, j.dht11_temperature, j.dht11_humidity);
         set_aht2x_data(true, j.aht2x_temperature, j.aht2x_humidity);
+        set_veml700_data(true, j.veml7700_lux, j.veml7700_gain, j.veml7700_integration_time);
         set_lm35_data(true, j.lm35_temperature);
         set_ldr_data(true, j.ldr);
     } catch (e) {
@@ -140,6 +160,7 @@ async function fetch_sensor_data() {
         set_ens160_data(false);
         set_dht11_data(false);
         set_aht2x_data(false);
+        set_veml700_data(false);
         set_lm35_data(false);
         set_ldr_data(false);
     }

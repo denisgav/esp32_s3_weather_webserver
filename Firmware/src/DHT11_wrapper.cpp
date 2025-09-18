@@ -41,7 +41,7 @@ bool DHT11_wrapper ::sample_sensor_data()
         return true;
     }
     else
-        return true;
+        return false;
 }
 
 // get sampled datetime values
