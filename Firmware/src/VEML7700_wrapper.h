@@ -7,8 +7,8 @@
 
 #include "board_defines.h"
 
-
-class VEML7700_wrapper{
+class VEML7700_wrapper
+{
 public:
     // Class constructor
     VEML7700_wrapper();
@@ -16,6 +16,8 @@ public:
     bool init();
     // Sample date/time
     bool sample_sensor_data();
+    // Returns true if values were sampled from sensor
+    bool get_is_sampled() const;
 
     // get sampled datetime values
     float get_sampled_lux() const;
@@ -25,10 +27,12 @@ public:
     String get_sampled_integration_time_s() const;
 
     bool get_is_initialized() const;
+
 private:
     Adafruit_VEML7700 veml;
     float sampled_lux;
     uint8_t sampled_gain;
     uint8_t sampled_integration_time;
+    bool is_sampled;
     bool is_initialized;
 };

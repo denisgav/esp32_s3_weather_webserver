@@ -148,13 +148,40 @@ async function fetch_sensor_data() {
         const r = await fetch("/api/fetch_sensor_data"); // { t,h,p } or {temperature,...}
         const j = await r.json();
 
-        set_bme280_data(true, j.bme280_temperature, j.bme280_humidity, j.bme280_pressure);
-        set_ens160_data(true, j.ens160_AQI, j.ens160_TVOC, j.ens160_eCO2);
-        set_dht11_data(true, j.dht11_temperature, j.dht11_humidity);
-        set_aht2x_data(true, j.aht2x_temperature, j.aht2x_humidity);
-        set_veml700_data(true, j.veml7700_lux, j.veml7700_gain, j.veml7700_integration_time);
-        set_lm35_data(true, j.lm35_temperature);
-        set_ldr_data(true, j.ldr);
+        if(j.bme280 != null)
+            set_bme280_data(true, j.bme280.temperature, j.bme280.humidity, j.bme280.pressure);
+        else
+            set_bme280_data(false);
+
+        if(j.ens160 != null)
+            set_ens160_data(true, j.ens160.AQI, j.ens160.TVOC, j.ens160.eCO2);
+        else 
+            set_ens160_data(false);
+
+        if(j.dht11 != null)
+            set_dht11_data(true, j.dht11.temperature, j.dht11.humidity);
+        else 
+            set_dht11_data(false);
+
+        if(j.aht2x != null)
+            set_aht2x_data(true, j.aht2x_temperature, j.aht2x_humidity);
+        else 
+            set_aht2x_data(false);
+
+        if(j.veml7700 != null)
+            set_veml700_data(true, j.veml7700.lux, j.veml7700.gain, j.veml7700.integration_time);
+        else 
+            set_veml700_data(false);
+
+        if(j.lm35 != null)
+            set_lm35_data(true, j.lm35.temperature);
+        else 
+            set_lm35_data(false);
+
+        if(j.ldr != null)
+            set_ldr_data(true, j.ldr.ldr);
+        else
+            set_ldr_data(false);
     } catch (e) {
         set_bme280_data(false);
         set_ens160_data(false);

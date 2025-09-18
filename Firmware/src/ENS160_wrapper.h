@@ -15,6 +15,8 @@ public:
     bool init();
     // Sample sensor values
     bool sample_sensor_data();
+    // Returns true if values were sampled from sensor
+    bool get_is_sampled() const;
 
     // get sampled sensor values
     uint8_t get_sampled_AQI() const;
@@ -27,5 +29,6 @@ private:
     uint8_t sampled_AQI;
     uint16_t sampled_TVOC;
     uint16_t sampled_eCO2;
+    bool is_sampled;
     bool is_initialized;
 };

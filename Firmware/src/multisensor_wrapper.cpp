@@ -49,11 +49,11 @@ bool multisensor_wrapper ::init()
     ldr.init();
     Serial.println("Init LDR Done");
 
-    is_initialized = rtc.get_is_initialized() && 
-        bme280.get_is_initialized() && ens160.get_is_initialized() && 
-        aht2x.get_is_initialized() && veml7700.get_is_initialized() && 
-        dht11.get_is_initialized() && 
-        lm35.get_is_initialized() && ldr.get_is_initialized();
+    is_initialized = rtc.get_is_initialized() &&
+                     bme280.get_is_initialized() && ens160.get_is_initialized() &&
+                     aht2x.get_is_initialized() && veml7700.get_is_initialized() &&
+                     dht11.get_is_initialized() &&
+                     lm35.get_is_initialized() && ldr.get_is_initialized();
 
     return is_initialized;
 }
@@ -64,8 +64,61 @@ bool multisensor_wrapper ::sample_sensor_data()
     bool sample_error_happen = false;
     if (rtc.sample_datetime_data() == false)
     {
-        Serial.println("Couldn't find RTC");
+        //Serial.println("Couldn't find RTC");
         sample_error_happen = true;
+    }
+    
+    if (lm35.sample_sensor_data() == false)
+    {
+        //Serial.println("Couldn't find LM35");
+        sample_error_happen = true;
+    }
+    
+    if (bme280.sample_sensor_data() == false)
+    {
+        //Serial.println("Could not find a valid BME280 sensor, check wiring!");
+        sample_error_happen = true;
+    }
+    
+    if (ens160.sample_sensor_data() == false)
+    {
+        //Serial.println("[ENS160] did not sample values!");
+        sample_error_happen = true;
+    }
+    
+    if (aht2x.sample_sensor_data() == false)
+    {
+        //Serial.println("Couldn't find AHT2x");
+        sample_error_happen = true;
+    }
+    
+    if (veml7700.sample_sensor_data() == false)
+    {
+        //Serial.println("Couldn't find VEML7700");
+        sample_error_happen = true;
+    }
+    
+    if (dht11.sample_sensor_data() == false)
+    {
+        //Serial.println("Couldn't find DHT11");
+        sample_error_happen = true;
+    }
+    
+    if (ldr.sample_sensor_data() == false)
+    {
+        //Serial.println("Couldn't find LDR");
+        sample_error_happen = true;
+    }
+    
+    return sample_error_happen == false;
+}
+
+// Print sampled values to serial
+void multisensor_wrapper ::print_to_serial() const
+{
+    if (rtc.get_is_sampled() == false)
+    {
+        Serial.println("[DS3231] Sample error");
     }
     else
     {
@@ -79,10 +132,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[DS3231] " + date_s + " " + time_s + " " + temperature_s);
     }
 
-    if (lm35.sample_sensor_data() == false)
+    if (lm35.get_is_sampled() == false)
     {
-        Serial.println("Couldn't find LM35");
-        sample_error_happen = true;
+        Serial.println("[LM35] Sample error");
     }
     else
     {
@@ -93,10 +145,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[LM35] " + temperature_s);
     }
 
-    if (bme280.sample_sensor_data() == false)
+    if (bme280.get_is_sampled() == false)
     {
-        Serial.println("Could not find a valid BME280 sensor, check wiring!");
-        sample_error_happen = true;
+        Serial.println("[BME280] Sample error");
     }
     else
     {
@@ -111,10 +162,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[BME280] " + temperature_s + " " + pressure_s + " " + humidity_s);
     }
 
-    if (ens160.sample_sensor_data() == false)
+    if (ens160.get_is_sampled() == false)
     {
-        Serial.println("[ENS160] did not sample values!");
-        sample_error_happen = true;
+        Serial.println("[ENS160] Sample error");
     }
     else
     {
@@ -129,10 +179,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[ENS160] " + AQI_s + " " + TVOC_s + " " + eCO2_s);
     }
 
-    if (aht2x.sample_sensor_data() == false)
+    if (aht2x.get_is_sampled() == false)
     {
-        Serial.println("Couldn't find AHT2x");
-        sample_error_happen = true;
+        Serial.println("[AHT2x] Sample error");
     }
     else
     {
@@ -145,10 +194,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[AHT2x] " + temperature_s + " " + humidity_s);
     }
 
-    if (veml7700.sample_sensor_data() == false)
+    if (veml7700.get_is_sampled() == false)
     {
-        Serial.println("Couldn't find VEML7700");
-        sample_error_happen = true;
+        Serial.println("[VEML7700] Sample error");
     }
     else
     {
@@ -163,10 +211,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[VEML7700] " + lux_s + " " + gain_s + " " + integration_time_s);
     }
 
-    if (dht11.sample_sensor_data() == false)
+    if (dht11.get_is_sampled() == false)
     {
-        Serial.println("Couldn't find DHT11");
-        sample_error_happen = true;
+        Serial.println("[DHT11] Sample error");
     }
     else
     {
@@ -179,10 +226,9 @@ bool multisensor_wrapper ::sample_sensor_data()
         Serial.println("[DHT11] " + temperature_s + " " + humidity_s);
     }
 
-    if (ldr.sample_sensor_data() == false)
+    if (ldr.get_is_sampled() == false)
     {
-        Serial.println("Couldn't find LDR");
-        sample_error_happen = true;
+        Serial.println("[LDR] Sample error");
     }
     else
     {
@@ -192,8 +238,6 @@ bool multisensor_wrapper ::sample_sensor_data()
 
         Serial.println("[LDR] " + ldr_s);
     }
-
-    return sample_error_happen == false;
 }
 
 // RTC3231

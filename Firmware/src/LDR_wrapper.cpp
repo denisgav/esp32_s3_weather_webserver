@@ -2,6 +2,7 @@
 
 // Class constructor
 LDR_wrapper ::LDR_wrapper() : sampled_ldr(nanf("")),
+                              is_sampled(false),
                               is_initialized(false)
 
 {
@@ -22,10 +23,20 @@ bool LDR_wrapper ::sample_sensor_data()
         double value = analogRead(LDR_PIN);
         double vout = (double(value) * ((3.3 / 4096.0) / 0.01));
         sampled_ldr = vout;
+        is_sampled = true;
         return true;
     }
     else
+    {
+        is_sampled = false;
         return false;
+    }
+}
+
+// Returns true if values were sampled from sensor
+bool LDR_wrapper ::get_is_sampled() const
+{
+    return is_sampled;
 }
 
 // get sampled sensor values

@@ -79,6 +79,9 @@ public:
     // LDR
     LDR_wrapper& get_ldr();
 
+    // Print sampled values to serial
+    void print_to_serial() const;
+
     bool get_is_initialized() const;
 private:
     // RTC3231

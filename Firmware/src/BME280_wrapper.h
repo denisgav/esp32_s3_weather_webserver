@@ -17,6 +17,8 @@ public:
     bool init();
     // Sample sensor values
     bool sample_sensor_data();
+    // Returns true if values were sampled from sensor
+    bool get_is_sampled() const;
 
     // get sampled sensor values
     float get_sampled_temperature() const;
@@ -29,5 +31,6 @@ private:
     float sampled_temperature;
     float sampled_humidity;
     float sampled_pressure;
+    bool is_sampled;
     bool is_initialized;
 };

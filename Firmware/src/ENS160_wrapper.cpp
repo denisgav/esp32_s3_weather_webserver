@@ -5,6 +5,7 @@ ENS160_wrapper ::ENS160_wrapper() : ens160(ENS160_I2CADDR_0),
                                     sampled_AQI(0),
                                     sampled_TVOC(0),
                                     sampled_eCO2(0),
+                                    is_sampled(false),
                                     is_initialized(false)
 {
 }
@@ -32,13 +33,26 @@ bool ENS160_wrapper ::sample_sensor_data()
             sampled_AQI = ens160.getAQI();
             sampled_TVOC = ens160.getTVOC();
             sampled_eCO2 = ens160.geteCO2();
+            is_sampled = true;
             return true;
         }
         else
+        {
+            is_sampled = false;
             return false;
+        }
     }
     else
+    {
+        is_sampled = false;
         return false;
+    }
+}
+
+// Returns true if values were sampled from sensor
+bool ENS160_wrapper ::get_is_sampled() const
+{
+    return is_sampled;
 }
 
 // get sampled sensor values

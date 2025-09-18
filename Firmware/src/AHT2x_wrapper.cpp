@@ -4,6 +4,7 @@
 AHT2x_wrapper ::AHT2x_wrapper() : aht(),
                                   sampled_temperature(nanf("")),
                                   sampled_humidity(nanf("")),
+                                  is_sampled(false),
                                   is_initialized(false)
 
 {
@@ -23,10 +24,20 @@ bool AHT2x_wrapper ::sample_sensor_data()
         aht.getEvent(&humidity, &temp); // populate temp and humidity objects with fresh data
         sampled_temperature = temp.temperature;
         sampled_humidity = humidity.relative_humidity;
+        is_sampled = true;
         return true;
     }
     else
+    {
+        is_sampled = false;
         return false;
+    }
+}
+
+// Returns true if values were sampled from sensor
+bool AHT2x_wrapper ::get_is_sampled() const
+{
+    return is_sampled;
 }
 
 // get sampled datetime values

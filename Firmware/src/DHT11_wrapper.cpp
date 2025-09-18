@@ -4,6 +4,7 @@
 DHT11_wrapper ::DHT11_wrapper() : dht(DHT11_PIN, DHTTYPE),
                                   sampled_temperature(nanf("")),
                                   sampled_humidity(nanf("")),
+                                  is_sampled(false),
                                   is_initialized(false)
 {
 }
@@ -26,22 +27,36 @@ bool DHT11_wrapper ::sample_sensor_data()
         dht.temperature().getEvent(&event);
 
         sampled_temperature = event.temperature;
-        if (isnan(event.temperature)) {
-             Serial.println(F("Error reading temperature!"));
-             return false;
+        if (isnan(event.temperature))
+        {
+            Serial.println(F("Error reading temperature!"));
+            is_sampled = false;
+            return false;
         }
 
         dht.humidity().getEvent(&event);
         sampled_humidity = event.relative_humidity;
-        if (isnan(event.relative_humidity)) {
+        if (isnan(event.relative_humidity))
+        {
             Serial.println(F("Error reading humidity!"));
+            is_sampled = false;
             return false;
         }
 
+        is_sampled = true;
         return true;
     }
     else
+    {
+        is_sampled = false;
         return false;
+    }
+}
+
+// Returns true if values were sampled from sensor
+bool DHT11_wrapper ::get_is_sampled() const
+{
+    return is_sampled;
 }
 
 // get sampled datetime values

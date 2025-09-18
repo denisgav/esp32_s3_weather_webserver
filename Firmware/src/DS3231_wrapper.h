@@ -12,6 +12,8 @@ public:
     bool init();
     // Sample date/time
     bool sample_datetime_data();
+    // Returns true if values were sampled from sensor
+    bool get_is_sampled() const;
 
     // get sampled datetime values
     DateTime get_sampled_datetime() const;
@@ -22,5 +24,6 @@ private:
     RTC_DS3231 rtc; // I2C
     DateTime now;
     float sampled_temperature;
+    bool is_sampled;
     bool is_initialized;
 };

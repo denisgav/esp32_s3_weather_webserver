@@ -4,6 +4,7 @@
 DS3231_wrapper ::DS3231_wrapper() : rtc(),
                                     now(0x0, 0x0, 0x0, 0x0, 0x0, 0x0),
                                     sampled_temperature(nanf("")),
+                                    is_sampled(false),
                                     is_initialized(false)
 {
 }
@@ -30,10 +31,20 @@ bool DS3231_wrapper ::sample_datetime_data()
     {
         sampled_temperature = rtc.getTemperature();
         now = rtc.now();
+        is_sampled = true;
         return true;
     }
     else
+    {
+        is_sampled = false;
         return false;
+    }
+}
+
+// Returns true if values were sampled from sensor
+bool DS3231_wrapper ::get_is_sampled() const
+{
+    return is_sampled;
 }
 
 // get sampled datetime values

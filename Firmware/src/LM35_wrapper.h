@@ -2,7 +2,8 @@
 #include <stdbool.h>
 #include "board_defines.h"
 
-class LM35_wrapper{
+class LM35_wrapper
+{
 public:
     // Class constructor
     LM35_wrapper();
@@ -10,11 +11,15 @@ public:
     bool init();
     // Sample sensor values
     bool sample_sensor_data();
+    // Returns true if values were sampled from sensor
+    bool get_is_sampled() const;
 
     // get sampled sensor values
     float get_sampled_temperature() const;
     bool get_is_initialized() const;
+
 private:
     float sampled_temperature;
+    bool is_sampled;
     bool is_initialized;
 };
