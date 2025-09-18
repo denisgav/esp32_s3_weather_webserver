@@ -17,11 +17,28 @@
     <div class="inline">
       <button id="btnRefresh">Refresh</button>
       <button id="btnWifi">Wi-Fi</button>
-      <!--<button id="btnSync">Time Setup</button> -->
     </div>
   </header>
 
   <section class="grid">
+    <div class="card">
+      <div class="row"><strong>RTC (DS3231)</strong><small id="rtc_status" class="muted">updating…</small></div>
+      <div class="row"><span>Temperature</span><span id="rtc_t" class="val k">—</span></div>
+      <div class="row"><span>RTC Date</span><span id="rtc_date" class="val k">—</span></div>
+      <div class="row"><span>RTC Time</span><span id="rtc_time" class="val k">—</span></div>
+      <div class="row"><span>PC Date</span><span id="pc_date" class="val k">—</span></div>
+      <div class="row"><span>PC Time</span><span id="pc_time" class="val k">—</span></div>
+      <div class="row inline">
+        <input type="date" id="datePick" aria-label="Date">
+      </div>
+      <div class="row inline">
+        <input type="time" id="timePick" step="1" aria-label="Time">
+      </div>
+      <div class="row">
+        <button id="btnSetPickedTime">Set picked time</button>
+        <button id="btnSyncTime">Set PC time</button>
+      </div>
+    </div>
     <div class="card">
       <div class="row"><strong>BME280</strong><small id="bme280_status" class="muted">updating…</small></div>
       <div class="row"><span>Temperature</span><span id="bme280_t" class="val k">—</span></div>
@@ -58,23 +75,6 @@
       <div class="row"><strong>LM35</strong><small id="lm35_status" class="muted">updating…</small></div>
       <div class="row"><span>Temperature</span><span id="lm35_t" class="val k">—</span></div>
     </div>
-    
-    
-<!--
-    <div class="card">
-      <div class="row"><strong>Часы</strong><small id="timeStatus" class="muted">DS3231</small></div>
-      <div class="row"><span>DS3231</span><span id="rtcNow" class="val k">—</span></div>
-      <div class="row"><span>Время ПК</span><span id="pcNow" class="val k">—</span></div>
-      <div class="row inline">
-        <input type="date" id="datePick" aria-label="Дата">
-        <input type="time" id="timePick" step="1" aria-label="Время">
-      </div>
-      <div class="row">
-        <button id="btnSetPicked">Установить выбранные</button>
-        <small>или используйте «Синхр. время» вверху</small>
-      </div>
-    </div>
-  -->
   </section>
 
 

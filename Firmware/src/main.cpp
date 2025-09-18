@@ -131,7 +131,7 @@ void loop()
 
 void MultisensorSampleTask(void *parameter){
   for (;;) { // Infinite loop
-    vTaskDelay(5000);
+    vTaskDelay(2500);
     multisensor.sample_sensor_data();
     multisensor.print_to_serial();
   }
@@ -139,7 +139,7 @@ void MultisensorSampleTask(void *parameter){
 
 void WebServerTask(void *parameter){
   for (;;) { // Infinite loop
-    vTaskDelay(5000);
+    vTaskDelay(2500);
 
     String ip_addr_s = "IP address: " + WiFi.localIP().toString();
     Serial.println(ip_addr_s);

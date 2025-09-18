@@ -1,13 +1,22 @@
 // ======== Helpers ========
 
 const $ = sel => document.querySelector(sel);
-/*
+
 const fmt2 = n => String(n).padStart(2, "0");
+
 const toISODateTimeLocal = (d) => {
     const y = d.getFullYear(), m = fmt2(d.getMonth() + 1), da = fmt2(d.getDate());
     const h = fmt2(d.getHours()), mi = fmt2(d.getMinutes()), s = fmt2(d.getSeconds());
     return { date: `${y}-${m}-${da}`, time: `${h}:${mi}:${s}` };
 };
+
+function to_ISO_DateTime_RTC (year, month, day, hour, minute, second){
+    const y = year, m = fmt2(month), da = fmt2(day);
+    const h = fmt2(hour), mi = fmt2(minute), s = fmt2(second);
+    return { date: `${y}-${m}-${da}`, time: `${h}:${mi}:${s}` };
+};
+
+/*
 const epochFromInputs = () => {
     const ds = $("#datePick").value, ts = $("#timePick").value;
     if (!ds || !ts) return null;
@@ -19,8 +28,46 @@ const epochFromInputs = () => {
 const rtcNow = $("#rtcNow"), pcNow = $("#pcNow"), timeStatus = $("#timeStatus");
 */
 
+function tickPC() {
+    const d = new Date();
+    const loc = toISODateTimeLocal(d);
 
-function set_bme280_data(success, temperature=null, humidity=null, pressure=null){
+    const el_date = $("#pc_date");
+    const el_time = $("#pc_time");
+
+    el_date.textContent = `${loc.date}`;
+    el_time.textContent = `${loc.time}`;
+}
+
+function set_rtc_data(success, temperature = null, year = null, month = null, day = null, hour = null, minute = null, second = null) {
+    const el_t = $("#rtc_t");
+    const el_date = $("#rtc_date");
+    const el_time = $("#rtc_time");
+    const el_status = $("#rtc_status");
+
+    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+
+    if ((year != null) && (month != null) && (day != null) && (hour != null) && (minute != null) && (second != null)) {
+        const dateTime = to_ISO_DateTime_RTC(year, month, day, hour, minute, second);
+        el_date.textContent = dateTime.date;
+        el_time.textContent = dateTime.time;
+    }
+    else {
+        el_date.textContent = "—";
+        el_time.textContent = "-";
+    }
+
+
+    if (success == true) {
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_bme280_data(success, temperature = null, humidity = null, pressure = null) {
     const el_t = $("#bme280_t");
     const el_h = $("#bme280_h");
     const el_p = $("#bme280_p");
@@ -30,7 +77,7 @@ function set_bme280_data(success, temperature=null, humidity=null, pressure=null
     el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
     el_p.textContent = (pressure != null) ? (pressure.toFixed ? pressure.toFixed(0) : pressure) + " hPa" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -39,7 +86,7 @@ function set_bme280_data(success, temperature=null, humidity=null, pressure=null
     }
 }
 
-function set_ens160_data(success, AQI=null, TVOC=null, eCO2=null){
+function set_ens160_data(success, AQI = null, TVOC = null, eCO2 = null) {
     const el_AQI = $("#ens160_AQI");
     const el_TVOC = $("#ens160_TVOC");
     const el_eCO2 = $("#ens160_ECO2");
@@ -49,7 +96,7 @@ function set_ens160_data(success, AQI=null, TVOC=null, eCO2=null){
     el_TVOC.textContent = (TVOC != null) ? (TVOC.toFixed ? TVOC.toFixed(0) : TVOC) + " ppb" : "—";
     el_eCO2.textContent = (eCO2 != null) ? (eCO2.toFixed ? eCO2.toFixed(0) : eCO2) + " ppm" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -58,7 +105,7 @@ function set_ens160_data(success, AQI=null, TVOC=null, eCO2=null){
     }
 }
 
-function set_dht11_data(success, temperature=null, humidity=null){
+function set_dht11_data(success, temperature = null, humidity = null) {
     const el_t = $("#dht11_t");
     const el_h = $("#dht11_h");
     const el_status = $("#dht11_status");
@@ -66,7 +113,7 @@ function set_dht11_data(success, temperature=null, humidity=null){
     el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
     el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -75,7 +122,7 @@ function set_dht11_data(success, temperature=null, humidity=null){
     }
 }
 
-function set_aht2x_data(success, temperature=null, humidity=null){
+function set_aht2x_data(success, temperature = null, humidity = null) {
     const el_t = $("#aht2x_t");
     const el_h = $("#aht2x_h");
     const el_status = $("#aht2x_status");
@@ -83,7 +130,7 @@ function set_aht2x_data(success, temperature=null, humidity=null){
     el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
     el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -92,7 +139,7 @@ function set_aht2x_data(success, temperature=null, humidity=null){
     }
 }
 
-function set_veml700_data(success, lux=null, gain=null, integration_time=null){
+function set_veml700_data(success, lux = null, gain = null, integration_time = null) {
     const el_lux = $("#veml7700_lux");
     const el_gain = $("#veml7700_gain");
     const el_integration_time = $("#veml7700_integration_time");
@@ -102,7 +149,7 @@ function set_veml700_data(success, lux=null, gain=null, integration_time=null){
     el_gain.textContent = (gain != null) ? gain : "—";
     el_integration_time.textContent = (integration_time != null) ? integration_time + "MS" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -111,13 +158,13 @@ function set_veml700_data(success, lux=null, gain=null, integration_time=null){
     }
 }
 
-function set_lm35_data(success, temperature=null){
+function set_lm35_data(success, temperature = null) {
     const el_t = $("#lm35_t");
     const el_status = $("#lm35_status");
 
     el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -126,13 +173,13 @@ function set_lm35_data(success, temperature=null){
     }
 }
 
-function set_ldr_data(success, mv=null){
+function set_ldr_data(success, mv = null) {
     const el_mv = $("#ldr_mv");
     const el_status = $("#ldr_status");
 
     el_mv.textContent = (mv != null) ? (mv.toFixed ? mv.toFixed(1) : mv) + " mV" : "—";
 
-    if(success == true){
+    if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
     } else {
@@ -148,41 +195,47 @@ async function fetch_sensor_data() {
         const r = await fetch("/api/fetch_sensor_data"); // { t,h,p } or {temperature,...}
         const j = await r.json();
 
-        if(j.bme280 != null)
+        if (j.rtc != null)
+            set_rtc_data(true, j.rtc.temperature, j.rtc.year, j.rtc.month, j.rtc.day, j.rtc.hour, j.rtc.minute, j.rtc.second);
+        else
+            set_rtc_data(false);
+
+        if (j.bme280 != null)
             set_bme280_data(true, j.bme280.temperature, j.bme280.humidity, j.bme280.pressure);
         else
             set_bme280_data(false);
 
-        if(j.ens160 != null)
+        if (j.ens160 != null)
             set_ens160_data(true, j.ens160.AQI, j.ens160.TVOC, j.ens160.eCO2);
-        else 
+        else
             set_ens160_data(false);
 
-        if(j.dht11 != null)
+        if (j.dht11 != null)
             set_dht11_data(true, j.dht11.temperature, j.dht11.humidity);
-        else 
+        else
             set_dht11_data(false);
 
-        if(j.aht2x != null)
-            set_aht2x_data(true, j.aht2x_temperature, j.aht2x_humidity);
-        else 
+        if (j.aht2x != null)
+            set_aht2x_data(true, j.aht2x.temperature, j.aht2x.humidity);
+        else
             set_aht2x_data(false);
 
-        if(j.veml7700 != null)
+        if (j.veml7700 != null)
             set_veml700_data(true, j.veml7700.lux, j.veml7700.gain, j.veml7700.integration_time);
-        else 
+        else
             set_veml700_data(false);
 
-        if(j.lm35 != null)
+        if (j.lm35 != null)
             set_lm35_data(true, j.lm35.temperature);
-        else 
+        else
             set_lm35_data(false);
 
-        if(j.ldr != null)
+        if (j.ldr != null)
             set_ldr_data(true, j.ldr.ldr);
         else
             set_ldr_data(false);
     } catch (e) {
+        set_rtc_data(false);
         set_bme280_data(false);
         set_ens160_data(false);
         set_dht11_data(false);
@@ -224,13 +277,7 @@ async function refreshRTC() {
         timeStatus.className = "bad";
     }
 }
-function tickPC() {
-    const d = new Date();
-    const loc = toISODateTimeLocal(d);
-    pcNow.textContent = `${loc.date} ${loc.time}`;
-    requestAnimationFrame(() => setTimeout(tickPC, 200));
-}
-tickPC();
+
 
 async function syncToPC() {
     // send current local epoch seconds
@@ -310,11 +357,14 @@ $("#btnWifiSave").addEventListener("click", async (ev) => {
 
 // ======== Init ========
 (function init() {
-//    const now = new Date(); const { date, time } = toISODateTimeLocal(now);
-//    $("#datePick").value = date; $("#timePick").value = time;
-//    fetch_sensor_data(); 
-//    refreshRTC();
+    const now = new Date(); 
+    const { date, time } = toISODateTimeLocal(now);
+    $("#datePick").value = date; 
+    $("#timePick").value = time;
+
+    tickPC();
+    setInterval(tickPC, 200);
+
     setTimeout(fetch_sensor_data, 100);
     setInterval(fetch_sensor_data, 5000);
-//    setInterval(refreshRTC, 5000);
 })();
