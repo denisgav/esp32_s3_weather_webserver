@@ -31,30 +31,33 @@ const int FSPI_MISO_PIN  = 37;
 //--------------------------
 const int I2C_SDA_PIN  = 8;
 const int I2C_SCL_PIN  = 9;
-
-const int DS3231_INT_PIN = 42;
 //--------------------------
 
 //--------------------------
-// DHT11
+// UART1 bus
 //--------------------------
-const int DHT11_PIN = 7;
-//--------------------------
-
-//--------------------------
-// User buttons
-//--------------------------
-const int USR_BTN_PIN = 1;
-const int USR_BTN_LEFT_PIN = 17;
-const int USR_BTN_RIGHT_PIN = 18;
+const int UART1_RXD_PIN  = 15;
+const int UART1_TXD_PIN  = 16;
 //--------------------------
 
 //--------------------------
-// Analog pins
+// Peripherals
 //--------------------------
-const int LDR_PIN = 4;
-const int DS18B20_PIN = 5;
-const int LM35_PIN = 6;
+const int WS2812_RGB_STRIP_PIN = 1;
+const int LDR_PIN              = 4;
+const int DS18B20_PIN          = 5;
+const int LM35_PIN             = 6;
+const int DHT11_PIN            = 7;
+
+const int DS3231_INT_PIN       = 17;
+const int ENS160_INT_PIN       = 18;
+
+const int USR_BTN_PIN          = 48;
+const int USR_BTN_LEFT_PIN     = 42;
+const int USR_BTN_RIGHT_PIN    = 41;
+const int USR_ONBOARD_LED_PIN  = 40;
+
+const int SD_CD                = 38;
 //--------------------------
 
 //--------------------------
@@ -62,10 +65,10 @@ const int LM35_PIN = 6;
 //--------------------------
 const int TFT_SCL_PIN  = HSPI_SCK_PIN;  // SPI clock signal
 const int TFT_SDA_PIN  = HSPI_MOSI_PIN; // Serial data input pin sda
-const int TFT_RES_PIN  = 40; // Reset pin
-const int TFT_DC_PIN   = 41; // Data selection signal
 const int TFT_CS_PIN   = HSPI_SS_PIN; // LCD chip select signal, for SPI protocol
-const int TFT_BLK_PIN  = -1; //
+const int TFT_DC_PIN   = 21; // Data selection signal
+const int TFT_RES_PIN  = 14; // Reset pin
+const int TFT_BLK_PIN  = 47; // Back light
 //--------------------------
 
 //--------------------------
