@@ -25,7 +25,7 @@ bool BME280_wrapper ::sample_sensor_data()
     {
         sampled_temperature = bme280.readTemperature();
         sampled_humidity = bme280.readHumidity();
-        sampled_pressure = bme280.readPressure();
+        sampled_pressure = bme280.readPressure() / 100.0F;
         is_sampled = true;
         return true;
     }
