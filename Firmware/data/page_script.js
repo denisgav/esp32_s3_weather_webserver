@@ -527,7 +527,9 @@ btnWifi.addEventListener("click", async () => {
         const list = await r.json();
         ssidSelect.innerHTML = "";
         (list || []).forEach(ss => {
-            const o = document.createElement("option"); o.value = o.textContent = ss; ssidSelect.appendChild(o);
+            const o = document.createElement("option"); 
+            o.value = o.textContent = ss; 
+            ssidSelect.appendChild(o);
         });
         wifiMsg.textContent = "select one of existing networks or enter manually.";
     } catch (e) {
@@ -541,7 +543,10 @@ btnWifi.addEventListener("click", async () => {
         if (j && j.ssid) {
             // preselect if in list
             const opt = Array.from(ssidSelect.options).find(o => o.value === j.ssid);
-            if (opt) ssidSelect.value = j.ssid; else ssidManual.value = j.ssid;
+            if (opt) 
+                ssidSelect.value = j.ssid; 
+            else 
+                ssidManual.value = j.ssid;
         }
         if (j && j.hostname) hostname.value = j.hostname;
         if (j && j.ip) ip.value = j.ip;
@@ -551,11 +556,24 @@ btnWifi.addEventListener("click", async () => {
 $("#btnWifiSave").addEventListener("click", async (ev) => {
     ev.preventDefault();
     const ssid = (ssidManual.value || "").trim() || ssidSelect.value;
-    if (!ssid) { alert("Select SSID."); return; }
-    const data = { ssid, password: password.value, hostname: hostname.value || undefined, ip: ip.value || undefined };
+    if (!ssid) { 
+        alert("Select SSID."); 
+        return; 
+    }
+    const data = { 
+        ssid:ssid, 
+        password: password.value, 
+        hostname: hostname.value || "", 
+        ip: ip.value || "" 
+    };
     try {
-        const r = await fetch("/api/wifi/save", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
-        if (!r.ok) throw 0;
+        const r = await fetch("/api/wifi/save", { 
+            method: "POST", 
+            headers: { "Content-Type": "application/json" }, 
+            body: JSON.stringify(data) 
+        });
+        if (!r.ok) 
+            throw 0;
         wifiMsg.textContent = "Saved. Please reconnect.";
         setTimeout(() => wifiDlg.close(), 400);
     } catch (e) {

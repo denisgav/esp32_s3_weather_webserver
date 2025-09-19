@@ -79,11 +79,6 @@ void setup(void)
   multisensor.init();
   Serial.println("Init multisensor done");
 
-  // WiFi
-  Serial.println("Init web_server");
-  web_server.init();
-  Serial.println("Init web_server done");
-
   // Create freeRTOS tasks
   xTaskCreate(
     MultisensorSampleTask,         // Task function
@@ -138,11 +133,34 @@ void MultisensorSampleTask(void *parameter){
 }
 
 void WebServerTask(void *parameter){
+  // WiFi
+  Serial.println("Init web_server");
+  web_server.init();
+  web_server.setup_wifi();
+  web_server.setup_server();
+  Serial.println("Init web_server done");
+
   for (;;) { // Infinite loop
     vTaskDelay(2500);
 
-    String ip_addr_s = "IP address: " + WiFi.localIP().toString();
-    Serial.println(ip_addr_s);
+    if(web_server.get_force_reconnect())
+    {
+      WiFi.disconnect();
+      web_server.setup_wifi();
+    }
+    else
+    {
+      if((web_server.get_is_running_softAP()) || (WiFi.status() == WL_CONNECTED))
+      {
+        String AP_info = web_server.get_is_running_softAP() ? "(Use AP)" : "";
+        String ip_addr_s = web_server.get_is_running_softAP() ? WiFi.softAPIP().toString() : WiFi.localIP().toString();
+        Serial.println("IP address: " + ip_addr_s + AP_info);
+      }
+      else 
+      {
+        web_server.setup_wifi();
+      }
+    }
   }
 }
 
