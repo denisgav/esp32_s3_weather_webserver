@@ -147,6 +147,53 @@ dialog::backdrop {
     font-variant-numeric: tabular-nums
 }
 
+.indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.green {
+    background: #00ff00;
+}
+
+.yellow {
+    background: #ffff00;
+}
+
+.red {
+    background: #ff0000;
+}
+
+.grey {
+    background: #413e3e;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 footer {
     padding: 10px 16px;
     border-top: 1px solid #1f2935;

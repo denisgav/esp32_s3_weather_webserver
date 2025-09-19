@@ -7,7 +7,7 @@
   <title>ESP32 S3 — Air Quality Sensor</title>
   <link rel="stylesheet" href="style.css">
   <style>
-      /* Manually added style */
+    /* Manually added style */
   </style>
 </head>
 
@@ -23,7 +23,14 @@
   <section class="grid">
     <div class="card">
       <div class="row"><strong>RTC (DS3231)</strong><small id="rtc_status" class="muted">updating…</small></div>
-      <div class="row"><span>Temperature</span><span id="rtc_t" class="val k">—</span></div>
+      <div class="row">
+        <span>Temperature</span>
+        <span id="rtc_t" class="val k">—</span>
+        <div class="tooltip">
+          <span id="rtc_t_i" class="indicator grey"></span>
+          <span id="rtc_t_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
       <div class="row"><span>RTC Date</span><span id="rtc_date" class="val k">—</span></div>
       <div class="row"><span>RTC Time</span><span id="rtc_time" class="val k">—</span></div>
       <div class="row"><span>PC Date</span><span id="pc_date" class="val k">—</span></div>
@@ -41,29 +48,106 @@
     </div>
     <div class="card">
       <div class="row"><strong>BME280</strong><small id="bme280_status" class="muted">updating…</small></div>
-      <div class="row"><span>Temperature</span><span id="bme280_t" class="val k">—</span></div>
-      <div class="row"><span>Humidity</span><span id="bme280_h" class="val k">—</span></div>
-      <div class="row"><span>Pressure</span><span id="bme280_p" class="val k">—</span></div>
+      <div class="row">
+        <span>Temperature</span>
+        <span id="bme280_t" class="val k">—</span>
+        <div class="tooltip">
+          <span id="bme280_t_i" class="indicator grey"></span>
+          <span id="bme280_t_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
+      <div class="row">
+        <span>Humidity</span>
+        <span id="bme280_h" class="val k">—</span>
+        <div class="tooltip">
+          <span id="bme280_h_i" class="indicator grey"></span>
+          <span id="bme280_h_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
+      <div class="row">
+        <span>Pressure</span>
+        <span id="bme280_p" class="val k">—</span>
+        <div class="tooltip">
+          <span id="bme280_p_i" class="indicator grey"></span>
+          <span id="bme280_p_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
     </div>
     <div class="card">
       <div class="row"><strong>ENS160</strong><small id="ens160_status" class="muted">updating…</small></div>
-      <div class="row"><span>AQI</span><span id="ens160_AQI" class="val k">—</span></div>
-      <div class="row"><span>TVOC</span><span id="ens160_TVOC" class="val k">—</span></div>
-      <div class="row"><span>eCO2</span><span id="ens160_ECO2" class="val k">—</span></div>
+      <div class="row">
+        <span>AQI</span>
+        <span id="ens160_AQI" class="val k">—</span>
+        <div class="tooltip">
+          <span id="ens160_AQI_i" class="indicator grey"></span>
+          <span id="ens160_AQI_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
+      <div class="row">
+        <span>TVOC</span>
+        <span id="ens160_TVOC" class="val k">—</span>
+        <div class="tooltip">
+          <span id="ens160_TVOC_i" class="indicator grey"></span>
+          <span id="ens160_TVOC_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
+      <div class="row">
+        <span>eCO2</span>
+        <span id="ens160_eCO2" class="val k">—</span>
+        <div class="tooltip">
+          <span id="ens160_eCO2_i" class="indicator grey"></span>
+          <span id="ens160_eCO2_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
     </div>
     <div class="card">
       <div class="row"><strong>DHT11</strong><small id="dht11_status" class="muted">updating…</small></div>
-      <div class="row"><span>Temperature</span><span id="dht11_t" class="val k">—</span></div>
-      <div class="row"><span>Humidity</span><span id="dht11_h" class="val k">—</span></div>
+      <div class="row">
+        <span>Temperature</span>
+        <span id="dht11_t" class="val k">—</span>
+        <div class="tooltip">
+          <span id="dht11_t_i" class="indicator grey"></span>
+          <span id="dht11_t_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
+      <div class="row">
+        <span>Humidity</span>
+        <span id="dht11_h" class="val k">—</span>
+        <div class="tooltip">
+          <span id="dht11_h_i" class="indicator grey"></span>
+          <span id="dht11_h_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
     </div>
     <div class="card">
       <div class="row"><strong>AHT2x</strong><small id="aht2x_status" class="muted">updating…</small></div>
-      <div class="row"><span>Temperature</span><span id="aht2x_t" class="val k">—</span></div>
-      <div class="row"><span>Humidity</span><span id="aht2x_h" class="val k">—</span></div>
+      <div class="row">
+        <span>Temperature</span>
+        <span id="aht2x_t" class="val k">—</span>
+        <div class="tooltip">
+          <span id="aht2x_t_i" class="indicator grey"></span>
+          <span id="aht2x_t_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
+      <div class="row">
+        <span>Humidity</span>
+        <span id="aht2x_h" class="val k">—</span>
+        <div class="tooltip">
+          <span id="aht2x_h_i" class="indicator grey"></span>
+          <span id="aht2x_h_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
     </div>
     <div class="card">
       <div class="row"><strong>VEML7700</strong><small id="veml7700_status" class="muted">updating…</small></div>
-      <div class="row"><span>Lux</span><span id="veml7700_lux" class="val k">—</span></div>
+      <div class="row">
+        <span>Lux</span>
+        <span id="veml7700_lux" class="val k">—</span>
+        <div class="tooltip">
+          <span id="veml7700_lux_i" class="indicator grey"></span>
+          <span id="veml7700_lux_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
       <div class="row"><span>Gain</span><span id="veml7700_gain" class="val k">—</span></div>
       <div class="row"><span>Integration Time</span><span id="veml7700_integration_time" class="val k">—</span></div>
     </div>
@@ -73,7 +157,14 @@
     </div>
     <div class="card">
       <div class="row"><strong>LM35</strong><small id="lm35_status" class="muted">updating…</small></div>
-      <div class="row"><span>Temperature</span><span id="lm35_t" class="val k">—</span></div>
+      <div class="row">
+        <span>Temperature</span>
+        <span id="lm35_t" class="val k">—</span>
+        <div class="tooltip">
+          <span id="lm35_t_i" class="indicator grey"></span>
+          <span id="lm35_t_ttt" class="tooltiptext">Some tooltip text</span>
+        </div>
+      </div>
     </div>
   </section>
 

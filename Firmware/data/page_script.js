@@ -10,7 +10,7 @@ const toISODateTimeLocal = (d) => {
     return { date: `${y}-${m}-${da}`, time: `${h}:${mi}:${s}` };
 };
 
-function to_ISO_DateTime_RTC (year, month, day, hour, minute, second){
+function to_ISO_DateTime_RTC(year, month, day, hour, minute, second) {
     const y = year, m = fmt2(month), da = fmt2(day);
     const h = fmt2(hour), mi = fmt2(minute), s = fmt2(second);
     return { date: `${y}-${m}-${da}`, time: `${h}:${mi}:${s}` };
@@ -28,7 +28,8 @@ const epochFromInputs = () => {
 const rtcNow = $("#rtcNow"), pcNow = $("#pcNow"), timeStatus = $("#timeStatus");
 */
 
-function tickPC() {
+function tickPC() 
+{
     const d = new Date();
     const loc = toISODateTimeLocal(d);
 
@@ -39,13 +40,243 @@ function tickPC() {
     el_time.textContent = `${loc.time}`;
 }
 
+function set_status(el_status, success) 
+{
+    if (success == true) {
+        el_status.textContent = "OK";
+        el_status.className = "ok";
+    } else {
+        el_status.textContent = "error";
+        el_status.className = "bad";
+    }
+}
+
+function set_temperature_indication(value, el_t, el_i, el_ttt) 
+{
+    el_t.textContent = (value != null) ? (value.toFixed ? value.toFixed(1) : value) + "°C" : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if (value >= 20 && value <= 26) 
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else 
+        {
+            if ((value >= 18 && value < 20) || (value > 26 && value <= 28)) 
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Mostly Ok";
+            }
+            else 
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
+function set_humidity_indication(value, el_h, el_i, el_ttt) 
+{
+    el_h.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + "%" : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if(value >= 30 && value <= 60)
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else 
+        {
+            if((value >= 20 && value < 30) || (value > 60 && value <= 70))
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Dry/Wet";
+            }
+            else 
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
+function set_pressure_indication(value, el_p, el_i, el_ttt) 
+{
+    el_p.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + " hPa" : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if(value >= 990 && value <= 1025)
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else
+        {
+            if((value >= 970 && value < 990) || (value > 1025 && value <= 1040))
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Mostly Ok";
+            }
+            else
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
+function set_AQI_indication(value, el_AQI, el_i, el_ttt) 
+{
+    el_AQI.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if(value <= 3)
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else
+        {
+            if((value >= 4) && (value <= 6))
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Mostly Ok";
+            }
+            else
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
+function set_TVOC_indication(value, el_TVOC, el_i, el_ttt) 
+{
+    el_TVOC.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + " ppb" : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if(value < 300)
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else
+        {
+            if((value >= 300) && (value <= 1000))
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Mostly Ok";
+            }
+            else
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
+function set_eCO2_indication(value, el_eCO2, el_i, el_ttt) 
+{
+    el_eCO2.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + " ppm" : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if(value < 600)
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else
+        {
+            if((value >= 600) && (value <= 1000))
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Mostly Ok";
+            }
+            else
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
+function set_lux_indication(value, el_lux, el_i, el_ttt) 
+{
+    el_lux.textContent = (value != null) ? (value.toFixed ? value.toFixed(2) : value) : "—";
+    if (value == null) 
+    {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else 
+    {
+        if((value >= 300) && (value <= 500))
+        {
+            el_i.className = "indicator green";
+            el_ttt.textContent = "Comfortable";
+        }
+        else
+        {
+            if((value >= 100 && value < 300) || (value > 500 && value <= 1000))
+            {
+                el_i.className = "indicator yellow";
+                el_ttt.textContent = "Mostly Ok";
+            }
+            else
+            {
+                el_i.className = "indicator red";
+                el_ttt.textContent = "Not comfortable";
+            }
+        }
+    }
+}
+
 function set_rtc_data(success, temperature = null, year = null, month = null, day = null, hour = null, minute = null, second = null) {
     const el_t = $("#rtc_t");
     const el_date = $("#rtc_date");
     const el_time = $("#rtc_time");
     const el_status = $("#rtc_status");
 
-    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+    const el_t_i = $("#rtc_t_i");
+    const el_t_ttt = $("#rtc_t_ttt");
+    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
 
     if ((year != null) && (month != null) && (day != null) && (hour != null) && (minute != null) && (second != null)) {
         const dateTime = to_ISO_DateTime_RTC(year, month, day, hour, minute, second);
@@ -57,14 +288,8 @@ function set_rtc_data(success, temperature = null, year = null, month = null, da
         el_time.textContent = "-";
     }
 
-
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    set_status(el_status, success);
+    
 }
 
 function set_bme280_data(success, temperature = null, humidity = null, pressure = null) {
@@ -73,36 +298,40 @@ function set_bme280_data(success, temperature = null, humidity = null, pressure 
     const el_p = $("#bme280_p");
     const el_status = $("#bme280_status");
 
-    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
-    el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
-    el_p.textContent = (pressure != null) ? (pressure.toFixed ? pressure.toFixed(0) : pressure) + " hPa" : "—";
+    const el_t_i = $("#bme280_t_i");
+    const el_t_ttt = $("#bme280_t_ttt");
+    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    const el_h_i = $("#bme280_h_i");
+    const el_h_ttt = $("#bme280_h_ttt");
+    set_humidity_indication(humidity, el_h, el_h_i, el_h_ttt);
+
+    const el_p_i = $("#bme280_p_i");
+    const el_p_ttt = $("#bme280_p_ttt");
+    set_pressure_indication(pressure, el_p, el_p_i, el_p_ttt);
+
+    set_status(el_status, success);
 }
 
 function set_ens160_data(success, AQI = null, TVOC = null, eCO2 = null) {
     const el_AQI = $("#ens160_AQI");
     const el_TVOC = $("#ens160_TVOC");
-    const el_eCO2 = $("#ens160_ECO2");
+    const el_eCO2 = $("#ens160_eCO2");
     const el_status = $("#ens160_status");
 
-    el_AQI.textContent = (AQI != null) ? (AQI.toFixed ? AQI.toFixed(0) : AQI) : "—";
-    el_TVOC.textContent = (TVOC != null) ? (TVOC.toFixed ? TVOC.toFixed(0) : TVOC) + " ppb" : "—";
-    el_eCO2.textContent = (eCO2 != null) ? (eCO2.toFixed ? eCO2.toFixed(0) : eCO2) + " ppm" : "—";
+    const el_AQI_i = $("#ens160_AQI_i");
+    const el_AQI_ttt = $("#ens160_AQI_ttt");
+    set_AQI_indication(AQI, el_AQI, el_AQI_i, el_AQI_ttt) ;
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    const el_TVOC_i = $("#ens160_TVOC_i");
+    const el_TVOC_ttt = $("#ens160_TVOC_ttt");
+    set_TVOC_indication(TVOC, el_TVOC, el_TVOC_i, el_TVOC_ttt) ;
+
+    const el_eCO2_i = $("#ens160_eCO2_i");
+    const el_eCO2_ttt = $("#ens160_eCO2_ttt");
+    set_eCO2_indication(eCO2, el_eCO2, el_eCO2_i, el_eCO2_ttt) ;
+
+    set_status(el_status, success);
 }
 
 function set_dht11_data(success, temperature = null, humidity = null) {
@@ -110,16 +339,15 @@ function set_dht11_data(success, temperature = null, humidity = null) {
     const el_h = $("#dht11_h");
     const el_status = $("#dht11_status");
 
-    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
-    el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
+    const el_t_i = $("#dht11_t_i");
+    const el_t_ttt = $("#dht11_t_ttt");
+    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    const el_h_i = $("#dht11_h_i");
+    const el_h_ttt = $("#dht11_h_ttt");
+    set_humidity_indication(humidity, el_h, el_h_i, el_h_ttt);
+
+    set_status(el_status, success);
 }
 
 function set_aht2x_data(success, temperature = null, humidity = null) {
@@ -127,16 +355,15 @@ function set_aht2x_data(success, temperature = null, humidity = null) {
     const el_h = $("#aht2x_h");
     const el_status = $("#aht2x_status");
 
-    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
-    el_h.textContent = (humidity != null) ? (humidity.toFixed ? humidity.toFixed(0) : humidity) + "%" : "—";
+    const el_t_i = $("#aht2x_t_i");
+    const el_t_ttt = $("#aht2x_t_ttt");
+    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    const el_h_i = $("#aht2x_h_i");
+    const el_h_ttt = $("#aht2x_h_ttt");
+    set_humidity_indication(humidity, el_h, el_h_i, el_h_ttt);
+
+    set_status(el_status, success);
 }
 
 function set_veml700_data(success, lux = null, gain = null, integration_time = null) {
@@ -145,32 +372,25 @@ function set_veml700_data(success, lux = null, gain = null, integration_time = n
     const el_integration_time = $("#veml7700_integration_time");
     const el_status = $("#veml7700_status");
 
-    el_lux.textContent = (lux != null) ? (lux.toFixed ? lux.toFixed(2) : lux) : "—";
+    const el_lux_i = $("#veml7700_lux_i");
+    const el_lux_ttt = $("#veml7700_lux_ttt");
+    set_lux_indication(lux, el_lux, el_lux_i, el_lux_ttt);
+
     el_gain.textContent = (gain != null) ? gain : "—";
     el_integration_time.textContent = (integration_time != null) ? integration_time + "MS" : "—";
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    set_status(el_status, success);
 }
 
 function set_lm35_data(success, temperature = null) {
     const el_t = $("#lm35_t");
     const el_status = $("#lm35_status");
 
-    el_t.textContent = (temperature != null) ? (temperature.toFixed ? temperature.toFixed(1) : temperature) + "°C" : "—";
+    const el_t_i = $("#lm35_t_i");
+    const el_t_ttt = $("#lm35_t_ttt");
+    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    set_status(el_status, success);
 }
 
 function set_ldr_data(success, mv = null) {
@@ -179,13 +399,7 @@ function set_ldr_data(success, mv = null) {
 
     el_mv.textContent = (mv != null) ? (mv.toFixed ? mv.toFixed(1) : mv) + " mV" : "—";
 
-    if (success == true) {
-        el_status.textContent = "OK";
-        el_status.className = "ok";
-    } else {
-        el_status.textContent = "error";
-        el_status.className = "bad";
-    }
+    set_status(el_status, success);
 }
 
 
@@ -357,9 +571,9 @@ $("#btnWifiSave").addEventListener("click", async (ev) => {
 
 // ======== Init ========
 (function init() {
-    const now = new Date(); 
+    const now = new Date();
     const { date, time } = toISODateTimeLocal(now);
-    $("#datePick").value = date; 
+    $("#datePick").value = date;
     $("#timePick").value = time;
 
     tickPC();
