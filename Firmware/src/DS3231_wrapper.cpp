@@ -47,6 +47,11 @@ bool DS3231_wrapper ::get_is_sampled() const
     return is_sampled;
 }
 
+void DS3231_wrapper ::adjust(const DateTime &dt)
+{
+    rtc.adjust(dt);
+}
+
 // get sampled datetime values
 DateTime DS3231_wrapper ::get_sampled_datetime() const
 {

@@ -15,6 +15,8 @@ public:
     // Returns true if values were sampled from sensor
     bool get_is_sampled() const;
 
+    void adjust(const DateTime &dt);
+
     // get sampled datetime values
     DateTime get_sampled_datetime() const;
     float get_sampled_temperature() const;

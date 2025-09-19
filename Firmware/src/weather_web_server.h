@@ -41,5 +41,6 @@ private:
     String scanned_networks;
 
     String fetch_sensor_data() const;
+    void set_rtc_time(AsyncWebServerRequest *request, uint8_t *data, size_t len, size_t index, size_t total);
     
 };

@@ -16,17 +16,15 @@ function to_ISO_DateTime_RTC(year, month, day, hour, minute, second) {
     return { date: `${y}-${m}-${da}`, time: `${h}:${mi}:${s}` };
 };
 
-/*
-const epochFromInputs = () => {
+function get_picked_dateTime()
+{
     const ds = $("#datePick").value, ts = $("#timePick").value;
     if (!ds || !ts) return null;
     // compose as local time
     const [Y, M, D] = ds.split("-").map(Number);
     const [h, m, s] = ts.split(":").map(Number);
-    return Math.floor(new Date(Y, (M - 1), D, h || 0, m || 0, s || 0).getTime() / 1000);
-};
-const rtcNow = $("#rtcNow"), pcNow = $("#pcNow"), timeStatus = $("#timeStatus");
-*/
+    return new Date(Y, (M - 1), D, h || 0, m || 0, s || 0);
+}
 
 function tickPC() 
 {
@@ -461,62 +459,58 @@ async function fetch_sensor_data() {
 }
 $("#btnRefresh").addEventListener("click", fetch_sensor_data);
 
-/*
-// ======== Time (DS3231 & PC) ========
-async function refreshRTC() {
-    // local PC time
+async function syncToPC_Time() {
     const d = new Date();
-    const loc = toISODateTimeLocal(d);
-    pcNow.textContent = `${loc.date} ${loc.time}`;
-
-    // device RTC
-    try {
-        const r = await fetch("/api/time"); // { epoch: 1690000000 } or {rtc:169..., now:...}
-        const j = await r.json();
-        const epo = j.epoch ?? j.rtc ?? j.now;
-        if (epo) {
-            const dd = new Date(epo * 1000);
-            const rloc = toISODateTimeLocal(dd);
-            rtcNow.textContent = `${rloc.date} ${rloc.time}`;
-            timeStatus.textContent = "DS3231";
-            timeStatus.className = "muted";
-        } else {
-            rtcNow.textContent = "—";
-            timeStatus.textContent = "нет данных";
-            timeStatus.className = "bad";
-        }
-    } catch (e) {
-        rtcNow.textContent = "—";
-        timeStatus.textContent = "ошибка";
-        timeStatus.className = "bad";
-    }
-}
-
-
-async function syncToPC() {
     // send current local epoch seconds
-    const epoch = Math.floor(Date.now() / 1000);
     try {
-        const r = await fetch("/api/time", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ epoch }) });
-        if (!r.ok) throw 0;
-        await refreshRTC();
-        alert("Время DS3231 синхронизировано с временем компьютера.");
+        const r = await fetch("/api/set_rtc_time", { 
+            method: "POST", 
+            headers: { "Content-Type": "application/json" }, 
+            body: JSON.stringify({
+                "year" : d.getFullYear(), 
+                "month" : d.getMonth() + 1,
+                "day" : d.getDate(),
+                "hour" : d.getHours(),
+                "minute" : d.getMinutes(),
+                "second" : d.getSeconds()
+              }) 
+        });
+        if (!r.ok) 
+            throw 0;
+        fetch_sensor_data();
+        alert("RTC time synced with PC.");
     } catch (e) {
-        alert("Не удалось установить время.");
+        alert("Can not sync RTC with PC time");
     }
 }
-$("#btnSync").addEventListener("click", syncToPC);
-$("#btnSetPicked").addEventListener("click", async () => {
-    const epoch = epochFromInputs();
-    if (!epoch) { alert("Укажите дату и время."); return; }
+
+async function syncToPicked_Time() {
+    const d = get_picked_dateTime();
+    // send current local epoch seconds
     try {
-        const r = await fetch("/api/time", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ epoch }) });
-        if (!r.ok) throw 0;
-        await refreshRTC();
-        alert("Время DS3231 обновлено.");
-    } catch (e) { alert("Ошибка установки времени."); }
-});
-*/
+        const r = await fetch("/api/set_rtc_time", { 
+            method: "POST", 
+            headers: { "Content-Type": "application/json" }, 
+            body: JSON.stringify({
+                "year" : d.getFullYear(), 
+                "month" : d.getMonth() + 1,
+                "day" : d.getDate(),
+                "hour" : d.getHours(),
+                "minute" : d.getMinutes(),
+                "second" : d.getSeconds()
+              }) 
+        });
+        if (!r.ok) 
+            throw 0;
+        fetch_sensor_data();
+        alert("RTC time synced with picked.");
+    } catch (e) {
+        alert("Can not sync RTC with picked time");
+    }
+}
+
+$("#btnSyncTime").addEventListener("click", syncToPC_Time);
+$("#btnSetPickedTime").addEventListener("click", syncToPicked_Time);
 
 // ======== Wi‑Fi Config ========
 const wifiDlg = $("#wifiDlg"), btnWifi = $("#btnWifi"), wifiMsg = $("#wifiMsg");
