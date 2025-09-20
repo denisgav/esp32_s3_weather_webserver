@@ -3615,7 +3615,7 @@
 	)
 	(rectangle
 		(start 173.99 114.3)
-		(end 254 157.48)
+		(end 261.62 157.48)
 		(stroke
 			(width 0)
 			(type default)
@@ -3675,7 +3675,7 @@
 	)
 	(rectangle
 		(start 97.79 160.02)
-		(end 175.26 196.85)
+		(end 171.45 196.85)
 		(stroke
 			(width 0)
 			(type default)
@@ -4007,6 +4007,12 @@
 		(uuid "c01a49c4-6f8e-4787-a3bc-0b7dfe524ba7")
 	)
 	(junction
+		(at 241.3 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c1f08eb8-a623-43f1-9da5-b0f90ab14bc3")
+	)
+	(junction
 		(at 199.39 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4113,6 +4119,16 @@
 			(type default)
 		)
 		(uuid "0395df55-b798-4d0f-a8ab-33fc01bc47c4")
+	)
+	(wire
+		(pts
+			(xy 246.38 125.73) (xy 246.38 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06206f4d-9aaf-454e-b49c-720053d2db7c")
 	)
 	(wire
 		(pts
@@ -4586,6 +4602,16 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 123.19) (xy 246.38 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54c69102-a0ca-4154-bcad-314cd3c983cf")
+	)
+	(wire
+		(pts
 			(xy 99.06 36.83) (xy 106.68 36.83)
 		)
 		(stroke
@@ -4636,7 +4662,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 137.16) (xy 245.11 133.35)
+			(xy 241.3 137.16) (xy 241.3 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4666,7 +4692,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 137.16) (xy 245.11 137.16)
+			(xy 229.87 137.16) (xy 241.3 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4783,6 +4809,16 @@
 			(type default)
 		)
 		(uuid "6eab1f93-6465-493e-930a-946f3ee2d26f")
+	)
+	(wire
+		(pts
+			(xy 241.3 123.19) (xy 241.3 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ee0033b-83f5-48f5-9b1b-1e05f422aea4")
 	)
 	(wire
 		(pts
@@ -5543,6 +5579,16 @@
 			(type default)
 		)
 		(uuid "cf212ed1-c172-44b4-9463-7c2049f49c66")
+	)
+	(wire
+		(pts
+			(xy 246.38 133.35) (xy 246.38 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf90240c-7030-4427-9852-78577f0bc708")
 	)
 	(wire
 		(pts
@@ -8812,6 +8858,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 246.38 134.62 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "478d9eff-fb01-40d8-9d03-7fcfb0c089b1")
+		(property "Reference" "#PWR0251"
+			(at 246.38 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 250.698 135.636 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 246.38 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "21c67261-df58-4718-96d1-435eb6d6bf9a")
+		)
+		(instances
+			(project "esp32_s3_weather_webserver"
+				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
+					(reference "#PWR0251")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 59.69 31.75 0)
 		(unit 1)
@@ -10250,7 +10362,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 245.11 133.35 0)
+		(at 241.3 120.65 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10260,7 +10372,7 @@
 		(fields_autoplaced yes)
 		(uuid "72d5b568-e1c4-487e-adab-71d988dcbecd")
 		(property "Reference" "#PWR0231"
-			(at 245.11 137.16 0)
+			(at 241.3 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10269,7 +10381,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 245.11 128.27 0)
+			(at 241.3 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10277,7 +10389,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 245.11 133.35 0)
+			(at 241.3 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10286,7 +10398,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 245.11 133.35 0)
+			(at 241.3 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10295,7 +10407,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 245.11 133.35 0)
+			(at 241.3 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11131,6 +11243,120 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
 					(reference "#PWR0218")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 246.38 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "963f501b-1e24-480d-bfa1-08e5269a5736")
+		(property "Reference" "C215"
+			(at 250.19 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 250.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 247.3452 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CL10A226MP8NUNE"
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 246.38 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a00a6dd2-772f-4542-9fa8-d7393fa2181a")
+		)
+		(pin "2"
+			(uuid "e6c08d7b-cd45-4399-b934-ded1b6f64aa4")
+		)
+		(instances
+			(project "esp32_s3_weather_webserver"
+				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/693a6e30-8587-4c1f-a65c-fa3e0d92fd94"
+					(reference "C215")
 					(unit 1)
 				)
 			)
