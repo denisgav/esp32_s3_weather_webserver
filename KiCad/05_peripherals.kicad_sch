@@ -8148,6 +8148,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 184.15 124.46 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "660378e3-180f-425e-84d8-042006df7319")
+		(property "Reference" "#PWR0523"
+			(at 184.15 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VIN"
+			(at 184.15 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 184.15 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "792dac9a-8971-4557-bd73-d8fe78e57c79")
+		)
+		(instances
+			(project "esp32_s3_weather_webserver"
+				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
+					(reference "#PWR0523")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 128.27 48.26 0)
 		(unit 1)
@@ -8371,6 +8438,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 224.79 68.58 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "764d70be-bc86-4b6f-9dbd-1f4e764da127")
+		(property "Reference" "#PWR0508"
+			(at 224.79 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VIN"
+			(at 224.79 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 224.79 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c8733ac9-8021-42af-9ba6-3817b9a21dcf")
+		)
+		(instances
+			(project "esp32_s3_weather_webserver"
+				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
+					(reference "#PWR0508")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 144.78 60.96 0)
 		(unit 1)
@@ -8444,7 +8578,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7c8434e3-73cb-4dba-9d82-e872efbbe115")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR0528"
 			(at 17.78 171.45 0)
 			(effects
 				(font
@@ -8494,7 +8628,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR03")
+					(reference "#PWR0528")
 					(unit 1)
 				)
 			)
@@ -8738,6 +8872,73 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
 					(reference "#PWR0504")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 224.79 104.14 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "89b45c53-5c99-4bc8-97a4-3c7f076a2de4")
+		(property "Reference" "#PWR0513"
+			(at 224.79 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VIN"
+			(at 224.79 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 224.79 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7e58ad6c-26cd-40d3-bc22-851059f9e062")
+		)
+		(instances
+			(project "esp32_s3_weather_webserver"
+				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
+					(reference "#PWR0513")
 					(unit 1)
 				)
 			)
@@ -9183,73 +9384,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 224.79 104.14 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9c1d0dc3-da86-43de-a7ff-d8157acb23e7")
-		(property "Reference" "#PWR0513"
-			(at 224.79 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 224.79 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 224.79 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 224.79 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 224.79 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fb4b677b-5425-43eb-b5cf-f398b0b149f1")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0513")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 134.62 119.38 0)
 		(unit 1)
@@ -9372,7 +9506,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e2571f5-7990-48ba-a746-f7355daa7f04")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0529"
 			(at 55.88 171.45 0)
 			(effects
 				(font
@@ -9422,7 +9556,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR02")
+					(reference "#PWR0529")
 					(unit 1)
 				)
 			)
@@ -9651,73 +9785,6 @@
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
 					(reference "C505")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 224.79 68.58 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "adef7ca6-bf5f-45f2-8726-30d2fa730a19")
-		(property "Reference" "#PWR0508"
-			(at 224.79 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 224.79 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 224.79 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 224.79 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 224.79 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ddafcec2-1901-44e4-8c7c-b3fafe2c9538")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0508")
 					(unit 1)
 				)
 			)
@@ -10465,73 +10532,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 184.15 124.46 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c552b935-9c18-4e2b-8b27-4584b6b93328")
-		(property "Reference" "#PWR0523"
-			(at 184.15 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 184.15 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 184.15 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 184.15 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5330c485-786d-4c83-8171-c81adbd8b366")
-		)
-		(instances
-			(project "esp32_s3_weather_webserver"
-				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR0523")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 74.93 186.69 0)
 		(unit 1)
@@ -11075,7 +11075,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d85b7bb2-ba8d-4b6c-bb18-7ff58a4389e3")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0530"
 			(at 99.06 171.45 0)
 			(effects
 				(font
@@ -11125,7 +11125,7 @@
 		(instances
 			(project "esp32_s3_weather_webserver"
 				(path "/04e96486-ec4c-4881-a0bf-37cb6ce91c2d/c3c48617-55df-481a-bcdd-56b688125780"
-					(reference "#PWR01")
+					(reference "#PWR0530")
 					(unit 1)
 				)
 			)
