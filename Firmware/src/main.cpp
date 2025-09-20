@@ -166,7 +166,8 @@ void WebServerTask(void *parameter){
 
 void TFT_Task(void *parameter){
   for (;;) { // Infinite loop
-    vTaskDelay(1000/25);
+    vTaskDelay(1000);
+    tft.refresh();
   }
 }
 
