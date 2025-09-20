@@ -4029,10 +4029,6 @@
 		(uuid "57ea1b33-aa2f-4c72-b17f-08c2e79e9222")
 	)
 	(no_connect
-		(at 218.44 60.96)
-		(uuid "783e8962-045d-4549-9c43-0c79606f41e5")
-	)
-	(no_connect
 		(at 91.44 139.7)
 		(uuid "f5de9d77-1829-4777-b27d-370122c3e615")
 	)
@@ -6078,6 +6074,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 60.96) (xy 218.44 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faa96a7a-7039-4b9d-ad52-189a7be727c6")
+	)
+	(wire
+		(pts
 			(xy 93.98 102.87) (xy 93.98 105.41)
 		)
 		(stroke
@@ -6357,6 +6363,28 @@
 		(uuid "0bba04fc-632a-4130-a79e-1a939e70d0ca")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 16.4881 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VBAT_STAT"
+		(shape input)
+		(at 213.36 60.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "13fbd9b5-3a54-4315-b8ca-190579a6fa0f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 200.7591 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
