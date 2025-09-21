@@ -1,4 +1,4 @@
-26657462121347221
+26660980635031392
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106253,6 +106253,13 @@ Varistor VF
 2
 2
 esp32_s3_weather_webserver
+BM02B-GHS-TBT_1
+BM02B-GHS-TBT
+Connector
+0
+4
+4
+esp32_s3_weather_webserver
 BME280
 
 
@@ -106315,6 +106322,13 @@ Integrated Circuit
 0
 8
 8
+esp32_s3_weather_webserver
+SOT95P270X145-5N
+(OT) [SOT-23]
+Integrated Circuit
+0
+5
+5
 esp32_s3_weather_webserver
 ST7735S
 

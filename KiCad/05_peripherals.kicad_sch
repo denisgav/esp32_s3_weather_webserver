@@ -7640,7 +7640,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "VEML7700-TT"
+		(property "Manufacturer Part Number" "VEML7700-TR"
 			(at 160.02 64.77 0)
 			(effects
 				(font

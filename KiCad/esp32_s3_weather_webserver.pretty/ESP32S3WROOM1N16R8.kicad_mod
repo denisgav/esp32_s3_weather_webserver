@@ -566,7 +566,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -2.9 8.51 90)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -576,7 +576,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -2.9 9.91)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -586,7 +586,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -2.2 7.81)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -596,7 +596,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -2.2 9.21)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -606,7 +606,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -2.2 10.61)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -616,7 +616,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -1.5 8.51)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -634,7 +634,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -1.5 9.91)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -644,7 +644,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -0.8 7.81)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -654,7 +654,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -0.8 9.21)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -664,7 +664,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -0.8 10.61)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -674,7 +674,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -0.1 8.51)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
@@ -684,7 +684,7 @@
 	)
 	(pad "41" thru_hole circle
 		(at -0.1 9.91)
-		(size 0.6 0.6)
+		(size 0.7 0.7)
 		(drill 0.3)
 		(property pad_prop_heatsink)
 		(layers "*.Cu" "F.Mask")
