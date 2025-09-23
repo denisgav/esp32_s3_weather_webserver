@@ -34,15 +34,27 @@ enum LCD_Window_e {
   LCD_WINDOW_TOTAL
 }; 
 
+enum LCD_BUTTON_e {
+  LCD_BUTTON_LEFT,
+  LCD_BUTTON,
+  LCD_BUTTON_RIGHT
+}; 
+
+enum LCD_BUTTON_EVENT_e {
+  LCD_BUTTON_PRESS,
+  LCD_BUTTON_RELEASE
+}; 
+
+
+
 class LCD_wrapper{
 public:
     // Class constructor
     LCD_wrapper(multisensor_wrapper &multisensor, SPIClass &spi);
     bool init();
 
-    void on_left_button_press();
-    void on_user_button_press();
-    void on_right_button_press();
+    void on_button_event(LCD_BUTTON_e button, LCD_BUTTON_EVENT_e event);
+    
     void refresh();
 private:
     multisensor_wrapper &multisensor;

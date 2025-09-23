@@ -49,6 +49,7 @@ weather_web_server web_server(multisensor);
 
 // LCD
 LCD_wrapper tft(multisensor, hspi);
+SemaphoreHandle_t xtftSemaphore;
 
 // Declare task handle
 TaskHandle_t MultisensorSampleTaskHandle = NULL;
@@ -64,7 +65,7 @@ void ButtonsTask(void *parameter);
 void setup(void)
 {
   Serial.begin(115200);
- 
+
   // SPI
   // fspi.begin(FSPI_SCK, FSPI_MISO, FSPI_MOSI, FSPI_SS);
   hspi.begin(HSPI_SCK_PIN, HSPI_MISO_PIN, HSPI_MOSI_PIN, HSPI_SS_PIN);
@@ -79,60 +80,64 @@ void setup(void)
   multisensor.init();
   Serial.println("Init multisensor done");
 
+  /* Create a mutex type semaphore. */
+  xtftSemaphore = xSemaphoreCreateMutex();
+
   // Create freeRTOS tasks
   xTaskCreate(
-    MultisensorSampleTask,         // Task function
-    "MultisensorSampleTask",       // Task name
-    10000,                         // Stack size (bytes)
-    NULL,                          // Parameters
-    1,                             // Priority
-    &MultisensorSampleTaskHandle  // Task handle
+      MultisensorSampleTask,       // Task function
+      "MultisensorSampleTask",     // Task name
+      10000,                       // Stack size (bytes)
+      NULL,                        // Parameters
+      1,                           // Priority
+      &MultisensorSampleTaskHandle // Task handle
   );
 
   xTaskCreate(
-    WebServerTask,                 // Task function
-    "WebServerTask",               // Task name
-    10000,                         // Stack size (bytes)
-    NULL,                          // Parameters
-    1,                             // Priority
-    &WebServerTaskHandle           // Task handle
+      WebServerTask,       // Task function
+      "WebServerTask",     // Task name
+      10000,               // Stack size (bytes)
+      NULL,                // Parameters
+      1,                   // Priority
+      &WebServerTaskHandle // Task handle
   );
 
   xTaskCreate(
-    TFT_Task,                      // Task function
-    "TFT_Task",                    // Task name
-    10000,                         // Stack size (bytes)
-    NULL,                          // Parameters
-    1,                             // Priority
-    &TFT_TaskHandle                // Task handle
+      TFT_Task,       // Task function
+      "TFT_Task",     // Task name
+      10000,          // Stack size (bytes)
+      NULL,           // Parameters
+      1,              // Priority
+      &TFT_TaskHandle // Task handle
   );
 
   xTaskCreate(
-    ButtonsTask,                   // Task function
-    "ButtonsTask",                 // Task name
-    10000,                         // Stack size (bytes)
-    NULL,                          // Parameters
-    1,                             // Priority
-    &ButtonsTaskHandle             // Task handle
+      ButtonsTask,       // Task function
+      "ButtonsTask",     // Task name
+      10000,             // Stack size (bytes)
+      NULL,              // Parameters
+      1,                 // Priority
+      &ButtonsTaskHandle // Task handle
   );
- 
 }
 
 void loop()
 {
   // Empty because FreeRTOS scheduler runs the task
-  
 }
 
-void MultisensorSampleTask(void *parameter){
-  for (;;) { // Infinite loop
+void MultisensorSampleTask(void *parameter)
+{
+  for (;;)
+  { // Infinite loop
     vTaskDelay(2500);
     multisensor.sample_sensor_data();
     multisensor.print_to_serial();
   }
 }
 
-void WebServerTask(void *parameter){
+void WebServerTask(void *parameter)
+{
   // WiFi
   Serial.println("Init web_server");
   web_server.init();
@@ -140,23 +145,24 @@ void WebServerTask(void *parameter){
   web_server.setup_server();
   Serial.println("Init web_server done");
 
-  for (;;) { // Infinite loop
+  for (;;)
+  { // Infinite loop
     vTaskDelay(2500);
 
-    if(web_server.get_force_reconnect())
+    if (web_server.get_force_reconnect())
     {
       WiFi.disconnect();
       web_server.setup_wifi();
     }
     else
     {
-      if((web_server.get_is_running_softAP()) || (WiFi.status() == WL_CONNECTED))
+      if ((web_server.get_is_running_softAP()) || (WiFi.status() == WL_CONNECTED))
       {
         String AP_info = web_server.get_is_running_softAP() ? "(Use AP)" : "";
         String ip_addr_s = web_server.get_is_running_softAP() ? WiFi.softAPIP().toString() : WiFi.localIP().toString();
         Serial.println("IP address: " + ip_addr_s + AP_info);
       }
-      else 
+      else
       {
         web_server.setup_wifi();
       }
@@ -164,14 +170,57 @@ void WebServerTask(void *parameter){
   }
 }
 
-void TFT_Task(void *parameter){
-  for (;;) { // Infinite loop
+void TFT_Task(void *parameter)
+{
+  for (;;)
+  { // Infinite loop
     vTaskDelay(1000);
-    tft.refresh();
+
+    /* See if we can obtain the semaphore. If the semaphore is not
+          available wait 10 ticks to see if it becomes free. */
+    if (xSemaphoreTake(xtftSemaphore, (TickType_t)1000) == pdTRUE)
+    {
+      /* We were able to obtain the semaphore and can now access the
+          shared resource. */
+
+      tft.refresh();
+
+      /* We have finished accessing the shared resource. Release the
+          semaphore. */
+      xSemaphoreGive(xtftSemaphore);
+    }
+    else
+    {
+      /* We could not obtain the semaphore and can therefore not access
+          the shared resource safely. */
+    }
   }
 }
 
-void ButtonsTask(void *parameter){
+void on_button_event(LCD_BUTTON_e button, LCD_BUTTON_EVENT_e event)
+{
+  /* See if we can obtain the semaphore. If the semaphore is not
+      available wait 10 ticks to see if it becomes free. */
+  if (xSemaphoreTake(xtftSemaphore, (TickType_t)1000) == pdTRUE)
+  {
+    /* We were able to obtain the semaphore and can now access the
+        shared resource. */
+
+    tft.on_button_event(button, event);
+
+    /* We have finished accessing the shared resource. Release the
+        semaphore. */
+    xSemaphoreGive(xtftSemaphore);
+  }
+  else
+  {
+    /* We could not obtain the semaphore and can therefore not access
+        the shared resource safely. */
+  }
+}
+
+void ButtonsTask(void *parameter)
+{
   static bool btn_left_state_prev = false;
   static bool btn_state_prev = false;
   static bool btn_right_state_prev = false;
@@ -180,24 +229,42 @@ void ButtonsTask(void *parameter){
   pinMode(USR_BTN_PIN, INPUT);
   pinMode(USR_BTN_RIGHT_PIN, INPUT);
 
-  for (;;) { // Infinite loop
+  for (;;)
+  { // Infinite loop
     vTaskDelay(50);
 
     bool btn_left_state = digitalRead(USR_BTN_LEFT_PIN);
     bool btn_state = digitalRead(USR_BTN_PIN);
     bool btn_right_state = digitalRead(USR_BTN_RIGHT_PIN);
 
-    if((btn_left_state == true) && (btn_left_state_prev == false))
+    if ((btn_left_state == true) && (btn_left_state_prev == false))
     {
-      tft.on_left_button_press();
+      on_button_event(LCD_BUTTON_LEFT, LCD_BUTTON_PRESS);
     }
-    if((btn_state == true) && (btn_state_prev == false))
+
+    if ((btn_left_state == false) && (btn_left_state_prev == true))
     {
-      tft.on_user_button_press();
+      on_button_event(LCD_BUTTON_LEFT, LCD_BUTTON_RELEASE);
     }
-    if((btn_right_state == true) && (btn_right_state_prev == false))
+
+    if ((btn_state == true) && (btn_state_prev == false))
     {
-      tft.on_right_button_press();
+      on_button_event(LCD_BUTTON, LCD_BUTTON_PRESS);
+    }
+
+    if ((btn_state == false) && (btn_state_prev == true))
+    {
+      on_button_event(LCD_BUTTON, LCD_BUTTON_RELEASE);
+    }
+
+    if ((btn_right_state == true) && (btn_right_state_prev == false))
+    {
+      on_button_event(LCD_BUTTON_RIGHT, LCD_BUTTON_PRESS);
+    }
+
+    if ((btn_right_state == false) && (btn_right_state_prev == true))
+    {
+      on_button_event(LCD_BUTTON_RIGHT, LCD_BUTTON_RELEASE);
     }
 
     btn_left_state_prev = btn_left_state;
@@ -205,4 +272,3 @@ void ButtonsTask(void *parameter){
     btn_right_state_prev = btn_right_state;
   }
 }
-
