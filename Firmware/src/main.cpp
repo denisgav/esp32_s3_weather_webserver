@@ -172,8 +172,37 @@ void TFT_Task(void *parameter){
 }
 
 void ButtonsTask(void *parameter){
+  static bool btn_left_state_prev = false;
+  static bool btn_state_prev = false;
+  static bool btn_right_state_prev = false;
+
+  pinMode(USR_BTN_LEFT_PIN, INPUT);
+  pinMode(USR_BTN_PIN, INPUT);
+  pinMode(USR_BTN_RIGHT_PIN, INPUT);
+
   for (;;) { // Infinite loop
     vTaskDelay(50);
+
+    bool btn_left_state = digitalRead(USR_BTN_LEFT_PIN);
+    bool btn_state = digitalRead(USR_BTN_PIN);
+    bool btn_right_state = digitalRead(USR_BTN_RIGHT_PIN);
+
+    if((btn_left_state == true) && (btn_left_state_prev == false))
+    {
+      tft.on_left_button_press();
+    }
+    if((btn_state == true) && (btn_state_prev == false))
+    {
+      tft.on_user_button_press();
+    }
+    if((btn_right_state == true) && (btn_right_state_prev == false))
+    {
+      tft.on_right_button_press();
+    }
+
+    btn_left_state_prev = btn_left_state;
+    btn_state_prev = btn_state;
+    btn_right_state_prev = btn_right_state;
   }
 }
 

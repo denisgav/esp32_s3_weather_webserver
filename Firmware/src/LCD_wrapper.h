@@ -3,6 +3,7 @@
 #include <Arduino.h>
 #include <stdbool.h>
 #include "board_defines.h"
+#include "string_utils.h"
 
 //-------------------------------------------------
 // Multisensor
@@ -60,6 +61,10 @@ private:
     void display_WINDOW_DHT11();
     void display_WINDOW_LM35();
     void display_WINDOW_LDR();
+
+    void display_full_refresh();
+    void display_background();
+    void display_header_footer();
 
     String LCD_Window_e_ToString(LCD_Window_e window) const;
     LCD_Window_e get_next_window(LCD_Window_e window) const;

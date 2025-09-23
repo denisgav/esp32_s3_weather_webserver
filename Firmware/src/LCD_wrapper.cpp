@@ -1,10 +1,17 @@
 #include "LCD_wrapper.h"
 
-const char daysOfTheWeek[7][12] = {
-    "Sunday", "Monday",
-    "Tuesday", "Wednesday",
-    "Thursday", "Friday",
-    "Saturday"};
+const char daysOfTheWeek_s[7][4] = {
+    "SUN", "MON",
+    "TUE", "WED",
+    "THU", "FRI",
+    "SAT"};
+
+const char month_s[12][4] = {
+    "JAN", "FEB",
+    "MAR", "APR", "MAY",
+    "JUN", "JUL", "AUG",
+    "SEP", "OCT", "NOW",
+    "DEC"};
 
 const int SCREEN_WIDTH = 160;
 const int SCREEN_HEIGHT = 80;
@@ -54,7 +61,7 @@ void LCD_wrapper ::on_left_button_press()
   {
     cur_window = (LCD_Window_e)(LCD_WINDOW_TOTAL - 1);
   }
-  tft.fillScreen(ST77XX_BLACK);
+  display_full_refresh();
   refresh();
 }
 
@@ -70,7 +77,7 @@ void LCD_wrapper ::on_right_button_press()
     cur_window = (LCD_Window_e)(LCD_WINDOW_NONE + 1);
   }
 
-  tft.fillScreen(ST77XX_BLACK);
+  display_full_refresh();
   refresh();
 }
 
@@ -137,62 +144,58 @@ void LCD_wrapper ::display_WINDOW_MESSAGES()
 
 void LCD_wrapper ::display_WINDOW_RTC()
 {
-  // tft.fillScreen(ST77XX_BLACK);
+  static bool is_data_sampled_prev = false;
 
-  String caption_s = "RTC (DS3231)";
-  String footer_s = "<--" + LCD_Window_e_ToString(get_prev_window(cur_window)) + " | " + LCD_Window_e_ToString(get_next_window(cur_window)) + " -->";
+  bool is_data_sampled = multisensor.get_rtc().get_is_sampled();
 
-  
-  tft.fillRect(0, 0, SCREEN_WIDTH, FONT_HEIGHT+2, ST77XX_ORANGE);
+  if(is_data_sampled_prev != is_data_sampled){
+    display_full_refresh();
+  }
 
-  tft.setTextColor(ST77XX_BLACK, ST77XX_ORANGE);
-  tft.setCursor(SCREEN_WIDTH / 2 - (caption_s.length() / 2) * FONT_WIDTH, (FONT_HEIGHT + 2) * 0 + 2);
-  tft.println("RTC (DS3231)");
+  is_data_sampled_prev = is_data_sampled;
 
-  tft.setTextColor(ST77XX_WHITE, ST77XX_BLACK);
-
-  tft.fillRect(0, FONT_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - FONT_HEIGHT - FONT_HEIGHT, ST77XX_BLACK);
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT+ 2)*2;
 
   // Get the current time from the RTC
-  if (multisensor.get_rtc().get_is_sampled())
+  if (is_data_sampled)
   {
     DateTime now = multisensor.get_rtc().get_sampled_datetime();
 
     // Getting each time field in individual variables
     // And adding a leading zero when needed;
     String yearStr = String(now.year(), DEC);
-    String monthStr = (now.month() < 10 ? "0" : "") + String(now.month(), DEC);
+    String monthStr = month_s[now.month()-1];
     String dayStr = (now.day() < 10 ? "0" : "") + String(now.day(), DEC);
     String hourStr = (now.hour() < 10 ? "0" : "") + String(now.hour(), DEC);
     String minuteStr = (now.minute() < 10 ? "0" : "") + String(now.minute(), DEC);
     String secondStr = (now.second() < 10 ? "0" : "") + String(now.second(), DEC);
-    String dayOfWeek = daysOfTheWeek[now.dayOfTheWeek()];
+    String dayOfWeek = daysOfTheWeek_s[now.dayOfTheWeek()];
 
     // Complete time string
-    String formattedDate = yearStr + "-" + monthStr + "-" + dayStr;
-    String formattedTime = hourStr + ":" + minuteStr + ":" + secondStr;
+    String formattedDate = monthStr + " " + dayStr;
+    String formattedTime = hourStr + ":" + minuteStr;
     String formattedTemperature = String(multisensor.get_rtc().get_sampled_temperature()) + " C";
 
-    tft.setCursor(12, (FONT_HEIGHT+ 2) * 1);
-    tft.println(dayOfWeek);
-    tft.setCursor(12, (FONT_HEIGHT+ 2) * 2);
+    formattedDate = string_extend(formattedDate, 8, STRING_ALIGN_LEFT);
+    formattedTime = string_extend(formattedTime, 8, STRING_ALIGN_LEFT);
+    formattedTemperature = string_extend(formattedTemperature, 8, STRING_ALIGN_LEFT);
+
+    tft.setTextSize(2);
+
+    tft.setCursor(12, (FONT_HEIGHT+ 2));
     tft.println(formattedDate);
-    tft.setCursor(12, (FONT_HEIGHT+ 2) * 3);
+    tft.setCursor(12, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*1)/3);
     tft.println(formattedTime);
-    tft.setCursor(12, (FONT_HEIGHT+ 2) * 4);
+    tft.setCursor(12, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*2)/3);
     tft.println(formattedTemperature);
+
+    tft.setTextSize(1);
   }
   else
   {
     tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
     tft.println("No data available");
   }
-
-  tft.fillRect(0, SCREEN_HEIGHT - FONT_HEIGHT, SCREEN_WIDTH, FONT_HEIGHT+2, ST77XX_ORANGE);
-
-  tft.setTextColor(ST77XX_BLACK, ST77XX_ORANGE);
-  tft.setCursor(SCREEN_WIDTH / 2 - (footer_s.length() / 2) * FONT_WIDTH, SCREEN_HEIGHT - FONT_HEIGHT+2);
-  tft.println(footer_s);
 }
 
 void LCD_wrapper ::display_WINDOW_WIFI()
@@ -201,6 +204,45 @@ void LCD_wrapper ::display_WINDOW_WIFI()
 
 void LCD_wrapper ::display_WINDOW_BME280()
 {
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_bme280().get_is_sampled();
+
+  if(is_data_sampled_prev != is_data_sampled){
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT+ 2)*2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formattedTemperature = "T:" + String(multisensor.get_bme280().get_sampled_temperature()) + " C";
+    String formattedHumidity = "H:" + String(multisensor.get_bme280().get_sampled_humidity()) + " %";
+    String formattedPressure = "P:" + String(multisensor.get_bme280().get_sampled_pressure()) + "hPa";
+
+    formattedTemperature = string_extend(formattedTemperature, 13, STRING_ALIGN_LEFT);
+    formattedHumidity = string_extend(formattedHumidity, 13, STRING_ALIGN_LEFT);
+    formattedPressure = string_extend(formattedPressure, 13, STRING_ALIGN_LEFT);
+    
+    tft.setTextSize(2);
+
+    tft.setCursor(2, (FONT_HEIGHT+ 2));
+    tft.println(formattedTemperature);
+    tft.setCursor(2, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*1)/3);
+    tft.println(formattedHumidity);
+    tft.setCursor(2, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*2)/3);
+    tft.println(formattedPressure);
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
 }
 
 void LCD_wrapper ::display_WINDOW_ENS160()
@@ -209,6 +251,41 @@ void LCD_wrapper ::display_WINDOW_ENS160()
 
 void LCD_wrapper ::display_WINDOW_AHT2x()
 {
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_aht2x().get_is_sampled();
+
+  if(is_data_sampled_prev != is_data_sampled){
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT+ 2)*2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formattedTemperature = "T:" + String(multisensor.get_aht2x().get_sampled_temperature()) + "C";
+    String formattedHumidity = "H:" + String(multisensor.get_aht2x().get_sampled_humidity()) + "%";
+
+    formattedTemperature = string_extend(formattedTemperature, 7, STRING_ALIGN_LEFT);
+    formattedHumidity = string_extend(formattedHumidity, 7, STRING_ALIGN_LEFT);
+    
+    tft.setTextSize(3);
+
+    tft.setCursor(2, (FONT_HEIGHT+ 2));
+    tft.println(formattedTemperature);
+    tft.setCursor(2, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*1)/2);
+    tft.println(formattedHumidity);
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
 }
 
 void LCD_wrapper ::display_WINDOW_VEML7700()
@@ -217,14 +294,142 @@ void LCD_wrapper ::display_WINDOW_VEML7700()
 
 void LCD_wrapper ::display_WINDOW_DHT11()
 {
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_dht11().get_is_sampled();
+
+  if(is_data_sampled_prev != is_data_sampled){
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT+ 2)*2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formattedTemperature = "T:" + String(multisensor.get_dht11().get_sampled_temperature()) + "C";
+    String formattedHumidity = "H:" + String(multisensor.get_dht11().get_sampled_humidity()) + "%";
+
+    formattedTemperature = string_extend(formattedTemperature, 7, STRING_ALIGN_LEFT);
+    formattedHumidity = string_extend(formattedHumidity, 7, STRING_ALIGN_LEFT);
+    
+    tft.setTextSize(3);
+
+    tft.setCursor(2, (FONT_HEIGHT+ 2));
+    tft.println(formattedTemperature);
+    tft.setCursor(2, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*1)/2);
+    tft.println(formattedHumidity);
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
 }
 
 void LCD_wrapper ::display_WINDOW_LM35()
 {
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_lm35().get_is_sampled();
+
+  if(is_data_sampled_prev != is_data_sampled){
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT+ 2)*2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formattedTemperature = "T:" + String(multisensor.get_lm35().get_sampled_temperature()) + "C";
+
+    formattedTemperature = string_extend(formattedTemperature, 7, STRING_ALIGN_LEFT);
+    
+    tft.setTextSize(3);
+
+    tft.setCursor(2, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*1)/3);
+    tft.println(formattedTemperature);
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
 }
 
 void LCD_wrapper ::display_WINDOW_LDR()
 {
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_ldr().get_is_sampled();
+
+  if(is_data_sampled_prev != is_data_sampled){
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT+ 2)*2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formatted = String(multisensor.get_ldr().get_sampled_ldr());
+    formatted = string_extend(formatted, 7, STRING_ALIGN_LEFT);
+    
+    tft.setTextSize(3);
+
+    tft.setCursor(2, (FONT_HEIGHT+ 2));
+    tft.println(formatted);
+    tft.setCursor(2, (FONT_HEIGHT+ 2) + (TEXT_BLOCK_HEIGHT*1)/2);
+    tft.println("mV");
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
+}
+
+void LCD_wrapper ::display_full_refresh()
+{
+  display_background();
+  display_header_footer();
+}
+
+void LCD_wrapper ::display_background()
+{
+  tft.fillScreen(ST77XX_BLACK);
+
+  tft.fillRect(0, 0, SCREEN_WIDTH, FONT_HEIGHT+2, ST77XX_ORANGE);
+  tft.fillRect(0, FONT_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - FONT_HEIGHT - FONT_HEIGHT, ST77XX_BLACK);
+  tft.fillRect(0, SCREEN_HEIGHT - FONT_HEIGHT, SCREEN_WIDTH, FONT_HEIGHT+2, ST77XX_ORANGE);
+}
+
+void LCD_wrapper ::display_header_footer()
+{
+  String caption_s = LCD_Window_e_ToString(cur_window);
+  String footer_s = "<--" + LCD_Window_e_ToString(get_prev_window(cur_window)) + " | " + LCD_Window_e_ToString(get_next_window(cur_window)) + " -->";
+
+  tft.setTextColor(ST77XX_BLACK, ST77XX_ORANGE);
+  tft.setCursor(SCREEN_WIDTH / 2 - (caption_s.length() / 2) * FONT_WIDTH, (FONT_HEIGHT + 2) * 0 + 2);
+  tft.println(caption_s);
+
+  tft.setCursor(SCREEN_WIDTH / 2 - (footer_s.length() / 2) * FONT_WIDTH, SCREEN_HEIGHT - FONT_HEIGHT+2);
+  tft.println(footer_s);
+
+  tft.setTextColor(ST77XX_WHITE, ST77XX_BLACK);
 }
 
 String LCD_wrapper ::LCD_Window_e_ToString(LCD_Window_e window) const

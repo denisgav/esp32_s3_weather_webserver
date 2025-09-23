@@ -328,7 +328,7 @@ String weather_web_server ::fetch_sensor_data() const
     }
 
     // LM35
-    if (multisensor.get_rtc().get_is_sampled())
+    if (multisensor.get_lm35().get_is_sampled())
     {
         doc["lm35"]["temperature"] = String(multisensor.get_lm35().get_sampled_temperature());
     }
@@ -349,7 +349,7 @@ String weather_web_server ::fetch_sensor_data() const
     }
 
     // ENS160
-    if (multisensor.get_dht11().get_is_sampled())
+    if (multisensor.get_ens160().get_is_sampled())
     {
         doc["ens160"]["AQI"] = String(multisensor.get_ens160().get_sampled_AQI());
         doc["ens160"]["TVOC"] = String(multisensor.get_ens160().get_sampled_TVOC());
@@ -357,14 +357,14 @@ String weather_web_server ::fetch_sensor_data() const
     }
 
     // AHT2x
-    if (multisensor.get_dht11().get_is_sampled())
+    if (multisensor.get_aht2x().get_is_sampled())
     {
         doc["aht2x"]["temperature"] = String(multisensor.get_aht2x().get_sampled_temperature());
         doc["aht2x"]["humidity"] = String(multisensor.get_aht2x().get_sampled_humidity());
     }
 
     // VEML7700
-    if (multisensor.get_dht11().get_is_sampled())
+    if (multisensor.get_veml7700().get_is_sampled())
     {
         doc["veml7700"]["lux"] = String(multisensor.get_veml7700().get_sampled_lux());
         doc["veml7700"]["gain"] = multisensor.get_veml7700().get_sampled_gain_s();
