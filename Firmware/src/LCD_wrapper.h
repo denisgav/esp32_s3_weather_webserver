@@ -5,6 +5,8 @@
 #include "board_defines.h"
 #include "string_utils.h"
 
+#include <WiFi.h>
+
 //-------------------------------------------------
 // Multisensor
 //-------------------------------------------------

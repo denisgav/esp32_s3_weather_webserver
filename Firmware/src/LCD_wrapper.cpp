@@ -214,6 +214,61 @@ void LCD_wrapper ::display_WINDOW_RTC()
 
 void LCD_wrapper ::display_WINDOW_WIFI()
 {
+  static wifi_mode_t mode_prev = WIFI_MODE_NULL;
+  wifi_mode_t mode = WiFi.getMode();
+
+  static bool is_connection_ok_prev = false;
+  bool is_connection_ok = (mode == WIFI_MODE_AP) || ((mode == WIFI_MODE_STA) && (WiFi.status() == WL_CONNECTED));
+
+  if ((mode_prev != mode) || (is_connection_ok_prev != is_connection_ok))
+  {
+    display_full_refresh();
+  }
+
+  mode_prev = mode;
+  is_connection_ok_prev = is_connection_ok;
+
+  String AP_info = (is_connection_ok ? "Ok" : "Err");
+  String ip_addr_s = "";
+
+  switch(mode)
+  {
+    case WIFI_MODE_AP:
+    {
+      AP_info = AP_info + ", AP";
+      ip_addr_s = WiFi.softAPIP().toString();
+      break;
+    }
+    case WIFI_MODE_STA:
+    {
+      AP_info = AP_info + ", STA";
+      ip_addr_s = WiFi.localIP().toString();
+      break;
+    }
+    default:
+    {
+      AP_info = "Error";
+      ip_addr_s = "--";
+      break;
+    }
+  }
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT + 2) * 2;
+
+  AP_info = string_extend(AP_info, 15, STRING_ALIGN_LEFT);
+  ip_addr_s = string_extend(ip_addr_s, 15, STRING_ALIGN_LEFT);
+
+  tft.setTextSize(2);
+
+  tft.setCursor(2, (FONT_HEIGHT + 2));
+  tft.println(AP_info);
+
+  tft.setTextSize(1);
+
+  tft.setCursor(2, (FONT_HEIGHT + 2) + (TEXT_BLOCK_HEIGHT * 1) / 2);
+  tft.println(ip_addr_s);
+
+  tft.setTextSize(1);
 }
 
 void LCD_wrapper ::display_WINDOW_BME280()
@@ -346,6 +401,40 @@ void LCD_wrapper ::display_WINDOW_AHT2x()
 
 void LCD_wrapper ::display_WINDOW_VEML7700()
 {
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_veml7700().get_is_sampled();
+
+  if (is_data_sampled_prev != is_data_sampled)
+  {
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT + 2) * 2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formattedLux = String(multisensor.get_veml7700().get_sampled_lux());
+
+    formattedLux = string_extend(formattedLux, 8, STRING_ALIGN_LEFT);
+
+    tft.setTextSize(3);
+
+    tft.setCursor(2, (FONT_HEIGHT + 2));
+    tft.println(formattedLux);
+    tft.setCursor(2, (FONT_HEIGHT + 2) + (TEXT_BLOCK_HEIGHT * 1) / 2);
+    tft.println("lux");
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
 }
 
 void LCD_wrapper ::display_WINDOW_DHT11()

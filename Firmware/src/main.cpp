@@ -156,13 +156,33 @@ void WebServerTask(void *parameter)
     }
     else
     {
-      if ((web_server.get_is_running_softAP()) || (WiFi.status() == WL_CONNECTED))
+      wifi_mode_t mode = WiFi.getMode();
+      switch(mode)
       {
-        String AP_info = web_server.get_is_running_softAP() ? "(Use AP)" : "";
-        String ip_addr_s = web_server.get_is_running_softAP() ? WiFi.softAPIP().toString() : WiFi.localIP().toString();
-        Serial.println("IP address: " + ip_addr_s + AP_info);
+        case WIFI_MODE_AP:
+        {
+          String AP_info = "(Use AP)";
+          String ip_addr_s = WiFi.softAPIP().toString();
+          Serial.println("[WiFi]" + AP_info + " IP address: " + ip_addr_s);
+          break;
+        }
+        case WIFI_MODE_STA:
+        {
+          String AP_info = "(STA)";
+          String ip_addr_s = WiFi.localIP().toString();
+          Serial.println("[WiFi]" + AP_info + " IP address: " + ip_addr_s);
+          break;
+        }
+        default:
+        {
+          Serial.println("[WiFi] Config error");
+          break;
+        }
       }
-      else
+
+      bool is_connection_ok = (mode == WIFI_MODE_AP) || ((mode == WIFI_MODE_STA) && (WiFi.status() == WL_CONNECTED));
+      
+      if (is_connection_ok == false)
       {
         web_server.setup_wifi();
       }
