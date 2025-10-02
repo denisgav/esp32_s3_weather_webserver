@@ -391,6 +391,17 @@ function set_lm35_data(success, temperature = null) {
     set_status(el_status, success);
 }
 
+function set_ds18b20_data(success, temperature = null) {
+    const el_t = $("#ds18b20_t");
+    const el_status = $("#ds18b20_status");
+
+    const el_t_i = $("#ds18b20_t_i");
+    const el_t_ttt = $("#ds18b20_t_ttt");
+    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
+
+    set_status(el_status, success);
+}
+
 function set_ldr_data(success, mv = null) {
     const el_mv = $("#ldr_mv");
     const el_status = $("#ldr_status");
@@ -442,6 +453,11 @@ async function fetch_sensor_data() {
         else
             set_lm35_data(false);
 
+        if (j.ds18b20 != null)
+            set_ds18b20_data(true, j.ds18b20.temperature);
+        else
+            set_ds18b20_data(false);
+
         if (j.ldr != null)
             set_ldr_data(true, j.ldr.ldr);
         else
@@ -454,6 +470,7 @@ async function fetch_sensor_data() {
         set_aht2x_data(false);
         set_veml700_data(false);
         set_lm35_data(false);
+        set_ds18b20_data(false);
         set_ldr_data(false);
     }
 }

@@ -32,6 +32,7 @@ enum LCD_Window_e {
   LCD_WINDOW_VEML7700,
   LCD_WINDOW_DHT11,
   LCD_WINDOW_LM35,
+  LCD_WINDOW_DS18B20,
   LCD_WINDOW_LDR,
   LCD_WINDOW_TOTAL
 }; 
@@ -74,6 +75,7 @@ private:
     void display_WINDOW_VEML7700();
     void display_WINDOW_DHT11();
     void display_WINDOW_LM35();
+    void display_WINDOW_DS18B20();
     void display_WINDOW_LDR();
 
     void display_full_refresh();

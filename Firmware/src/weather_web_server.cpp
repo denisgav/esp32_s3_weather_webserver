@@ -333,6 +333,12 @@ String weather_web_server ::fetch_sensor_data() const
         doc["lm35"]["temperature"] = String(multisensor.get_lm35().get_sampled_temperature());
     }
 
+    // DS18B20
+    if (multisensor.get_ds18b20().get_is_sampled())
+    {
+        doc["ds18b20"]["temperature"] = String(multisensor.get_ds18b20().get_sampled_temperature());
+    }
+
     // BME280
     if (multisensor.get_bme280().get_is_sampled())
     {

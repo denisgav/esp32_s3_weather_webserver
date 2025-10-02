@@ -10,6 +10,7 @@ multisensor_wrapper ::multisensor_wrapper() : rtc(),
                                               veml7700(),
                                               dht11(),
                                               lm35(),
+                                              ds18b20(),
                                               ldr(),
                                               is_initialized(false)
 {
@@ -45,6 +46,10 @@ bool multisensor_wrapper ::init()
     lm35.init();
     Serial.println("Init LM35 Done");
 
+    Serial.println("Init DS18B20");
+    ds18b20.init();
+    Serial.println("Init DS18B20 Done");
+
     Serial.println("Init LDR");
     ldr.init();
     Serial.println("Init LDR Done");
@@ -53,7 +58,8 @@ bool multisensor_wrapper ::init()
                      bme280.get_is_initialized() && ens160.get_is_initialized() &&
                      aht2x.get_is_initialized() && veml7700.get_is_initialized() &&
                      dht11.get_is_initialized() &&
-                     lm35.get_is_initialized() && ldr.get_is_initialized();
+                     lm35.get_is_initialized() && ds18b20.get_is_initialized() && 
+                     ldr.get_is_initialized();
 
     return is_initialized;
 }
@@ -71,6 +77,12 @@ bool multisensor_wrapper ::sample_sensor_data()
     if (lm35.sample_sensor_data() == false)
     {
         //Serial.println("Couldn't find LM35");
+        sample_error_happen = true;
+    }
+
+    if (ds18b20.sample_sensor_data() == false)
+    {
+        //Serial.println("Couldn't find DS18B20");
         sample_error_happen = true;
     }
     
@@ -143,6 +155,19 @@ void multisensor_wrapper ::print_to_serial() const
         String temperature_s = "Temperature: " + String(lm35_temperature) + " C";
 
         Serial.println("[LM35] " + temperature_s);
+    }
+
+    if (ds18b20.get_is_sampled() == false)
+    {
+        Serial.println("[DS18B20] Sample error");
+    }
+    else
+    {
+        float ds18b20_temperature = ds18b20.get_sampled_temperature();
+
+        String temperature_s = "Temperature: " + String(ds18b20_temperature) + " C";
+
+        Serial.println("[DS18B20] " + temperature_s);
     }
 
     if (bme280.get_is_sampled() == false)
@@ -274,6 +299,12 @@ DHT11_wrapper &multisensor_wrapper ::get_dht11()
 LM35_wrapper &multisensor_wrapper ::get_lm35()
 {
     return lm35;
+}
+
+// DS18B20
+DS18B20_wrapper &multisensor_wrapper ::get_ds18b20()
+{
+    return ds18b20;
 }
 
 // LDR

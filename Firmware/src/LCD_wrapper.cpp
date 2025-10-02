@@ -143,6 +143,11 @@ void LCD_wrapper ::refresh()
     display_WINDOW_LM35();
     break;
   }
+  case LCD_WINDOW_DS18B20:
+  {
+    display_WINDOW_DS18B20();
+    break;
+  }
   case LCD_WINDOW_LDR:
   {
     display_WINDOW_LDR();
@@ -513,6 +518,42 @@ void LCD_wrapper ::display_WINDOW_LM35()
   }
 }
 
+void LCD_wrapper ::display_WINDOW_DS18B20()
+{
+  static bool is_data_sampled_prev = false;
+
+  bool is_data_sampled = multisensor.get_ds18b20().get_is_sampled();
+
+  if (is_data_sampled_prev != is_data_sampled)
+  {
+    display_full_refresh();
+  }
+
+  is_data_sampled_prev = is_data_sampled;
+
+  const int TEXT_BLOCK_HEIGHT = SCREEN_HEIGHT - (FONT_HEIGHT + 2) * 2;
+
+  // Get the current time from the RTC
+  if (is_data_sampled)
+  {
+    String formattedTemperature = "T:" + String(multisensor.get_ds18b20().get_sampled_temperature()) + "C";
+
+    formattedTemperature = string_extend(formattedTemperature, 7, STRING_ALIGN_LEFT);
+
+    tft.setTextSize(3);
+
+    tft.setCursor(2, (FONT_HEIGHT + 2) + (TEXT_BLOCK_HEIGHT * 1) / 3);
+    tft.println(formattedTemperature);
+
+    tft.setTextSize(1);
+  }
+  else
+  {
+    tft.setCursor(12, (FONT_HEIGHT + 2) * 1);
+    tft.println("No data available");
+  }
+}
+
 void LCD_wrapper ::display_WINDOW_LDR()
 {
   static bool is_data_sampled_prev = false;
@@ -602,6 +643,8 @@ String LCD_wrapper ::LCD_Window_e_ToString(LCD_Window_e window) const
     return "DHT11";
   case LCD_WINDOW_LM35:
     return "LM35";
+  case LCD_WINDOW_DS18B20:
+    return "DS18B20";
   case LCD_WINDOW_LDR:
     return "LDR";
   default:
