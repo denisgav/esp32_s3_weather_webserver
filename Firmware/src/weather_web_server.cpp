@@ -35,8 +35,13 @@ void weather_web_server ::init()
 
 void weather_web_server ::setup_wifi()
 {
+    // We need to make sure we are disconnected
+    // before trying to setup WiFi
+    WiFi.disconnect();
+
     if (is_WiFiCfg_available)
     {
+        WiFi.mode(WIFI_STA);
         if (WiFiCfg_hostname != "")
         {
             WiFi.setHostname(WiFiCfg_hostname.c_str());
@@ -162,7 +167,6 @@ void weather_web_server ::configure(
     file.close();
 
     load_configuration();
-    force_reconnect = true;
 }
 
 void weather_web_server ::load_configuration()
@@ -324,7 +328,7 @@ String weather_web_server ::fetch_sensor_data() const
         doc["rtc"]["minute"] = String(now.minute());
         doc["rtc"]["second"] = String(now.second());
 
-        doc["rtc"]["temperature"] = String(multisensor.get_rtc().get_sampled_temperature());
+        doc["ds3231"]["temperature"] = String(multisensor.get_rtc().get_sampled_temperature());
     }
 
     // LM35
@@ -461,6 +465,7 @@ void weather_web_server ::set_wifi_cfg(AsyncWebServerRequest *request, uint8_t *
         // Serial.println("Configure ip:" + String(ip));
 
         configure(ssid, password, hostname, ip);
+        force_reconnect = true;
         // You can perform actions based on the received JSON data here
     }
     // If the body is larger and comes in multiple chunks, you'd handle

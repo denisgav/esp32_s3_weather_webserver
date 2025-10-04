@@ -16,8 +16,7 @@ function to_ISO_DateTime_RTC(year, month, day, hour, minute, second) {
     return { date: `${y}-${m}-${da}`, time: `${h}:${mi}:${s}` };
 };
 
-function get_picked_dateTime()
-{
+function get_picked_dateTime() {
     const ds = $("#datePick").value, ts = $("#timePick").value;
     if (!ds || !ts) return null;
     // compose as local time
@@ -26,8 +25,7 @@ function get_picked_dateTime()
     return new Date(Y, (M - 1), D, h || 0, m || 0, s || 0);
 }
 
-function tickPC() 
-{
+function tickPC() {
     const d = new Date();
     const loc = toISODateTimeLocal(d);
 
@@ -38,8 +36,7 @@ function tickPC()
     el_time.textContent = `${loc.time}`;
 }
 
-function set_status(el_status, success) 
-{
+function set_status(el_status, success) {
     if (success == true) {
         el_status.textContent = "OK";
         el_status.className = "ok";
@@ -49,30 +46,49 @@ function set_status(el_status, success)
     }
 }
 
-function set_temperature_indication(value, el_t, el_i, el_ttt) 
-{
-    el_t.textContent = (value != null) ? (value.toFixed ? value.toFixed(1) : value) + "°C" : "—";
-    if (value == null) 
+const tempUnitSelect = $("#tempUnitSelect");
+tempUnitSelect.addEventListener("change", function () {
+    fetch_sensor_data();
+});
+
+function TempCelsiusToFarengheit(val){
+    return (val*1.8 + 32.0);
+}
+
+function set_temperature_indication(value, el_t, el_i, el_ttt) {
+    const tempUnitInCelsius = tempUnitSelect.value == "Celsius";
+    if(value == null)
     {
-        el_i.className = "indicator grey";
-        el_ttt.textContent = "Not available";
+        el_t.textContent = "—";
     }
     else 
     {
-        if (value >= 20 && value <= 26) 
+        const tempInCelsius = (value.toFixed ? value.toFixed(1) : value);
+        const tempInFarengheit = TempCelsiusToFarengheit(value).toFixed(1);
+        if(tempUnitInCelsius)
         {
+            el_t.textContent = tempInCelsius + "°C";
+        }
+        else
+        {
+            el_t.textContent = tempInFarengheit + "°F";
+        }
+    }
+    if (value == null) {
+        el_i.className = "indicator grey";
+        el_ttt.textContent = "Not available";
+    }
+    else {
+        if (value >= 20 && value <= 26) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else 
-        {
-            if ((value >= 18 && value < 20) || (value > 26 && value <= 28)) 
-            {
+        else {
+            if ((value >= 18 && value < 20) || (value > 26 && value <= 28)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Mostly Ok";
             }
-            else 
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -80,30 +96,23 @@ function set_temperature_indication(value, el_t, el_i, el_ttt)
     }
 }
 
-function set_humidity_indication(value, el_h, el_i, el_ttt) 
-{
+function set_humidity_indication(value, el_h, el_i, el_ttt) {
     el_h.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + "%" : "—";
-    if (value == null) 
-    {
+    if (value == null) {
         el_i.className = "indicator grey";
         el_ttt.textContent = "Not available";
     }
-    else 
-    {
-        if(value >= 30 && value <= 60)
-        {
+    else {
+        if (value >= 30 && value <= 60) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else 
-        {
-            if((value >= 20 && value < 30) || (value > 60 && value <= 70))
-            {
+        else {
+            if ((value >= 20 && value < 30) || (value > 60 && value <= 70)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Dry/Wet";
             }
-            else 
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -111,30 +120,23 @@ function set_humidity_indication(value, el_h, el_i, el_ttt)
     }
 }
 
-function set_pressure_indication(value, el_p, el_i, el_ttt) 
-{
+function set_pressure_indication(value, el_p, el_i, el_ttt) {
     el_p.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + " hPa" : "—";
-    if (value == null) 
-    {
+    if (value == null) {
         el_i.className = "indicator grey";
         el_ttt.textContent = "Not available";
     }
-    else 
-    {
-        if(value >= 990 && value <= 1025)
-        {
+    else {
+        if (value >= 990 && value <= 1025) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else
-        {
-            if((value >= 970 && value < 990) || (value > 1025 && value <= 1040))
-            {
+        else {
+            if ((value >= 970 && value < 990) || (value > 1025 && value <= 1040)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Mostly Ok";
             }
-            else
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -142,30 +144,23 @@ function set_pressure_indication(value, el_p, el_i, el_ttt)
     }
 }
 
-function set_AQI_indication(value, el_AQI, el_i, el_ttt) 
-{
+function set_AQI_indication(value, el_AQI, el_i, el_ttt) {
     el_AQI.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) : "—";
-    if (value == null) 
-    {
+    if (value == null) {
         el_i.className = "indicator grey";
         el_ttt.textContent = "Not available";
     }
-    else 
-    {
-        if(value <= 3)
-        {
+    else {
+        if (value <= 3) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else
-        {
-            if((value >= 4) && (value <= 6))
-            {
+        else {
+            if ((value >= 4) && (value <= 6)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Mostly Ok";
             }
-            else
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -173,30 +168,23 @@ function set_AQI_indication(value, el_AQI, el_i, el_ttt)
     }
 }
 
-function set_TVOC_indication(value, el_TVOC, el_i, el_ttt) 
-{
+function set_TVOC_indication(value, el_TVOC, el_i, el_ttt) {
     el_TVOC.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + " ppb" : "—";
-    if (value == null) 
-    {
+    if (value == null) {
         el_i.className = "indicator grey";
         el_ttt.textContent = "Not available";
     }
-    else 
-    {
-        if(value < 300)
-        {
+    else {
+        if (value < 300) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else
-        {
-            if((value >= 300) && (value <= 1000))
-            {
+        else {
+            if ((value >= 300) && (value <= 1000)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Mostly Ok";
             }
-            else
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -204,30 +192,23 @@ function set_TVOC_indication(value, el_TVOC, el_i, el_ttt)
     }
 }
 
-function set_eCO2_indication(value, el_eCO2, el_i, el_ttt) 
-{
+function set_eCO2_indication(value, el_eCO2, el_i, el_ttt) {
     el_eCO2.textContent = (value != null) ? (value.toFixed ? value.toFixed(0) : value) + " ppm" : "—";
-    if (value == null) 
-    {
+    if (value == null) {
         el_i.className = "indicator grey";
         el_ttt.textContent = "Not available";
     }
-    else 
-    {
-        if(value < 600)
-        {
+    else {
+        if (value < 600) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else
-        {
-            if((value >= 600) && (value <= 1000))
-            {
+        else {
+            if ((value >= 600) && (value <= 1000)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Mostly Ok";
             }
-            else
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -235,30 +216,23 @@ function set_eCO2_indication(value, el_eCO2, el_i, el_ttt)
     }
 }
 
-function set_lux_indication(value, el_lux, el_i, el_ttt) 
-{
+function set_lux_indication(value, el_lux, el_i, el_ttt) {
     el_lux.textContent = (value != null) ? (value.toFixed ? value.toFixed(2) : value) : "—";
-    if (value == null) 
-    {
+    if (value == null) {
         el_i.className = "indicator grey";
         el_ttt.textContent = "Not available";
     }
-    else 
-    {
-        if((value >= 300) && (value <= 500))
-        {
+    else {
+        if ((value >= 300) && (value <= 500)) {
             el_i.className = "indicator green";
             el_ttt.textContent = "Comfortable";
         }
-        else
-        {
-            if((value >= 100 && value < 300) || (value > 500 && value <= 1000))
-            {
+        else {
+            if ((value >= 100 && value < 300) || (value > 500 && value <= 1000)) {
                 el_i.className = "indicator yellow";
                 el_ttt.textContent = "Mostly Ok";
             }
-            else
-            {
+            else {
                 el_i.className = "indicator red";
                 el_ttt.textContent = "Not comfortable";
             }
@@ -266,15 +240,11 @@ function set_lux_indication(value, el_lux, el_i, el_ttt)
     }
 }
 
-function set_rtc_data(success, temperature = null, year = null, month = null, day = null, hour = null, minute = null, second = null) {
+function set_rtc_data(success, year = null, month = null, day = null, hour = null, minute = null, second = null) {
     const el_t = $("#rtc_t");
     const el_date = $("#rtc_date");
     const el_time = $("#rtc_time");
     const el_status = $("#rtc_status");
-
-    const el_t_i = $("#rtc_t_i");
-    const el_t_ttt = $("#rtc_t_ttt");
-    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
 
     if ((year != null) && (month != null) && (day != null) && (hour != null) && (minute != null) && (second != null)) {
         const dateTime = to_ISO_DateTime_RTC(year, month, day, hour, minute, second);
@@ -287,28 +257,7 @@ function set_rtc_data(success, temperature = null, year = null, month = null, da
     }
 
     set_status(el_status, success);
-    
-}
 
-function set_bme280_data(success, temperature = null, humidity = null, pressure = null) {
-    const el_t = $("#bme280_t");
-    const el_h = $("#bme280_h");
-    const el_p = $("#bme280_p");
-    const el_status = $("#bme280_status");
-
-    const el_t_i = $("#bme280_t_i");
-    const el_t_ttt = $("#bme280_t_ttt");
-    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
-
-    const el_h_i = $("#bme280_h_i");
-    const el_h_ttt = $("#bme280_h_ttt");
-    set_humidity_indication(humidity, el_h, el_h_i, el_h_ttt);
-
-    const el_p_i = $("#bme280_p_i");
-    const el_p_ttt = $("#bme280_p_ttt");
-    set_pressure_indication(pressure, el_p, el_p_i, el_p_ttt);
-
-    set_status(el_status, success);
 }
 
 function set_ens160_data(success, AQI = null, TVOC = null, eCO2 = null) {
@@ -319,47 +268,15 @@ function set_ens160_data(success, AQI = null, TVOC = null, eCO2 = null) {
 
     const el_AQI_i = $("#ens160_AQI_i");
     const el_AQI_ttt = $("#ens160_AQI_ttt");
-    set_AQI_indication(AQI, el_AQI, el_AQI_i, el_AQI_ttt) ;
+    set_AQI_indication(AQI, el_AQI, el_AQI_i, el_AQI_ttt);
 
     const el_TVOC_i = $("#ens160_TVOC_i");
     const el_TVOC_ttt = $("#ens160_TVOC_ttt");
-    set_TVOC_indication(TVOC, el_TVOC, el_TVOC_i, el_TVOC_ttt) ;
+    set_TVOC_indication(TVOC, el_TVOC, el_TVOC_i, el_TVOC_ttt);
 
     const el_eCO2_i = $("#ens160_eCO2_i");
     const el_eCO2_ttt = $("#ens160_eCO2_ttt");
-    set_eCO2_indication(eCO2, el_eCO2, el_eCO2_i, el_eCO2_ttt) ;
-
-    set_status(el_status, success);
-}
-
-function set_dht11_data(success, temperature = null, humidity = null) {
-    const el_t = $("#dht11_t");
-    const el_h = $("#dht11_h");
-    const el_status = $("#dht11_status");
-
-    const el_t_i = $("#dht11_t_i");
-    const el_t_ttt = $("#dht11_t_ttt");
-    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
-
-    const el_h_i = $("#dht11_h_i");
-    const el_h_ttt = $("#dht11_h_ttt");
-    set_humidity_indication(humidity, el_h, el_h_i, el_h_ttt);
-
-    set_status(el_status, success);
-}
-
-function set_aht2x_data(success, temperature = null, humidity = null) {
-    const el_t = $("#aht2x_t");
-    const el_h = $("#aht2x_h");
-    const el_status = $("#aht2x_status");
-
-    const el_t_i = $("#aht2x_t_i");
-    const el_t_ttt = $("#aht2x_t_ttt");
-    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
-
-    const el_h_i = $("#aht2x_h_i");
-    const el_h_ttt = $("#aht2x_h_ttt");
-    set_humidity_indication(humidity, el_h, el_h_i, el_h_ttt);
+    set_eCO2_indication(eCO2, el_eCO2, el_eCO2_i, el_eCO2_ttt);
 
     set_status(el_status, success);
 }
@@ -380,28 +297,6 @@ function set_veml700_data(success, lux = null, gain = null, integration_time = n
     set_status(el_status, success);
 }
 
-function set_lm35_data(success, temperature = null) {
-    const el_t = $("#lm35_t");
-    const el_status = $("#lm35_status");
-
-    const el_t_i = $("#lm35_t_i");
-    const el_t_ttt = $("#lm35_t_ttt");
-    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
-
-    set_status(el_status, success);
-}
-
-function set_ds18b20_data(success, temperature = null) {
-    const el_t = $("#ds18b20_t");
-    const el_status = $("#ds18b20_status");
-
-    const el_t_i = $("#ds18b20_t_i");
-    const el_t_ttt = $("#ds18b20_t_ttt");
-    set_temperature_indication(temperature, el_t, el_t_i, el_t_ttt);
-
-    set_status(el_status, success);
-}
-
 function set_ldr_data(success, mv = null) {
     const el_mv = $("#ldr_mv");
     const el_status = $("#ldr_status");
@@ -412,66 +307,94 @@ function set_ldr_data(success, mv = null) {
 }
 
 
-// ======== BME280 ========
 async function fetch_sensor_data() {
     try {
-        const r = await fetch("/api/fetch_sensor_data"); // { t,h,p } or {temperature,...}
+        const r = await fetch("/api/fetch_sensor_data");
         const j = await r.json();
 
         if (j.rtc != null)
-            set_rtc_data(true, j.rtc.temperature, j.rtc.year, j.rtc.month, j.rtc.day, j.rtc.hour, j.rtc.minute, j.rtc.second);
+            set_rtc_data(true, j.rtc.year, j.rtc.month, j.rtc.day, j.rtc.hour, j.rtc.minute, j.rtc.second);
         else
             set_rtc_data(false);
-
-        if (j.bme280 != null)
-            set_bme280_data(true, j.bme280.temperature, j.bme280.humidity, j.bme280.pressure);
-        else
-            set_bme280_data(false);
 
         if (j.ens160 != null)
             set_ens160_data(true, j.ens160.AQI, j.ens160.TVOC, j.ens160.eCO2);
         else
             set_ens160_data(false);
 
-        if (j.dht11 != null)
-            set_dht11_data(true, j.dht11.temperature, j.dht11.humidity);
-        else
-            set_dht11_data(false);
-
-        if (j.aht2x != null)
-            set_aht2x_data(true, j.aht2x.temperature, j.aht2x.humidity);
-        else
-            set_aht2x_data(false);
-
         if (j.veml7700 != null)
             set_veml700_data(true, j.veml7700.lux, j.veml7700.gain, j.veml7700.integration_time);
         else
             set_veml700_data(false);
 
-        if (j.lm35 != null)
-            set_lm35_data(true, j.lm35.temperature);
-        else
-            set_lm35_data(false);
-
-        if (j.ds18b20 != null)
-            set_ds18b20_data(true, j.ds18b20.temperature);
-        else
-            set_ds18b20_data(false);
-
         if (j.ldr != null)
             set_ldr_data(true, j.ldr.ldr);
         else
             set_ldr_data(false);
+
+        for (const [sensor_module_name, sensor_module_sensor_types] of Object.entries(sensor_modules)) {
+            const el_status = $(`#${sensor_module_name}__status`);
+            for (const sensor_module_sensor_type of sensor_module_sensor_types) {
+                const el_value = $(`#${sensor_module_name}__${sensor_module_sensor_type}__val_k`);
+                const el_t_i = $(`#${sensor_module_name}__${sensor_module_sensor_type}__t_i`);
+                const el_t_ttt = $(`#${sensor_module_name}__${sensor_module_sensor_type}__ttt`);
+
+                const j_sensor_module_name = sensor_module_name.toLowerCase();
+                const j_sensor_module_sensor_type = sensor_module_sensor_type.toLowerCase();
+                let value = null;
+                if((j[j_sensor_module_name] != undefined) &&  (j[j_sensor_module_name][j_sensor_module_sensor_type] != undefined))
+                {
+                    value = j[j_sensor_module_name][j_sensor_module_sensor_type];
+                }
+
+                if(sensor_module_sensor_type == "Temperature")
+                {
+                    set_temperature_indication(value, el_value, el_t_i, el_t_ttt);
+                }
+                if(sensor_module_sensor_type == "Humidity")
+                {
+                    set_humidity_indication(value, el_value, el_t_i, el_t_ttt);
+                }
+                if(sensor_module_sensor_type == "Pressure")
+                {
+                    set_pressure_indication(value, el_value, el_t_i, el_t_ttt);
+                }
+            }
+
+            set_status(el_status, true);
+        }
+        
     } catch (e) {
         set_rtc_data(false);
-        set_bme280_data(false);
         set_ens160_data(false);
-        set_dht11_data(false);
-        set_aht2x_data(false);
         set_veml700_data(false);
-        set_lm35_data(false);
-        set_ds18b20_data(false);
         set_ldr_data(false);
+
+        for (const [sensor_module_name, sensor_module_sensor_types] of Object.entries(sensor_modules)) {
+            const el_status = $(`#${sensor_module_name}__status`);
+            for (const sensor_module_sensor_type of sensor_module_sensor_types) {
+                const el_value = $(`#${sensor_module_name}__${sensor_module_sensor_type}__val_k`);
+                const el_t_i = $(`#${sensor_module_name}__${sensor_module_sensor_type}__t_i`);
+                const el_t_ttt = $(`#${sensor_module_name}__${sensor_module_sensor_type}__ttt`);
+
+                let value = null;
+
+                if(sensor_module_sensor_type == "Temperature")
+                {
+                    set_temperature_indication(value, el_value, el_t_i, el_t_ttt);
+                }
+                if(sensor_module_sensor_type == "Humidity")
+                {
+                    set_humidity_indication(value, el_value, el_t_i, el_t_ttt);
+                }
+                if(sensor_module_sensor_type == "Pressure")
+                {
+                    set_pressure_indication(value, el_value, el_t_i, el_t_ttt);
+                }
+            }
+
+            set_status(el_status, false);
+        }
     }
 }
 $("#btnRefresh").addEventListener("click", fetch_sensor_data);
@@ -480,19 +403,19 @@ async function syncToPC_Time() {
     const d = new Date();
     // send current local epoch seconds
     try {
-        const r = await fetch("/api/set_rtc_time", { 
-            method: "POST", 
-            headers: { "Content-Type": "application/json" }, 
+        const r = await fetch("/api/set_rtc_time", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                "year" : d.getFullYear(), 
-                "month" : d.getMonth() + 1,
-                "day" : d.getDate(),
-                "hour" : d.getHours(),
-                "minute" : d.getMinutes(),
-                "second" : d.getSeconds()
-              }) 
+                "year": d.getFullYear(),
+                "month": d.getMonth() + 1,
+                "day": d.getDate(),
+                "hour": d.getHours(),
+                "minute": d.getMinutes(),
+                "second": d.getSeconds()
+            })
         });
-        if (!r.ok) 
+        if (!r.ok)
             throw 0;
         fetch_sensor_data();
         alert("RTC time synced with PC.");
@@ -505,19 +428,19 @@ async function syncToPicked_Time() {
     const d = get_picked_dateTime();
     // send current local epoch seconds
     try {
-        const r = await fetch("/api/set_rtc_time", { 
-            method: "POST", 
-            headers: { "Content-Type": "application/json" }, 
+        const r = await fetch("/api/set_rtc_time", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                "year" : d.getFullYear(), 
-                "month" : d.getMonth() + 1,
-                "day" : d.getDate(),
-                "hour" : d.getHours(),
-                "minute" : d.getMinutes(),
-                "second" : d.getSeconds()
-              }) 
+                "year": d.getFullYear(),
+                "month": d.getMonth() + 1,
+                "day": d.getDate(),
+                "hour": d.getHours(),
+                "minute": d.getMinutes(),
+                "second": d.getSeconds()
+            })
         });
-        if (!r.ok) 
+        if (!r.ok)
             throw 0;
         fetch_sensor_data();
         alert("RTC time synced with picked.");
@@ -526,6 +449,8 @@ async function syncToPicked_Time() {
     }
 }
 
+const rtcDlg = $("#rtcDlg")
+$("#btnRTC").addEventListener("click", () => { rtcDlg.showModal() });
 $("#btnSyncTime").addEventListener("click", syncToPC_Time);
 $("#btnSetPickedTime").addEventListener("click", syncToPicked_Time);
 
@@ -544,8 +469,8 @@ btnWifi.addEventListener("click", async () => {
         const list = await r.json();
         ssidSelect.innerHTML = "";
         (list || []).forEach(ss => {
-            const o = document.createElement("option"); 
-            o.value = o.textContent = ss; 
+            const o = document.createElement("option");
+            o.value = o.textContent = ss;
             ssidSelect.appendChild(o);
         });
         wifiMsg.textContent = "select one of existing networks or enter manually.";
@@ -560,9 +485,9 @@ btnWifi.addEventListener("click", async () => {
         if (j && j.ssid) {
             // preselect if in list
             const opt = Array.from(ssidSelect.options).find(o => o.value === j.ssid);
-            if (opt) 
-                ssidSelect.value = j.ssid; 
-            else 
+            if (opt)
+                ssidSelect.value = j.ssid;
+            else
                 ssidManual.value = j.ssid;
         }
         if (j && j.hostname) hostname.value = j.hostname;
@@ -573,23 +498,23 @@ btnWifi.addEventListener("click", async () => {
 $("#btnWifiSave").addEventListener("click", async (ev) => {
     ev.preventDefault();
     const ssid = (ssidManual.value || "").trim() || ssidSelect.value;
-    if (!ssid) { 
-        alert("Select SSID."); 
-        return; 
+    if (!ssid) {
+        alert("Select SSID.");
+        return;
     }
-    const data = { 
-        ssid:ssid, 
-        password: password.value, 
-        hostname: hostname.value || "", 
-        ip: ip.value || "" 
+    const data = {
+        ssid: ssid,
+        password: password.value,
+        hostname: hostname.value || "",
+        ip: ip.value || ""
     };
     try {
-        const r = await fetch("/api/wifi/save", { 
-            method: "POST", 
-            headers: { "Content-Type": "application/json" }, 
-            body: JSON.stringify(data) 
+        const r = await fetch("/api/wifi/save", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
         });
-        if (!r.ok) 
+        if (!r.ok)
             throw 0;
         wifiMsg.textContent = "Saved. Please reconnect.";
         setTimeout(() => wifiDlg.close(), 400);
@@ -598,12 +523,179 @@ $("#btnWifiSave").addEventListener("click", async (ev) => {
     }
 });
 
+
+// --------------------------------------------
+// --------------------------------------------
+const groupSelect = $("#groupSelect");
+groupSelect.addEventListener("change", function () {
+    const selectedValue = this.value;
+    if (selectedValue == "groupByModule") {
+        updateDynamicSensorsHTML(false);
+    }
+    else {
+        updateDynamicSensorsHTML(true);
+    }
+    fetch_sensor_data();
+});
+
+
+const sensor_types = ["Temperature", "Humidity", "Pressure"];
+const sensor_modules = {
+    "DS3231": ["Temperature"],
+    "BME280": ["Temperature", "Humidity", "Pressure"],
+    "DHT11": ["Temperature", "Humidity"],
+    "AHT2x": ["Temperature", "Humidity"],
+    "LM35": ["Temperature"],
+    "DS18B20": ["Temperature"]
+};
+
+function updateDynamicSensorsHTML(group_by_sensors = true) {
+    const dynamicSensorsContainer = document.getElementById("dynamicSensors");
+    dynamicSensorsContainer.innerHTML = "";
+
+    if (group_by_sensors == true) {
+        // ----------------------------------------------------
+        // -------------   Sensor status ----------------------
+        // ----------------------------------------------------
+        const sensors_status_div = document.createElement("div");
+        sensors_status_div.className = "card";
+
+        const sensor_status_caption_div = document.createElement("div");
+        sensor_status_caption_div.className = "row";
+
+        const sensor_status_caption_span = document.createElement("span");
+        sensor_status_caption_span.innerHTML = "<strong>Sensor status</strong>";
+        sensor_status_caption_div.appendChild(sensor_status_caption_span);
+        sensors_status_div.appendChild(sensor_status_caption_div);
+
+        for (const [sensor_module_name, sensor_module_sensor_types] of Object.entries(sensor_modules)) {
+            const sensor_module_status_div = document.createElement("div");
+            sensor_module_status_div.className = "row";
+            sensor_module_status_div.innerHTML = `${sensor_module_name}<small id="${sensor_module_name}__status" class="muted">updating…</small>`;
+            sensors_status_div.appendChild(sensor_module_status_div);
+        }
+        dynamicSensorsContainer.appendChild(sensors_status_div);
+        // ----------------------------------------------------
+
+        for (const sensor_type of sensor_types) {
+            const sensor_div = document.createElement("div");
+            sensor_div.className = "card";
+
+            const sensor_caption_div = document.createElement("div");
+            sensor_caption_div.className = "row";
+
+            const sensor_caption_span = document.createElement("span");
+            sensor_caption_span.innerHTML = `<strong>${sensor_type}</strong>`
+            sensor_caption_div.appendChild(sensor_caption_span);
+
+            sensor_div.appendChild(sensor_caption_div);
+
+            for (const [sensor_module_name, sensor_module_sensor_types] of Object.entries(sensor_modules)) {
+                if (sensor_module_sensor_types.includes(sensor_type)) {
+                    const sensor_module_div = document.createElement("div");
+                    sensor_module_div.className = "row";
+
+                    const sensor_caption = document.createElement("span");
+                    sensor_caption.innerHTML = `${sensor_module_name}`;
+                    sensor_module_div.appendChild(sensor_caption);
+
+                    const sensor_value = document.createElement("span");
+                    sensor_value.innerHTML = "-";
+                    sensor_value.className = "val";
+                    sensor_value.id = `${sensor_module_name}__${sensor_type}__val_k`;
+                    sensor_module_div.appendChild(sensor_value);
+
+                    const sensor_tooltip = document.createElement("div");
+                    sensor_tooltip.className = "tooltip";
+
+                    const sensor_tooltip_i = document.createElement("span");
+                    sensor_tooltip_i.innerHTML = "";
+                    sensor_tooltip_i.className = "indicator grey";
+                    sensor_tooltip_i.id = `${sensor_module_name}__${sensor_type}__t_i`;
+                    sensor_tooltip.appendChild(sensor_tooltip_i);
+
+                    const sensor_tooltip_ttt = document.createElement("span");
+                    sensor_tooltip_ttt.innerHTML = "Some tooltip text";
+                    sensor_tooltip_ttt.className = "tooltiptext";
+                    sensor_tooltip_ttt.id = `${sensor_module_name}__${sensor_type}__ttt`;
+                    sensor_tooltip.appendChild(sensor_tooltip_ttt);
+
+                    sensor_module_div.appendChild(sensor_tooltip);
+
+                    sensor_div.appendChild(sensor_module_div);
+                }
+            }
+
+            dynamicSensorsContainer.appendChild(sensor_div);
+        }
+    }
+    else {
+        for (const [sensor_module_name, sensor_module_sensor_types] of Object.entries(sensor_modules)) {
+            const sensor_module_div = document.createElement("div");
+            sensor_module_div.className = "card";
+
+            const sensor_caption_div = document.createElement("div");
+            sensor_caption_div.className = "row";
+
+            const sensor_caption = document.createElement("span");
+            sensor_caption.innerHTML = `<strong>${sensor_module_name}</strong>`
+            sensor_caption_div.appendChild(sensor_caption);
+
+            const sensor_module_status_div = document.createElement("div");
+            sensor_module_status_div.className = "row";
+            sensor_module_status_div.innerHTML = `<small id="${sensor_module_name}__status" class="muted">updating…</small>`;
+            sensor_caption_div.appendChild(sensor_module_status_div);
+
+            sensor_module_div.appendChild(sensor_caption_div);
+
+            for (const sensor_module_sensor_type of sensor_module_sensor_types) {
+                const sensor_module_sensor_type_div = document.createElement("div");
+                sensor_module_sensor_type_div.className = "row";
+
+                const sensor_module_sensor_type_span = document.createElement("span");
+                sensor_module_sensor_type_span.innerHTML = `${sensor_module_sensor_type}`;
+                sensor_module_sensor_type_div.appendChild(sensor_module_sensor_type_span);
+
+                const sensor_value = document.createElement("span");
+                sensor_value.innerHTML = "-";
+                sensor_value.className = "val";
+                sensor_value.id = `${sensor_module_name}__${sensor_module_sensor_type}__val_k`;
+                sensor_module_sensor_type_div.appendChild(sensor_value);
+
+                const sensor_tooltip = document.createElement("div");
+                sensor_tooltip.className = "tooltip";
+
+                const sensor_tooltip_i = document.createElement("span");
+                sensor_tooltip_i.innerHTML = "";
+                sensor_tooltip_i.className = "indicator grey";
+                sensor_tooltip_i.id = `${sensor_module_name}__${sensor_module_sensor_type}__t_i`;
+                sensor_tooltip.appendChild(sensor_tooltip_i);
+
+                const sensor_tooltip_ttt = document.createElement("span");
+                sensor_tooltip_ttt.innerHTML = "Some tooltip text";
+                sensor_tooltip_ttt.className = "tooltiptext";
+                sensor_tooltip_ttt.id = `${sensor_module_name}__${sensor_module_sensor_type}__ttt`;
+                sensor_tooltip.appendChild(sensor_tooltip_ttt);
+
+                sensor_module_sensor_type_div.appendChild(sensor_tooltip);
+
+                sensor_module_div.appendChild(sensor_module_sensor_type_div);
+            }
+            dynamicSensorsContainer.appendChild(sensor_module_div);
+        }
+    }
+}
+// --------------------------------------------
+// --------------------------------------------
+
 // ======== Init ========
 (function init() {
     const now = new Date();
     const { date, time } = toISODateTimeLocal(now);
     $("#datePick").value = date;
     $("#timePick").value = time;
+
+    updateDynamicSensorsHTML(false);
 
     tickPC();
     setInterval(tickPC, 200);

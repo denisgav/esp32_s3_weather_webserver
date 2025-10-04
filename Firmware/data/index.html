@@ -15,64 +15,23 @@
   <header>
     <h1>ESP32 S3 — Air Quality Sensor</h1>
     <div class="inline">
+      <select id="groupSelect">
+        <option value="groupByModule" selected="selected">Group by module</option>
+        <option value="groupBySensor">Group by sensor</option>
+      </select>
+      <select id="tempUnitSelect">
+        <option value="Celsius" selected="selected">Celsius</option>
+        <option value="Farengheit">Farengheit</option>
+      </select>
+    </div>
+    <div class="inline">
       <button id="btnRefresh">Refresh</button>
-      <button id="btnWifi">Wi-Fi</button>
+      <button id="btnRTC">RTC</button>
+      <button id="btnWifi">WiFi</button>
     </div>
   </header>
 
-  <section class="grid">
-    <div class="card">
-      <div class="row"><strong>RTC (DS3231)</strong><small id="rtc_status" class="muted">updating…</small></div>
-      <div class="row">
-        <span>Temperature</span>
-        <span id="rtc_t" class="val k">—</span>
-        <div class="tooltip">
-          <span id="rtc_t_i" class="indicator grey"></span>
-          <span id="rtc_t_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-      <div class="row"><span>RTC Date</span><span id="rtc_date" class="val k">—</span></div>
-      <div class="row"><span>RTC Time</span><span id="rtc_time" class="val k">—</span></div>
-      <div class="row"><span>PC Date</span><span id="pc_date" class="val k">—</span></div>
-      <div class="row"><span>PC Time</span><span id="pc_time" class="val k">—</span></div>
-      <div class="row inline">
-        <input type="date" id="datePick" aria-label="Date">
-      </div>
-      <div class="row inline">
-        <input type="time" id="timePick" step="1" aria-label="Time">
-      </div>
-      <div class="row">
-        <button id="btnSetPickedTime">Set picked time</button>
-        <button id="btnSyncTime">Set PC time</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row"><strong>BME280</strong><small id="bme280_status" class="muted">updating…</small></div>
-      <div class="row">
-        <span>Temperature</span>
-        <span id="bme280_t" class="val k">—</span>
-        <div class="tooltip">
-          <span id="bme280_t_i" class="indicator grey"></span>
-          <span id="bme280_t_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-      <div class="row">
-        <span>Humidity</span>
-        <span id="bme280_h" class="val k">—</span>
-        <div class="tooltip">
-          <span id="bme280_h_i" class="indicator grey"></span>
-          <span id="bme280_h_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-      <div class="row">
-        <span>Pressure</span>
-        <span id="bme280_p" class="val k">—</span>
-        <div class="tooltip">
-          <span id="bme280_p_i" class="indicator grey"></span>
-          <span id="bme280_p_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-    </div>
+  <section class="grid" id="staticSensors">
     <div class="card">
       <div class="row"><strong>ENS160</strong><small id="ens160_status" class="muted">updating…</small></div>
       <div class="row">
@@ -101,44 +60,6 @@
       </div>
     </div>
     <div class="card">
-      <div class="row"><strong>DHT11</strong><small id="dht11_status" class="muted">updating…</small></div>
-      <div class="row">
-        <span>Temperature</span>
-        <span id="dht11_t" class="val k">—</span>
-        <div class="tooltip">
-          <span id="dht11_t_i" class="indicator grey"></span>
-          <span id="dht11_t_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-      <div class="row">
-        <span>Humidity</span>
-        <span id="dht11_h" class="val k">—</span>
-        <div class="tooltip">
-          <span id="dht11_h_i" class="indicator grey"></span>
-          <span id="dht11_h_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row"><strong>AHT2x</strong><small id="aht2x_status" class="muted">updating…</small></div>
-      <div class="row">
-        <span>Temperature</span>
-        <span id="aht2x_t" class="val k">—</span>
-        <div class="tooltip">
-          <span id="aht2x_t_i" class="indicator grey"></span>
-          <span id="aht2x_t_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-      <div class="row">
-        <span>Humidity</span>
-        <span id="aht2x_h" class="val k">—</span>
-        <div class="tooltip">
-          <span id="aht2x_h_i" class="indicator grey"></span>
-          <span id="aht2x_h_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-    </div>
-    <div class="card">
       <div class="row"><strong>VEML7700</strong><small id="veml7700_status" class="muted">updating…</small></div>
       <div class="row">
         <span>Lux</span>
@@ -155,28 +76,10 @@
       <div class="row"><strong>LDR</strong><small id="ldr_status" class="muted">updating…</small></div>
       <div class="row"><span>Voltage</span><span id="ldr_mv" class="val k">—</span></div>
     </div>
-    <div class="card">
-      <div class="row"><strong>LM35</strong><small id="lm35_status" class="muted">updating…</small></div>
-      <div class="row">
-        <span>Temperature</span>
-        <span id="lm35_t" class="val k">—</span>
-        <div class="tooltip">
-          <span id="lm35_t_i" class="indicator grey"></span>
-          <span id="lm35_t_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row"><strong>DS18B20</strong><small id="ds18b20_status" class="muted">updating…</small></div>
-      <div class="row">
-        <span>Temperature</span>
-        <span id="ds18b20_t" class="val k">—</span>
-        <div class="tooltip">
-          <span id="ds18b20_t_i" class="indicator grey"></span>
-          <span id="ds18b20_t_ttt" class="tooltiptext">Some tooltip text</span>
-        </div>
-      </div>
-    </div>
+  </section>
+
+  <section class="grid" id="dynamicSensors">
+    
   </section>
 
 
@@ -207,6 +110,27 @@
       <div class="actions">
         <button value="cancel">Cancel</button>
         <button id="btnWifiSave" value="default">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="rtcDlg">
+    <form class="modal" method="dialog" id="wifiForm">
+      <div class="row"><h2>RTC Settings</h2> <small id="rtc_status" class="muted">updating…</small></div>
+      <div class="row"><span>RTC Date</span><span id="rtc_date" class="val k">—</span></div>
+      <div class="row"><span>RTC Time</span><span id="rtc_time" class="val k">—</span></div>
+      <div class="row"><span>PC Date</span><span id="pc_date" class="val k">—</span></div>
+      <div class="row"><span>PC Time</span><span id="pc_time" class="val k">—</span></div>
+      <div class="row inline">
+        <input type="date" id="datePick" aria-label="Date">
+      </div>
+      <div class="row inline">
+        <input type="time" id="timePick" step="1" aria-label="Time">
+      </div>
+      <div class="actions">
+        <button value="cancel">Cancel</button>
+        <button id="btnSetPickedTime">Set picked time</button>
+        <button id="btnSyncTime">Set PC time</button>
       </div>
     </form>
   </dialog>
