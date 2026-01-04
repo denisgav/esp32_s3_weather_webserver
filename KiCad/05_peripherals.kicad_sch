@@ -5900,15 +5900,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 128.27 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 128.27 54.61 0)
 			(effects
@@ -6098,46 +6089,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Microchip"
-			(at 168.91 620.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "DHT11"
-			(at 168.91 720.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 168.91 820.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 168.91 920.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Arrow Part Number" ""
 			(at 168.91 1020.65 0)
 			(effects
@@ -6300,15 +6251,6 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 146.05 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
 			(at 146.05 119.38 0)
 			(effects
 				(font
@@ -6537,15 +6479,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Product Number" "CL10B104KB8NNNC"
-			(at 247.65 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
 			(at 247.65 50.8 0)
 			(effects
@@ -6633,15 +6566,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 138.43 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 138.43 54.61 0)
 			(effects
 				(font
@@ -6738,15 +6662,6 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 156.21 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
 			(at 156.21 54.61 0)
 			(effects
 				(font
@@ -6899,15 +6814,6 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 62.23 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
 			(at 62.23 116.84 0)
 			(effects
 				(font
@@ -7077,15 +6983,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 25.4 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 25.4 186.69 0)
 			(effects
@@ -7184,15 +7081,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
-			(at 36.83 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 36.83 186.69 0)
 			(effects
 				(font
@@ -7571,46 +7459,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Vishay"
-			(at 179.07 559.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "VEML7700-TT"
-			(at 179.07 659.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "78-VEML7700-TT"
-			(at 179.07 759.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/VEML7700-TT?qs=BcfjnG7NVaXdL6DJFdWbdw%3D%3D"
-			(at 179.07 859.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Arrow Part Number" "VEML7700-TT"
 			(at 179.07 959.69 0)
 			(effects
@@ -7742,15 +7590,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 144.78 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 144.78 54.61 0)
 			(effects
@@ -7854,15 +7693,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 30.48 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 30.48 124.46 0)
 			(effects
@@ -7952,15 +7782,6 @@
 			)
 		)
 		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 237.49 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "0805W8F1002T5E"
 			(at 237.49 50.8 0)
 			(effects
 				(font
@@ -8445,7 +8266,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "764d70be-bc86-4b6f-9dbd-1f4e764da127")
 		(property "Reference" "#PWR0508"
@@ -8696,15 +8517,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 63.5 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 63.5 186.69 0)
 			(effects
 				(font
@@ -9008,15 +8820,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
-			(at 224.79 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
 			(at 224.79 111.76 0)
 			(effects
@@ -9097,15 +8900,6 @@
 			)
 		)
 		(property "Manufacturer" "JCHL(Shenzhen Jing Chuang He Li Tech)"
-			(at 237.49 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "GL5528(10-20)"
 			(at 237.49 40.64 0)
 			(effects
 				(font
@@ -9323,15 +9117,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 86.36 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "MYOUNG"
 			(at 86.36 119.38 0)
 			(effects
@@ -9447,15 +9232,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
-			(at 134.62 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 134.62 119.38 0)
 			(effects
 				(font
@@ -9699,8 +9475,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "a68cd18f-5d8a-4c13-88cb-5393bf1cb916")
 		(property "Reference" "C505"
@@ -9749,15 +9525,6 @@
 			)
 		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
-			(at 224.79 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
 			(at 224.79 76.2 0)
 			(effects
 				(font
@@ -9863,7 +9630,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "afdeee6d-6dff-4125-b5a9-51dc8deb0913")
 		(property "Reference" "#PWR0512"
 			(at 250.19 97.79 0)
@@ -10149,15 +9916,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 50.8 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 50.8 116.84 0)
 			(effects
@@ -10386,15 +10144,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Product Number" "CL21A106KOQNNNE"
-			(at 224.79 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
 			(at 224.79 41.91 0)
 			(effects
@@ -10481,15 +10230,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 106.68 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 106.68 186.69 0)
 			(effects
 				(font
@@ -10604,15 +10344,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 74.93 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 74.93 186.69 0)
 			(effects
@@ -10708,15 +10439,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 39.37 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 39.37 124.46 0)
 			(effects
 				(font
@@ -10825,46 +10547,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Analog Devices"
-			(at 90.17 621.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "DS3231MZ+TRL"
-			(at 90.17 721.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "700-DS3231MZ+TRL"
-			(at 90.17 821.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Analog-Devices-Maxim-Integrated/DS3231MZ%2bTRL?qs=4Rc5iGDDRGgh%2Fh2%252BvSsz9A%3D%3D"
-			(at 90.17 921.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Arrow Part Number" "DS3231MZ+TRL"
 			(at 90.17 1021.92 0)
 			(effects
@@ -10943,7 +10625,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "ce6b81dc-0a35-4621-9af9-e4a9f9a9785d")
 		(property "Reference" "#PWR0510"
 			(at 224.79 90.17 0)
@@ -11203,8 +10885,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "dd74e636-87ff-4fef-8d1c-2e1d0c17c838")
 		(property "Reference" "U502"
@@ -11353,15 +11035,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
-			(at 118.11 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 118.11 186.69 0)
 			(effects
 				(font
@@ -11681,8 +11354,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "f2988831-7cdc-4bd1-954c-085c8a993379")
 		(property "Reference" "R504"
 			(at 262.89 74.93 0)

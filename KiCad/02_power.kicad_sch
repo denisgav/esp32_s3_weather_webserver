@@ -6466,7 +6466,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "09d5f1c5-4213-47be-8388-d76d334d8c3b")
 		(property "Reference" "#PWR0210"
 			(at 43.18 68.58 0)
@@ -6691,7 +6691,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "115f0043-0dd2-4008-b9e7-b9e014869162")
 		(property "Reference" "#PWR0227"
@@ -6756,8 +6756,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "13a454e7-55f7-4cfd-9039-23682dfed708")
 		(property "Reference" "R210"
 			(at 156.21 170.18 0)
@@ -6814,15 +6814,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0402WGF1003TCE"
-			(at 153.67 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 153.67 171.45 0)
 			(effects
 				(font
@@ -6937,8 +6928,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "1c101ea1-8800-4298-be3c-09fdd6a8cdf7")
 		(property "Reference" "Q201"
 			(at 154.686 122.428 0)
@@ -7189,15 +7180,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 123.19 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 123.19 81.28 0)
 			(effects
@@ -7237,8 +7219,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "1eab2988-234f-4d98-83ab-d4c1bf15c7e8")
 		(property "Reference" "R203"
 			(at 189.738 127 0)
@@ -7454,15 +7436,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 124.46 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 124.46 40.64 0)
 			(effects
@@ -7502,8 +7475,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "2ccaca9e-6044-4e40-8cc2-e8de9a808b7d")
 		(property "Reference" "C208"
 			(at 77.724 74.168 0)
@@ -7560,15 +7533,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL10A225KO8NNNC"
-			(at 77.47 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 77.47 76.2 0)
 			(effects
 				(font
@@ -7741,15 +7705,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0402WGF2202TCE"
-			(at 199.39 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 199.39 95.25 0)
 			(effects
 				(font
@@ -7931,8 +7886,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "31c0eedc-f54e-4b51-922f-977def12233c")
 		(property "Reference" "R204"
 			(at 241.3 138.684 90)
@@ -8250,7 +8205,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "3427a4dc-8cee-45c9-b364-48f79409908a")
 		(property "Reference" "#PWR0235"
 			(at 215.9 156.21 0)
@@ -8379,8 +8334,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "36be5596-cfc4-4960-8a4d-1b2166a54cc4")
 		(property "Reference" "C214"
 			(at 200.66 123.19 0)
@@ -8445,15 +8400,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 196.85 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 196.85 124.46 0)
 			(effects
@@ -8495,7 +8441,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "3bf297b4-8e2e-4d8a-9bbd-25bb613bece4")
 		(property "Reference" "#PWR0232"
 			(at 245.11 149.86 0)
@@ -8692,15 +8638,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 148.59 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 148.59 77.47 0)
 			(effects
@@ -8815,15 +8752,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 77.47 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 77.47 43.18 0)
 			(effects
@@ -8865,7 +8793,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "478d9eff-fb01-40d8-9d03-7fcfb0c089b1")
 		(property "Reference" "#PWR0251"
 			(at 246.38 140.97 0)
@@ -9239,7 +9167,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "50f92602-95ef-4921-a2ef-e1feca8da303")
 		(property "Reference" "#FLG0206"
@@ -9435,15 +9363,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 170.18 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 170.18 74.93 0)
 			(effects
@@ -9483,8 +9402,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "557b6cc1-364b-44d1-9c6d-ac80c1a2cbc8")
 		(property "Reference" "FB202"
@@ -10368,7 +10287,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "72d5b568-e1c4-487e-adab-71d988dcbecd")
 		(property "Reference" "#PWR0231"
@@ -10434,7 +10353,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "779b30d5-308d-4dd0-af91-7bb1281ea915")
 		(property "Reference" "#PWR0211"
 			(at 59.69 68.58 0)
@@ -10562,15 +10481,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 20.32 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 20.32 168.91 0)
 			(effects
@@ -10678,7 +10588,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "7cfc84af-8317-4767-8eb4-38b455dd9ee5")
 		(property "Reference" "#FLG0205"
@@ -10812,7 +10722,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "8966ba0d-4ad2-4b57-bc1d-0733b17d5652")
 		(property "Reference" "#PWR0212"
 			(at 77.47 68.58 0)
@@ -10944,8 +10854,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "8b2ded8b-0058-41a8-ab22-629fc8eea727")
 		(property "Reference" "J202"
 			(at 129.286 133.604 90)
@@ -10994,46 +10904,6 @@
 		)
 		(property "Height" ""
 			(at 516.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "JST (JAPAN SOLDERLESS TERMINALS)"
-			(at 616.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "BM02B-GHS-TBT(LF)(SN)(N)"
-			(at 716.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 816.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 916.84 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11254,8 +11124,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "963f501b-1e24-480d-bfa1-08e5269a5736")
 		(property "Reference" "C215"
 			(at 250.19 128.27 0)
@@ -11312,15 +11182,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL10A226MP8NUNE"
-			(at 246.38 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 246.38 129.54 0)
 			(effects
 				(font
@@ -11437,7 +11298,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "a412491b-c4e3-4875-9824-7eff413bb691")
 		(property "Reference" "#PWR0226"
@@ -11637,7 +11498,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "a816beda-126b-4633-8c57-a72b6e91598b")
 		(property "Reference" "#PWR0233"
@@ -11702,8 +11563,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "abfdf6b6-4021-457b-a401-9a4e1aaa3851")
 		(property "Reference" "IC201"
@@ -11755,46 +11616,6 @@
 		)
 		(property "Height" "1.45"
 			(at 231.14 528.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Microchip"
-			(at 231.14 628.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "MCP73831T-2ACI/OT"
-			(at 231.14 728.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "579-MCP73831T-2ACIOT"
-			(at 231.14 828.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP73831T-2ACI-OT?qs=yUQqVecv4qvbBQBGbHx0Mw%3D%3D"
-			(at 231.14 928.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11959,7 +11780,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "afdaeef8-e2f3-4646-a5a9-3b92df0ababf")
 		(property "Reference" "#PWR0234"
 			(at 137.16 154.94 0)
@@ -12024,7 +11845,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "b199db4b-8869-4c85-b132-18cc9318286d")
 		(property "Reference" "#FLG0211"
@@ -12243,8 +12064,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "b7e7ed65-8fe7-4346-af4f-fb49b621d0f0")
 		(property "Reference" "D205"
 			(at 189.484 133.858 0)
@@ -12406,7 +12227,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "bf54b132-8734-4e52-82d2-a4e3832b1f41")
 		(property "Reference" "#PWR0249"
@@ -12473,7 +12294,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "c1816617-d99e-4987-bd29-28f94a2a1d5f")
 		(property "Reference" "#PWR0250"
 			(at 153.67 195.58 0)
@@ -12688,15 +12509,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 77.47 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 77.47 107.95 0)
 			(effects
@@ -12868,8 +12680,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "cf5adc48-43b3-4918-a4f7-f6118f7b8990")
 		(property "Reference" "D202"
@@ -13220,15 +13032,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 162.56 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 162.56 40.64 0)
 			(effects
@@ -13335,8 +13138,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "db6ba50f-5da1-431e-b6ef-7bbe11fdb168")
 		(property "Reference" "F202"
@@ -13488,15 +13291,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 199.39 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 199.39 81.28 0)
 			(effects
@@ -13538,7 +13332,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "dd59525a-e62f-4458-86f0-bd1bf18ba01d")
 		(property "Reference" "#PWR0229"
 			(at 196.85 135.89 0)
@@ -14017,8 +13811,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "e5ea81e0-036b-444a-a898-96812e7dcbe4")
 		(property "Reference" "R211"
 			(at 156.21 182.88 0)
@@ -14083,15 +13877,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 153.67 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 153.67 184.15 0)
 			(effects
@@ -14131,7 +13916,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "e6652a47-778d-4aec-be48-abd768eec27d")
 		(property "Reference" "C211"
@@ -14171,15 +13956,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 212.09 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 212.09 81.28 0)
 			(effects
 				(font
@@ -14293,15 +14069,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 181.61 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 181.61 81.28 0)
 			(effects
@@ -14400,15 +14167,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
-			(at 135.89 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 135.89 40.64 0)
 			(effects
 				(font
@@ -14678,7 +14436,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "ef4f8c34-41d7-4f39-a422-93f5c750f778")
 		(property "Reference" "#PWR0225"
 			(at 185.42 121.92 0)
@@ -14742,8 +14500,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "f00319d6-54f2-4aaa-9d90-e521a4dcda0a")
 		(property "Reference" "C207"
 			(at 59.944 74.168 0)
@@ -14800,15 +14558,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL10A225KO8NNNC"
-			(at 59.69 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 59.69 76.2 0)
 			(effects
 				(font
@@ -14922,15 +14671,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 59.69 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 59.69 107.95 0)
 			(effects
@@ -14970,8 +14710,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "f23503bd-3fa4-4fee-8551-7af5ad14176a")
 		(property "Reference" "R205"
 			(at 139.7 140.97 0)
@@ -15028,15 +14768,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0402WGF1003TCE"
-			(at 137.16 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 137.16 142.24 0)
 			(effects
 				(font
@@ -15227,15 +14958,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL10A225KO8NNNC"
-			(at 59.69 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 59.69 43.18 0)
 			(effects
 				(font

@@ -7544,15 +7544,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 71.12 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 71.12 120.65 0)
 			(effects
@@ -7887,15 +7878,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 43.18 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 43.18 77.47 0)
 			(effects
@@ -8079,46 +8061,6 @@
 		)
 		(property "Height" "1.85"
 			(at 115.57 519.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Korean Hroparts Elec"
-			(at 115.57 619.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "TF-01A"
-			(at 115.57 719.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 115.57 819.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 115.57 919.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8773,46 +8715,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Espressif Systems"
-			(at 252.73 538.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ESP32-S3-WROOM-1-N16R8"
-			(at 252.73 638.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "356-ESP32S3WRM1N16R8"
-			(at 252.73 738.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Espressif-Systems/ESP32-S3-WROOM-1-N16R8?qs=Li%252BoUPsLEnvQc9gW6AMhZg%3D%3D"
-			(at 252.73 838.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Arrow Part Number" ""
 			(at 252.73 938.1 0)
 			(effects
@@ -9250,15 +9152,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 99.06 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 99.06 83.82 0)
 			(effects
@@ -9485,15 +9378,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 62.23 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 62.23 120.65 0)
 			(effects
 				(font
@@ -9826,15 +9710,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 105.41 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 105.41 44.45 0)
 			(effects
@@ -9933,15 +9808,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL10A106KP8NNNC"
-			(at 212.09 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 212.09 34.29 0)
 			(effects
 				(font
@@ -10185,15 +10051,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 77.47 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 77.47 39.37 0)
 			(effects
@@ -10297,15 +10154,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 53.34 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 53.34 120.65 0)
 			(effects
@@ -10401,15 +10249,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F0000T5E"
-			(at 160.02 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 160.02 115.57 0)
 			(effects
 				(font
@@ -10580,15 +10419,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 35.56 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 35.56 120.65 0)
 			(effects
 				(font
@@ -10768,15 +10598,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 199.39 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 199.39 34.29 0)
 			(effects
@@ -10872,15 +10693,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F0000T5E"
-			(at 231.14 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 231.14 29.21 0)
 			(effects
 				(font
@@ -10992,15 +10804,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 99.06 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 99.06 52.07 0)
 			(effects
@@ -11099,15 +10902,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
-			(at 105.41 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 105.41 58.42 0)
 			(effects
 				(font
@@ -11478,15 +11272,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 224.79 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 224.79 34.29 0)
 			(effects
@@ -11791,15 +11576,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 40.64 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 40.64 44.45 0)
 			(effects
@@ -11895,15 +11671,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 78.74 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 78.74 58.42 0)
 			(effects
 				(font
@@ -12280,15 +12047,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 44.45 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 44.45 120.65 0)
 			(effects
@@ -12387,15 +12145,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CL05B104KO5NNNC"
-			(at 93.98 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 93.98 109.22 0)
 			(effects
 				(font
@@ -12641,15 +12390,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 81.28 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 81.28 109.22 0)
 			(effects
@@ -12753,15 +12493,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" ""
-			(at 77.47 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "PARTREV" ""
 			(at 77.47 34.29 0)
 			(effects
@@ -12857,15 +12588,6 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0805W8F1002T5E"
-			(at 78.74 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" ""
 			(at 78.74 76.2 0)
 			(effects
 				(font
